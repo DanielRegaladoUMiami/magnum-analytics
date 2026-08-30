@@ -69,6 +69,21 @@ from divs, CSS and one inline SVG. There are no screenshots anywhere. Consequenc
 - Every mock is labelled "sample data" / "datos de ejemplo". Keep that label: the numbers
   are illustrative and the site must not imply real client results.
 
+## Mobile navigation
+
+Below 860px the header collapses to a wordmark plus a menu button, and the nav
+becomes a dropdown. The open state is `data-menu="open"` on `#app`; `app.js` only
+flips that attribute and keeps `aria-expanded` in sync, so CSS owns the presentation.
+It closes on navigate, Escape, an outside tap, and on widening past the breakpoint.
+
+Two cascade traps to know before editing header styles — both are why `!important`
+appears there, and both are commented in `responsive.css`:
+
+1. The inline `<style>` block in `index.html` is parsed **after** `responsive.css`,
+   so a plain rule in the stylesheet loses to it.
+2. The `<nav>` carries `display: flex` as an inline **attribute**, which outranks
+   any stylesheet rule regardless of file order.
+
 ## Contact details
 Email and WhatsApp are hardcoded in `index.html` (4 `mailto:` + 2 `wa.me` links). If they
 change, update all of them — there is no single source of truth for them yet.

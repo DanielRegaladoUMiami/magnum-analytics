@@ -7,6 +7,7 @@
 - [x] Real contact details (email + WhatsApp)
 - [x] Publish on GitHub Pages
 - [x] Responsive layer + 44px touch targets (the export had zero media queries)
+- [x] Mobile menu — the wrapped header was eating 22% of the phone screen
 - [x] Fill the two empty demo slots (built as HTML/CSS dashboards, not screenshots)
 
 **v0.1 is complete.**
