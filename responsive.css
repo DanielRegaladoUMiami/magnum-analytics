@@ -1,0 +1,223 @@
+/* Responsive layer.
+ *
+ * The design canvas was authored at a single desktop width: every dimension in
+ * index.html is an inline style, and ds/styles.css ships no media queries at all.
+ * Inline styles beat stylesheets, so the only way to adapt them without rewriting
+ * the markup is to match the literal inline value and override it with !important.
+ * That is why these selectors look the way they do — each one targets an exact
+ * string that appears in a style="" attribute.
+ *
+ * Keep in sync with index.html: if a value there changes, its rule here stops
+ * matching and that element silently reverts to its desktop size.
+ */
+
+html {
+  /* Stop iOS from inflating body copy in landscape. */
+  -webkit-text-size-adjust: 100%;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+/* ---------- Tablet and below ---------------------------------------------- */
+@media (max-width: 860px) {
+  /* Collapse the multi-column grids to a single column. The 14-column grid is
+     deliberately excluded — it is the bar chart in the hero dashboard mock and
+     must keep its columns at every width. */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns: repeat(4, 1fr)"],
+  [style*="grid-template-columns: minmax(0, 1fr) minmax(0, 1fr)"],
+  [style*="grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Section rhythm: the generous desktop padding wastes most of a phone screen. */
+  [style*="padding: 72px 32px"],
+  [style*="padding: 76px 32px"],
+  [style*="padding: 68px 32px"] {
+    padding: 44px 20px !important;
+  }
+  [style*="padding: 84px 32px 64px"] {
+    padding: 48px 20px 40px !important;
+  }
+  [style*="padding: 34px 32px"] {
+    padding: 26px 20px !important;
+  }
+  [style*="padding: 0 32px"] {
+    padding: 0 20px !important;
+  }
+
+  /* Comparison rows carry asymmetric padding that only reads as columns.
+     Once stacked, even it out. */
+  [style*="padding: 26px 30px 26px 0"],
+  [style*="padding: 26px 0 26px 30px"],
+  [style*="padding: 26px 30px"] {
+    padding: 22px 0 !important;
+  }
+
+  /* Large gaps become dead space once everything is stacked. */
+  [style*="gap: 64px"],
+  [style*="gap: 56px"] {
+    gap: 32px !important;
+  }
+  [style*="gap: 40px"] {
+    gap: 26px !important;
+  }
+
+  /* Display type. Scaled by eye to keep the same visual hierarchy at phone size
+     rather than by a single ratio — the biggest sizes need the steepest cut. */
+  [style*="font-size: 68px"] { font-size: 36px !important; }
+  [style*="font-size: 60px"] { font-size: 33px !important; }
+  [style*="font-size: 56px"] { font-size: 31px !important; }
+  [style*="font-size: 46px"] { font-size: 28px !important; }
+  [style*="font-size: 44px"] { font-size: 27px !important; }
+  [style*="font-size: 40px"] { font-size: 26px !important; }
+  [style*="font-size: 34px"] { font-size: 24px !important; }
+  [style*="font-size: 30px"] { font-size: 22px !important; }
+
+  /* Header: let the logo and nav occupy separate rows instead of overflowing. */
+  header > div {
+    flex-wrap: wrap;
+    gap: 12px !important;
+    padding: 12px 20px !important;
+  }
+  header nav {
+    margin-left: 0 !important;
+    width: 100%;
+    gap: 16px !important;
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  /* The hero dashboard mock is decorative; shrink its inner padding so the
+     numbers inside stay on one line. */
+  [style*="padding: 28px 24px"],
+  [style*="padding: 22px 26px"] {
+    padding: 18px 16px !important;
+  }
+}
+
+/* ---------- Phone --------------------------------------------------------- */
+@media (max-width: 560px) {
+  [style*="padding: 72px 32px"],
+  [style*="padding: 76px 32px"],
+  [style*="padding: 68px 32px"] {
+    padding: 36px 16px !important;
+  }
+  [style*="padding: 84px 32px 64px"] {
+    padding: 36px 16px 32px !important;
+  }
+  [style*="padding: 0 32px"] {
+    padding: 0 16px !important;
+  }
+  header > div {
+    padding: 12px 16px !important;
+  }
+
+  [style*="font-size: 68px"] { font-size: 30px !important; }
+  [style*="font-size: 60px"] { font-size: 28px !important; }
+  [style*="font-size: 56px"] { font-size: 27px !important; }
+  [style*="font-size: 46px"] { font-size: 25px !important; }
+  [style*="font-size: 44px"] { font-size: 24px !important; }
+  [style*="font-size: 40px"] { font-size: 23px !important; }
+  [style*="font-size: 34px"] { font-size: 22px !important; }
+  [style*="font-size: 30px"] { font-size: 21px !important; }
+  [style*="font-size: 26px"] { font-size: 20px !important; }
+
+  /* Full-width call-to-action buttons are easier to hit than inline ones. */
+  .btn {
+    display: block !important;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  /* ...except the two in the header, which must stay on the nav row. */
+  header .btn {
+    display: inline-block !important;
+    width: auto;
+  }
+
+  /* Hero button pair stacks; keep them from touching. */
+  [style*="gap: 14px"] {
+    gap: 12px !important;
+  }
+
+  .img-slot {
+    min-height: 180px;
+  }
+}
+
+/* ---------- Touch targets -------------------------------------------------
+ * Anything tappable needs roughly 44px of height to hit reliably with a thumb.
+ * The desktop design sizes these by text alone, which lands around 23-28px.
+ *
+ * Gated on width rather than (pointer: coarse) on purpose: width is what the
+ * rest of this file keys on, it can be verified in a normal desktop browser by
+ * narrowing the window, and it still covers every phone and tablet. The cost is
+ * that a narrow window on a mouse-driven machine also gets the roomier hit
+ * areas, which is harmless.
+ */
+@media (max-width: 860px) {
+  header nav > a:not(.btn),
+  header nav > button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  header nav > .btn {
+    min-height: 44px;
+    display: inline-flex !important;
+    align-items: center;
+    width: auto;
+  }
+
+  /* The wordmark doubles as the link home. */
+  header > div > a:first-child {
+    min-height: 44px;
+    align-items: center !important;
+  }
+
+  /* Standalone text links that sit outside a button. */
+  .page a:not(.btn):not([href^="mailto:"]):not([href*="wa.me"]) {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Ghost buttons carry almost no padding of their own, so they land well under
+     the target height even though they are styled as buttons. */
+  .btn {
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+  .btn-ghost {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Email and WhatsApp links in the contact block. */
+  a[href^="mailto:"],
+  a[href*="wa.me"] {
+    display: inline-block;
+    padding: 10px 0;
+  }
+
+  /* That padding makes the link taller than its label, so re-center the row it
+     sits in (the EMAIL / WHATSAPP / BASED IN rows on the contact page). */
+  [style*="display: flex; gap: 14px; font-size: 15px"] {
+    align-items: center;
+  }
+
+  a[href^="mailto:"].btn,
+  a[href*="wa.me"].btn {
+    /* Buttons already have their own padding; do not double it. */
+    padding: 14px 22px;
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+}

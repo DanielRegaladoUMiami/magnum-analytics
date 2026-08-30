@@ -20,3 +20,7 @@ uploads/
 *.doc
 *.xlsx
 *.pptx
+
+# Local preview screenshots from the responsive review
+.preview/
+.playwright-mcp/
