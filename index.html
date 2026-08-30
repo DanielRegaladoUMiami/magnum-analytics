@@ -38,6 +38,17 @@
     color: var(--color-accent-700); border-bottom-color: var(--color-accent);
   }
 
+  /* Readability.
+     Running text was reaching 86 characters per line on a wide screen; past
+     roughly 70 the eye loses its place returning to the next line. Body copy is
+     capped here rather than per-element because every paragraph in this file
+     carries its own inline style. */
+  p { max-width: 68ch; }
+
+  /* Small monospace labels sit at 10.5-12.5px. They need more leading than body
+     copy, not less, or the uppercase forms crowd each other. */
+  [style*="ui-monospace"] { line-height: 1.55; }
+
   /* Mobile menu button. Hidden here; responsive.css reveals it below 860px. */
   #nav-toggle { display: none; margin-left: auto; background: none; border: 1px solid var(--color-divider);
     border-radius: var(--radius-md); padding: 7px 8px; cursor: pointer; color: var(--color-neutral-700);
@@ -70,7 +81,7 @@
     <div id="header-bar" style="position: relative; max-width: 1160px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 32px;">
       <a href="#" onclick="go('home'); return false;" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: var(--color-text);">
         <span style="font-family: var(--font-heading); font-weight: 700; font-size: 26px; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1;">Magnum</span>
-        <span style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-neutral-600);">Business Intelligence</span>
+        <span style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-neutral-600);">Business Intelligence</span>
       </a>
       <button id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menú" onclick="toggleMenu()">
         <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
@@ -80,19 +91,19 @@
         </svg>
       </button>
       <nav id="site-nav" style="margin-left: auto; display: flex; align-items: center; gap: 26px;">
-        <a href="#" onclick="go('services'); return false;" class="hv1 n-services" style="font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--color-neutral-700); border-bottom: 2px solid transparent; padding-bottom: 3px;">
+        <a href="#" onclick="go('services'); return false;" class="hv1 n-services" style="font-family: var(--font-heading); font-size: 16.5px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--color-neutral-700); border-bottom: 2px solid transparent; padding-bottom: 3px;">
           <span class="es">Servicios</span><span class="en">Services</span>
         </a>
-        <a href="#" onclick="go('work'); return false;" class="hv2 n-work" style="font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--color-neutral-700); border-bottom: 2px solid transparent; padding-bottom: 3px;">
+        <a href="#" onclick="go('work'); return false;" class="hv2 n-work" style="font-family: var(--font-heading); font-size: 16.5px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--color-neutral-700); border-bottom: 2px solid transparent; padding-bottom: 3px;">
           <span class="es">Demo</span><span class="en">Demo</span>
         </a>
-        <a href="#" onclick="go('contact'); return false;" class="hv3 n-contact" style="font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--color-neutral-700); border-bottom: 2px solid transparent; padding-bottom: 3px;">
+        <a href="#" onclick="go('contact'); return false;" class="hv3 n-contact" style="font-family: var(--font-heading); font-size: 16.5px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--color-neutral-700); border-bottom: 2px solid transparent; padding-bottom: 3px;">
           <span class="es">Contacto</span><span class="en">Contact</span>
         </a>
-        <button onclick="toggleLang()" style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; background: none; border: 1px solid var(--color-divider); border-radius: var(--radius-md); padding: 6px 10px; cursor: pointer; color: var(--color-neutral-700);" class="hv4">
+        <button onclick="toggleLang()" style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.1em; background: none; border: 1px solid var(--color-divider); border-radius: var(--radius-md); padding: 6px 10px; cursor: pointer; color: var(--color-neutral-700);" class="hv4">
           <span class="es">EN</span><span class="en">ES</span>
         </button>
-        <a href="#" onclick="go('contact'); return false;" class="btn btn-primary blueprint" style="font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; padding: 9px 18px; border-radius: 0;">
+        <a href="#" onclick="go('contact'); return false;" class="btn btn-primary blueprint" style="font-family: var(--font-heading); font-size: 16.5px; letter-spacing: 0.08em; text-transform: uppercase; padding: 9px 18px; border-radius: 0;">
           <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
           <span class="es">Agendar llamada</span><span class="en">Book a call</span>
         </a>
@@ -104,7 +115,7 @@
   <main>
     <section style="max-width: 1160px; margin: 0 auto; padding: 84px 32px 64px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 56px; align-items: start;">
       <div>
-        <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 22px;">
+        <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 22px;">
           01 &nbsp;/&nbsp; Miami, FL &nbsp;·&nbsp; <span class="es">Analítica para negocios pequeños</span><span class="en">Analytics for small business</span>
         </div>
         <h1 style="font-family: var(--font-heading); font-weight: 700; font-size: 68px; line-height: 0.98; letter-spacing: -0.01em; text-transform: uppercase; margin: 0 0 26px; text-wrap: balance;">
@@ -124,42 +135,42 @@
             <span class="es">Escríbenos</span><span class="en">Email us</span>
           </a>
         </div>
-        <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: var(--color-neutral-600); margin-top: 18px;">
+        <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.06em; color: var(--color-neutral-600); margin-top: 18px;">
           <span class="es">Sin compromiso · 20 minutos · Salimos con un alcance claro</span><span class="en">No commitment · 20 minutes · You leave with a clear scope</span>
         </div>
       </div>
       <div class="blueprint" style="position: relative; min-width: 0; background: var(--color-neutral-100); box-shadow: var(--shadow-lg);">
         <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
         <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--color-divider);">
-          <span style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Magnum · Retail Ops</span>
-          <span style="margin-left: auto; font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; color: var(--color-accent-700);">LIVE · AUG 2026</span>
+          <span style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);">Magnum · Retail Ops</span>
+          <span style="margin-left: auto; font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.1em; color: var(--color-accent-700);">LIVE · AUG 2026</span>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--color-divider);">
           <div style="background: var(--color-neutral-100); padding: 16px 18px;">
-            <div style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 8px;">Sales this month</div>
+            <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 8px;">Sales this month</div>
             <div style="font-family: var(--font-heading); font-size: 34px; line-height: 1;">$184,320</div>
             <div style="font-size: 12px; color: var(--color-accent-700); margin-top: 4px;">+12.4% vs. Jul</div>
           </div>
           <div style="background: var(--color-neutral-100); padding: 16px 18px;">
-            <div style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 8px;">Profit margin</div>
+            <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 8px;">Profit margin</div>
             <div style="font-family: var(--font-heading); font-size: 34px; line-height: 1;">31.8%</div>
             <div style="font-size: 12px; color: var(--color-accent-700); margin-top: 4px;">+1.9 pts vs. Jul</div>
           </div>
           <div style="background: var(--color-neutral-100); padding: 16px 18px;">
-            <div style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 8px;">Top acquisition channel</div>
+            <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 8px;">Top acquisition channel</div>
             <div style="font-family: var(--font-heading); font-size: 34px; line-height: 1;">Paid social</div>
             <div style="font-size: 12px; color: var(--color-neutral-700); margin-top: 4px;">38% of new customers</div>
           </div>
           <div style="background: var(--color-neutral-100); padding: 16px 18px;">
-            <div style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 8px;">Forecast · next 30 days</div>
+            <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 8px;">Forecast · next 30 days</div>
             <div style="font-family: var(--font-heading); font-size: 34px; line-height: 1;">$196,400</div>
             <div style="font-size: 12px; color: var(--color-neutral-700); margin-top: 4px;">±6% confidence band</div>
           </div>
         </div>
         <div style="padding: 18px; border-top: 1px solid var(--color-divider);">
           <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px;">
-            <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Revenue by week</span>
-            <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.1em; color: var(--color-neutral-500);">W22 — W35</span>
+            <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);">Revenue by week</span>
+            <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; color: var(--color-neutral-600);">W22 — W35</span>
           </div>
           <div style="display: grid; grid-template-columns: repeat(14, 1fr); gap: 5px; align-items: end; height: 96px;">
             <div style="height: 42%; background: var(--color-accent-300);"></div>
@@ -189,14 +200,14 @@
     <section style="border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider);">
       <div style="max-width: 1160px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: repeat(3, 1fr);">
         <div style="padding: 26px 30px 26px 0; border-right: 1px solid var(--color-divider);">
-          <div style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">01</div>
+          <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">01</div>
           <div style="font-family: var(--font-heading); font-size: 21px; line-height: 1.15; text-transform: uppercase;">
             <span class="es">Formación formal en analítica</span><span class="en">Formal analytics training</span>
           </div>
           <div style="font-size: 14px; color: var(--color-neutral-700); margin-top: 6px;">MS in Business Analytics — University of Miami</div>
         </div>
         <div style="padding: 26px 30px; border-right: 1px solid var(--color-divider);">
-          <div style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">02</div>
+          <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">02</div>
           <div style="font-family: var(--font-heading); font-size: 21px; line-height: 1.15; text-transform: uppercase;">
             <span class="es">Cuatro capacidades, un solo equipo</span><span class="en">Four capabilities, one team</span>
           </div>
@@ -205,7 +216,7 @@
           </div>
         </div>
         <div style="padding: 26px 0 26px 30px;">
-          <div style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">03</div>
+          <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">03</div>
           <div style="font-family: var(--font-heading); font-size: 21px; line-height: 1.15; text-transform: uppercase;">
             <span class="es">Alcance hecho para tu tamaño</span><span class="en">Scope built for your size</span>
           </div>
@@ -217,7 +228,7 @@
     </section>
 
     <section style="max-width: 1160px; margin: 0 auto; padding: 76px 32px;">
-      <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 18px;">
+      <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 18px;">
         02 &nbsp;/&nbsp; <span class="es">El problema</span><span class="en">The problem</span>
       </div>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start;">
@@ -240,7 +251,7 @@
 
     <section style="background: var(--color-accent-900); color: var(--color-neutral-100);">
       <div style="max-width: 1160px; margin: 0 auto; padding: 72px 32px;">
-        <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-300); margin-bottom: 18px;">
+        <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-300); margin-bottom: 18px;">
           03 &nbsp;/&nbsp; <span class="es">Comparación</span><span class="en">Comparison</span>
         </div>
         <h2 style="font-family: var(--font-heading); font-weight: 600; font-size: 44px; line-height: 1.02; text-transform: uppercase; margin: 0 0 34px; max-width: 22ch;">
@@ -250,42 +261,42 @@
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
           <div class="blueprint" style="padding: 26px; border-color: color-mix(in srgb, var(--color-neutral-100) 26%, transparent);">
             <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-            <div style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-300); margin-bottom: 12px;">
+            <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-300); margin-bottom: 12px;">
               <span class="es">Opción A</span><span class="en">Option A</span>
             </div>
             <div style="font-family: var(--font-heading); font-size: 25px; line-height: 1.1; text-transform: uppercase; margin-bottom: 14px;">
               <span class="es">Analista interno de tiempo completo</span><span class="en">Full-time in-house analyst</span>
             </div>
-            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: color-mix(in srgb, var(--color-neutral-100) 78%, transparent);">
+            <p style="margin: 0; font-size: 16.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-neutral-100) 78%, transparent);">
               <span class="bes">Cobertura total, pero implica salario, beneficios y overhead antes de saber si la función justifica una plaza fija.</span>
               <span class="ben">Full coverage, but it means salary, benefits and overhead before you know the role justifies a permanent seat.</span>
             </p>
           </div>
           <div class="blueprint" style="padding: 26px; border-color: color-mix(in srgb, var(--color-neutral-100) 26%, transparent);">
             <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-            <div style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-300); margin-bottom: 12px;">
+            <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-300); margin-bottom: 12px;">
               <span class="es">Opción B</span><span class="en">Option B</span>
             </div>
             <div style="font-family: var(--font-heading); font-size: 25px; line-height: 1.1; text-transform: uppercase; margin-bottom: 14px;">
               <span class="es">Freelance por hora</span><span class="en">Hourly freelancer</span>
             </div>
-            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: color-mix(in srgb, var(--color-neutral-100) 78%, transparent);">
+            <p style="margin: 0; font-size: 16.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-neutral-100) 78%, transparent);">
               <span class="bes">Flexible y barato de empezar, pero normalmente una sola especialidad y un costo que crece con cada hora sin alcance cerrado.</span>
               <span class="ben">Flexible and cheap to start, but usually one specialty and a cost that grows by the hour with no fixed scope.</span>
             </p>
           </div>
           <div style="position: relative; padding: 26px; background: var(--color-accent-100); color: var(--color-accent-900); border: 1px solid var(--color-accent-300);">
-            <div style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 12px;">Magnum</div>
+            <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 12px;">Magnum</div>
             <div style="font-family: var(--font-heading); font-size: 25px; line-height: 1.1; text-transform: uppercase; margin-bottom: 14px;">
               <span class="es">Equipo de analítica por proyecto o membresía</span><span class="en">Analytics team by project or membership</span>
             </div>
-            <p style="margin: 0; font-size: 15px; line-height: 1.55; color: var(--color-accent-800);">
+            <p style="margin: 0; font-size: 16.5px; line-height: 1.55; color: var(--color-accent-800);">
               <span class="bes">Alcance y entregables definidos antes de empezar, tres especialistas en lugar de uno, y la opción de continuar mes a mes sólo mientras aporte valor.</span>
               <span class="ben">Scope and deliverables defined before we start, three specialists instead of one, and the option to continue month to month only while it earns its place.</span>
             </p>
           </div>
         </div>
-        <div style="font-family: ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: color-mix(in srgb, var(--color-neutral-100) 55%, transparent); margin-top: 22px; max-width: 80ch;">
+        <div style="font-family: ui-monospace, monospace; font-size: 12.5px; line-height: 1.5; color: color-mix(in srgb, var(--color-neutral-100) 55%, transparent); margin-top: 22px; max-width: 80ch;">
           <span class="bes">Comparación cualitativa de modelos de contratación; no es asesoría financiera. El costo real depende de ciudad, experiencia y alcance.</span>
           <span class="ben">Qualitative comparison of engagement models; not financial advice. Real cost depends on city, experience and scope.</span>
         </div>
@@ -293,7 +304,7 @@
     </section>
 
     <section style="max-width: 1160px; margin: 0 auto; padding: 76px 32px;">
-      <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 18px;">
+      <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 18px;">
         04 &nbsp;/&nbsp; <span class="es">Cómo trabajamos</span><span class="en">How we work</span>
       </div>
       <h2 style="font-family: var(--font-heading); font-weight: 600; font-size: 44px; line-height: 1.02; text-transform: uppercase; margin: 0 0 40px; max-width: 26ch;">
@@ -306,7 +317,7 @@
           <div style="font-family: var(--font-heading); font-size: 22px; text-transform: uppercase; line-height: 1.1; margin-bottom: 8px;">
             <span class="es">Llamada de diagnóstico</span><span class="en">Diagnostic call</span>
           </div>
-          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: var(--color-neutral-700);">
+          <p style="margin: 0; font-size: 16.5px; line-height: 1.55; color: var(--color-neutral-700);">
             <span class="bes">20 minutos: qué datos tienes, dónde viven y qué decisión quieres tomar con ellos.</span>
             <span class="ben">20 minutes: what data you have, where it lives, and what decision you want to make with it.</span>
           </p>
@@ -316,7 +327,7 @@
           <div style="font-family: var(--font-heading); font-size: 22px; text-transform: uppercase; line-height: 1.1; margin-bottom: 8px;">
             <span class="es">Propuesta de alcance fijo</span><span class="en">Fixed-scope proposal</span>
           </div>
-          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: var(--color-neutral-700);">
+          <p style="margin: 0; font-size: 16.5px; line-height: 1.55; color: var(--color-neutral-700);">
             <span class="bes">Entregables, métricas y fecha por escrito antes de que se firme nada.</span>
             <span class="ben">Deliverables, metrics and dates in writing before anything is signed.</span>
           </p>
@@ -326,7 +337,7 @@
           <div style="font-family: var(--font-heading); font-size: 22px; text-transform: uppercase; line-height: 1.1; margin-bottom: 8px;">
             <span class="es">Construcción en sprints</span><span class="en">Build in sprints</span>
           </div>
-          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: var(--color-neutral-700);">
+          <p style="margin: 0; font-size: 16.5px; line-height: 1.55; color: var(--color-neutral-700);">
             <span class="bes">Ciclos de dos semanas con una revisión intermedia, para que veas avance real y corrijas rumbo.</span>
             <span class="ben">Two-week cycles with a mid-point review, so you see real progress and can correct course.</span>
           </p>
@@ -336,7 +347,7 @@
           <div style="font-family: var(--font-heading); font-size: 22px; text-transform: uppercase; line-height: 1.1; margin-bottom: 8px;">
             <span class="es">Entrega y traspaso</span><span class="en">Handover</span>
           </div>
-          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: var(--color-neutral-700);">
+          <p style="margin: 0; font-size: 16.5px; line-height: 1.55; color: var(--color-neutral-700);">
             <span class="bes">Dashboard en producción, documentación corta y una sesión de capacitación con tu equipo.</span>
             <span class="ben">Dashboard in production, short documentation and one training session with your team.</span>
           </p>
@@ -361,7 +372,7 @@
 
   <section class="page" data-page="services">
   <main style="max-width: 1160px; margin: 0 auto; padding: 72px 32px;">
-    <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 18px;">
+    <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 18px;">
       <span class="es">Servicios</span><span class="en">Services</span>
     </div>
     <h1 style="font-family: var(--font-heading); font-weight: 700; font-size: 60px; line-height: 0.98; text-transform: uppercase; margin: 0 0 22px; max-width: 24ch;">
@@ -376,24 +387,24 @@
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 28px;">
       <div class="blueprint" style="display: flex; flex-direction: column; padding: 28px; background: transparent;">
         <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-        <div style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">
+        <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">
           01 &nbsp;·&nbsp; <span class="es">Oferta de entrada</span><span class="en">Entry offer</span>
         </div>
         <div style="font-family: var(--font-heading); font-size: 30px; line-height: 1.05; text-transform: uppercase; margin-bottom: 12px;">Dashboard Starter</div>
-        <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.6; color: var(--color-neutral-700);">
+        <p style="margin: 0 0 18px; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
           <span class="bes">Un tablero en Power BI o Tableau con las métricas que realmente usas para decidir, conectado a tus fuentes actuales.</span>
           <span class="ben">One Power BI or Tableau dashboard with the metrics you actually decide on, connected to your current sources.</span>
         </p>
-        <ul style="margin: 0 0 22px; padding-left: 18px; font-size: 15px; line-height: 1.7; color: var(--color-neutral-700); display: flex; flex-direction: column; gap: 4px;">
+        <ul style="margin: 0 0 22px; padding-left: 18px; font-size: 16.5px; line-height: 1.7; color: var(--color-neutral-700); display: flex; flex-direction: column; gap: 4px;">
           <li><span class="es">Auditoría de fuentes de datos</span><span class="en">Data-source audit</span></li>
           <li><span class="es">Definición de KPIs con tu equipo</span><span class="en">KPI definition with your team</span></li>
           <li><span class="es">Dashboard en producción + capacitación</span><span class="en">Dashboard in production + training</span></li>
         </ul>
         <div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px;">
-          <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: var(--color-neutral-600);">
+          <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.06em; color: var(--color-neutral-600);">
             <span class="es">Proyecto de alcance fijo · 2–4 semanas</span><span class="en">Fixed-scope project · 2–4 weeks</span>
           </div>
-          <a href="#" onclick="go('contact'); return false;" class="btn btn-primary" style="font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 18px; border-radius: 0;">
+          <a href="#" onclick="go('contact'); return false;" class="btn btn-primary" style="font-family: var(--font-heading); font-size: 16.5px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 18px; border-radius: 0;">
             <span class="es">Pedir alcance</span><span class="en">Request a scope</span>
           </a>
         </div>
@@ -401,26 +412,26 @@
 
       <div class="blueprint" style="display: flex; flex-direction: column; padding: 28px; background: transparent;">
         <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-        <div style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">
+        <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">
           02 &nbsp;·&nbsp; <span class="es">Membresía mensual</span><span class="en">Monthly membership</span>
         </div>
         <div style="font-family: var(--font-heading); font-size: 30px; line-height: 1.05; text-transform: uppercase; margin-bottom: 12px;">
           <span class="es">Reportes &amp; Automatización</span><span class="en">Reporting &amp; Automation</span>
         </div>
-        <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.6; color: var(--color-neutral-700);">
+        <p style="margin: 0 0 18px; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
           <span class="bes">Tomamos el trabajo manual que aparece cada semana —consolidar, limpiar, enviar— y lo convertimos en un proceso que corre solo.</span>
           <span class="ben">We take the manual work that shows up every week — consolidating, cleaning, sending — and turn it into a process that runs itself.</span>
         </p>
-        <ul style="margin: 0 0 22px; padding-left: 18px; font-size: 15px; line-height: 1.7; color: var(--color-neutral-700); display: flex; flex-direction: column; gap: 4px;">
+        <ul style="margin: 0 0 22px; padding-left: 18px; font-size: 16.5px; line-height: 1.7; color: var(--color-neutral-700); display: flex; flex-direction: column; gap: 4px;">
           <li><span class="es">Reportes recurrentes automatizados</span><span class="en">Automated recurring reports</span></li>
           <li><span class="es">Pipelines entre tus herramientas</span><span class="en">Pipelines across your tools</span></li>
           <li><span class="es">Mantenimiento y ajustes continuos</span><span class="en">Ongoing maintenance and changes</span></li>
         </ul>
         <div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px;">
-          <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: var(--color-neutral-600);">
+          <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.06em; color: var(--color-neutral-600);">
             <span class="es">Mes a mes · Cancelable</span><span class="en">Month to month · Cancel anytime</span>
           </div>
-          <a href="#" onclick="go('contact'); return false;" class="btn btn-secondary" style="font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 18px; border-radius: 0;">
+          <a href="#" onclick="go('contact'); return false;" class="btn btn-secondary" style="font-family: var(--font-heading); font-size: 16.5px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 18px; border-radius: 0;">
             <span class="es">Hablar de membresía</span><span class="en">Discuss membership</span>
           </a>
         </div>
@@ -428,26 +439,26 @@
 
       <div class="blueprint" style="display: flex; flex-direction: column; padding: 28px; background: transparent;">
         <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-        <div style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">
+        <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">
           03 &nbsp;·&nbsp; <span class="es">Oferta premium</span><span class="en">Premium offer</span>
         </div>
         <div style="font-family: var(--font-heading); font-size: 30px; line-height: 1.05; text-transform: uppercase; margin-bottom: 12px;">
           <span class="es">Modelado &amp; Forecasting</span><span class="en">Modeling &amp; Forecasting</span>
         </div>
-        <p style="margin: 0 0 18px; font-size: 15px; line-height: 1.6; color: var(--color-neutral-700);">
+        <p style="margin: 0 0 18px; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
           <span class="bes">Donde la maestría en Business Analytics se nota: pronósticos, optimización, cohortes y unit economics sobre tus propios datos.</span>
           <span class="ben">Where the Business Analytics master's shows: forecasting, optimization, cohorts and unit economics on your own data.</span>
         </p>
-        <ul style="margin: 0 0 22px; padding-left: 18px; font-size: 15px; line-height: 1.7; color: var(--color-neutral-700); display: flex; flex-direction: column; gap: 4px;">
+        <ul style="margin: 0 0 22px; padding-left: 18px; font-size: 16.5px; line-height: 1.7; color: var(--color-neutral-700); display: flex; flex-direction: column; gap: 4px;">
           <li><span class="es">Pronóstico de demanda e ingresos</span><span class="en">Demand and revenue forecasting</span></li>
           <li><span class="es">Optimización de inventario y precios</span><span class="en">Inventory and pricing optimization</span></li>
           <li><span class="es">Cohortes, retención y unit economics</span><span class="en">Cohorts, retention and unit economics</span></li>
         </ul>
         <div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px;">
-          <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: var(--color-neutral-600);">
+          <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.06em; color: var(--color-neutral-600);">
             <span class="es">Proyecto independiente · 4–8 semanas</span><span class="en">Standalone project · 4–8 weeks</span>
           </div>
-          <a href="#" onclick="go('contact'); return false;" class="btn btn-secondary" style="font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 18px; border-radius: 0;">
+          <a href="#" onclick="go('contact'); return false;" class="btn btn-secondary" style="font-family: var(--font-heading); font-size: 16.5px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 18px; border-radius: 0;">
             <span class="es">Explorar un modelo</span><span class="en">Explore a model</span>
           </a>
         </div>
@@ -462,12 +473,12 @@
             <span class="es">En desarrollo</span><span class="en">In development</span>
           </span>
         </div>
-        <p style="margin: 6px 0 0; font-size: 15px; line-height: 1.55; color: var(--color-neutral-700); max-width: 76ch;">
+        <p style="margin: 6px 0 0; font-size: 16.5px; line-height: 1.55; color: var(--color-neutral-700); max-width: 76ch;">
           <span class="bes">Es una capacidad real del equipo, pero sólo la ofrecemos cuando el problema está maduro: datos limpios, historia suficiente y una decisión concreta que el modelo deba mejorar.</span>
           <span class="ben">It's a real capability of the team, but we only offer it when the problem is ready: clean data, enough history, and a concrete decision the model should improve.</span>
         </p>
       </div>
-      <a href="#" onclick="go('contact'); return false;" class="btn btn-ghost" style="font-family: var(--font-heading); font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase;">
+      <a href="#" onclick="go('contact'); return false;" class="btn btn-ghost" style="font-family: var(--font-heading); font-size: 16.5px; letter-spacing: 0.08em; text-transform: uppercase;">
         <span class="es">Consultar</span><span class="en">Ask us</span> →
       </a>
     </div>
@@ -476,7 +487,7 @@
 
   <section class="page" data-page="work">
   <main style="max-width: 1160px; margin: 0 auto; padding: 72px 32px;">
-    <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 18px;">
+    <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 18px;">
       <span class="es">Demo &amp; portafolio</span><span class="en">Demo &amp; portfolio</span>
     </div>
     <h1 style="font-family: var(--font-heading); font-weight: 700; font-size: 60px; line-height: 0.98; text-transform: uppercase; margin: 0 0 22px; max-width: 26ch;">
@@ -494,72 +505,72 @@
           <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
           <div style="display: flex; flex-direction: column; flex: 1; min-width: 0; background: var(--color-neutral-100);">
           <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--color-divider);">
-            <span style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Magnum &middot; <span class="es">Retail</span><span class="en">Retail</span></span>
-            <span style="margin-left: auto; font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700);"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
+            <span style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);">Magnum &middot; <span class="es">Retail</span><span class="en">Retail</span></span>
+            <span style="margin-left: auto; font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700);"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
           </div>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--color-divider);">
             <div style="background: var(--color-neutral-100); padding: 14px 16px;">
-              <div style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 6px;"><span class="es">Ingresos del mes</span><span class="en">Revenue MTD</span></div>
+              <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 6px;"><span class="es">Ingresos del mes</span><span class="en">Revenue MTD</span></div>
               <div style="font-family: var(--font-heading); font-size: 26px; line-height: 1;">$150,170</div>
-              <div style="font-size: 11px; color: var(--color-accent-700); margin-top: 4px;">+9.2% vs. Jul</div>
+              <div style="font-size: 12.5px; color: var(--color-accent-700); margin-top: 4px;">+9.2% vs. Jul</div>
             </div>
             <div style="background: var(--color-neutral-100); padding: 14px 16px;">
-              <div style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 6px;"><span class="es">Margen mezclado</span><span class="en">Blended margin</span></div>
+              <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 6px;"><span class="es">Margen mezclado</span><span class="en">Blended margin</span></div>
               <div style="font-family: var(--font-heading); font-size: 26px; line-height: 1;">34.6%</div>
-              <div style="font-size: 11px; color: var(--color-accent-700); margin-top: 4px;">+2.1 pts</div>
+              <div style="font-size: 12.5px; color: var(--color-accent-700); margin-top: 4px;">+2.1 pts</div>
             </div>
           </div>
 
           <div style="padding: 16px; border-top: 1px solid var(--color-divider); flex: 1;">
             <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 12px;">
-              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);"><span class="es">Ingresos por canal</span><span class="en">Revenue by channel</span></span>
-              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.1em; color: var(--color-neutral-500);">AUG 2026</span>
+              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);"><span class="es">Ingresos por canal</span><span class="en">Revenue by channel</span></span>
+              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; color: var(--color-neutral-600);">AUG 2026</span>
             </div>
             <div style="display: flex; flex-direction: column; gap: 9px;">
             <div style="display: flex; align-items: center; gap: 10px;">
-              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); width: 62px; flex: none;">Shopify</span>
+              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); width: 62px; flex: none;">Shopify</span>
               <div style="flex: 1; min-width: 0; height: 12px; background: var(--color-neutral-200);">
                 <div style="width: 100%; height: 100%; background: var(--color-accent-800);"></div>
               </div>
-              <span style="font-family: ui-monospace, monospace; font-size: 10px; color: var(--color-neutral-700); width: 54px; flex: none; text-align: right;">$61,240</span>
+              <span style="font-family: ui-monospace, monospace; font-size: 11.5px; color: var(--color-neutral-700); width: 54px; flex: none; text-align: right;">$61,240</span>
             </div>
             <div style="display: flex; align-items: center; gap: 10px;">
-              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); width: 62px; flex: none;">Amazon</span>
+              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); width: 62px; flex: none;">Amazon</span>
               <div style="flex: 1; min-width: 0; height: 12px; background: var(--color-neutral-200);">
                 <div style="width: 74%; height: 100%; background: var(--color-accent-700);"></div>
               </div>
-              <span style="font-family: ui-monospace, monospace; font-size: 10px; color: var(--color-neutral-700); width: 54px; flex: none; text-align: right;">$45,310</span>
+              <span style="font-family: ui-monospace, monospace; font-size: 11.5px; color: var(--color-neutral-700); width: 54px; flex: none; text-align: right;">$45,310</span>
             </div>
             <div style="display: flex; align-items: center; gap: 10px;">
-              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); width: 62px; flex: none;">Retail</span>
+              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); width: 62px; flex: none;">Retail</span>
               <div style="flex: 1; min-width: 0; height: 12px; background: var(--color-neutral-200);">
                 <div style="width: 46%; height: 100%; background: var(--color-accent-500);"></div>
               </div>
-              <span style="font-family: ui-monospace, monospace; font-size: 10px; color: var(--color-neutral-700); width: 54px; flex: none; text-align: right;">$28,150</span>
+              <span style="font-family: ui-monospace, monospace; font-size: 11.5px; color: var(--color-neutral-700); width: 54px; flex: none; text-align: right;">$28,150</span>
             </div>
             <div style="display: flex; align-items: center; gap: 10px;">
-              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); width: 62px; flex: none;">Wholesale</span>
+              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); width: 62px; flex: none;">Wholesale</span>
               <div style="flex: 1; min-width: 0; height: 12px; background: var(--color-neutral-200);">
                 <div style="width: 25%; height: 100%; background: var(--color-accent-300);"></div>
               </div>
-              <span style="font-family: ui-monospace, monospace; font-size: 10px; color: var(--color-neutral-700); width: 54px; flex: none; text-align: right;">$15,470</span>
+              <span style="font-family: ui-monospace, monospace; font-size: 11.5px; color: var(--color-neutral-700); width: 54px; flex: none; text-align: right;">$15,470</span>
             </div>
             </div>
 
             <div style="margin-top: 16px;">
-              <div style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 4px;"><span class="es">Margen por producto</span><span class="en">Margin by product</span></div>
+              <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 4px;"><span class="es">Margen por producto</span><span class="en">Margin by product</span></div>
               <div style="display: flex; align-items: center; justify-content: space-between; padding: 5px 0; border-top: 1px solid var(--color-divider);">
                 <span style="font-size: 12px; color: var(--color-neutral-700);">Bundle A</span>
-                <span style="font-family: ui-monospace, monospace; font-size: 11px; color: var(--color-accent-700);">41.2%</span>
+                <span style="font-family: ui-monospace, monospace; font-size: 12.5px; color: var(--color-accent-700);">41.2%</span>
               </div>
               <div style="display: flex; align-items: center; justify-content: space-between; padding: 5px 0; border-top: 1px solid var(--color-divider);">
                 <span style="font-size: 12px; color: var(--color-neutral-700);">Refill kit</span>
-                <span style="font-family: ui-monospace, monospace; font-size: 11px; color: var(--color-accent-500);">36.8%</span>
+                <span style="font-family: ui-monospace, monospace; font-size: 12.5px; color: var(--color-accent-700);">36.8%</span>
               </div>
               <div style="display: flex; align-items: center; justify-content: space-between; padding: 5px 0; border-top: 1px solid var(--color-divider);">
                 <span style="font-size: 12px; color: var(--color-neutral-700);">Starter set</span>
-                <span style="font-family: ui-monospace, monospace; font-size: 11px; color: var(--color-neutral-500);">22.4%</span>
+                <span style="font-family: ui-monospace, monospace; font-size: 12.5px; color: var(--color-neutral-600);">22.4%</span>
               </div>
             </div>
           </div>
@@ -567,17 +578,17 @@
           <div style="display: flex; align-items: center; gap: 8px; padding: 0 16px 16px; flex-wrap: wrap;">
             <span class="tag tag-accent">Shopify</span>
             <span class="tag tag-neutral">QuickBooks</span>
-            <span style="margin-left: auto; font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);">
+            <span style="margin-left: auto; font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);">
               <span class="es">Stock bajo &middot; 3 SKU</span><span class="en">Low stock &middot; 3 SKUs</span>
             </span>
           </div>
         </div>
         </div>
-        <div style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">Demo 01 · Retail / e-commerce</div>
+        <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">Demo 01 · Retail / e-commerce</div>
         <div style="font-family: var(--font-heading); font-size: 26px; text-transform: uppercase; line-height: 1.1; margin-bottom: 8px;">
           <span class="es">Ventas y margen por canal</span><span class="en">Sales and margin by channel</span>
         </div>
-        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-700);">
+        <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
           <span class="bes">Shopify + hojas de cálculo consolidadas en una vista diaria: ingresos, margen por producto y alertas de inventario.</span>
           <span class="ben">Shopify + spreadsheets consolidated into a daily view: revenue, margin by product and inventory alerts.</span>
         </p>
@@ -587,27 +598,27 @@
           <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
           <div style="display: flex; flex-direction: column; flex: 1; min-width: 0; background: var(--color-neutral-100);">
           <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--color-divider);">
-            <span style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Magnum &middot; <span class="es">Servicios</span><span class="en">Services</span></span>
-            <span style="margin-left: auto; font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700);"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
+            <span style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);">Magnum &middot; <span class="es">Servicios</span><span class="en">Services</span></span>
+            <span style="margin-left: auto; font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700);"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
           </div>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--color-divider);">
             <div style="background: var(--color-neutral-100); padding: 14px 16px;">
-              <div style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 6px;"><span class="es">Pron&oacute;stico 12 meses</span><span class="en">12-month forecast</span></div>
+              <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 6px;"><span class="es">Pron&oacute;stico 12 meses</span><span class="en">12-month forecast</span></div>
               <div style="font-family: var(--font-heading); font-size: 26px; line-height: 1;">$1.24M</div>
-              <div style="font-size: 11px; color: var(--color-neutral-700); margin-top: 4px;">&plusmn;8% <span class="es">banda</span><span class="en">band</span></div>
+              <div style="font-size: 12.5px; color: var(--color-neutral-700); margin-top: 4px;">&plusmn;8% <span class="es">banda</span><span class="en">band</span></div>
             </div>
             <div style="background: var(--color-neutral-100); padding: 14px 16px;">
-              <div style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 6px;"><span class="es">Retenci&oacute;n neta</span><span class="en">Net retention</span></div>
+              <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 6px;"><span class="es">Retenci&oacute;n neta</span><span class="en">Net retention</span></div>
               <div style="font-family: var(--font-heading); font-size: 26px; line-height: 1;">112%</div>
-              <div style="font-size: 11px; color: var(--color-accent-700); margin-top: 4px;">+6 pts</div>
+              <div style="font-size: 12.5px; color: var(--color-accent-700); margin-top: 4px;">+6 pts</div>
             </div>
           </div>
 
           <div style="padding: 16px; border-top: 1px solid var(--color-divider);">
             <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px;">
-              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);"><span class="es">Proyecci&oacute;n con escenarios</span><span class="en">Projection with scenarios</span></span>
-              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.1em; color: var(--color-neutral-500);">FY27</span>
+              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);"><span class="es">Proyecci&oacute;n con escenarios</span><span class="en">Projection with scenarios</span></span>
+              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; color: var(--color-neutral-600);">FY27</span>
             </div>
             <svg viewBox="0 0 300 76" width="100%" height="76" role="img" preserveAspectRatio="none"
                  aria-label="Revenue projection with a confidence band widening over twelve months">
@@ -621,8 +632,8 @@
 
           <div style="padding: 0 16px 16px; flex: 1;">
             <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px;">
-              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);"><span class="es">Retenci&oacute;n por cohorte</span><span class="en">Retention by cohort</span></span>
-              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.1em; color: var(--color-neutral-500);">M0 &mdash; M5</span>
+              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);"><span class="es">Retenci&oacute;n por cohorte</span><span class="en">Retention by cohort</span></span>
+              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; color: var(--color-neutral-600);">M0 &mdash; M5</span>
             </div>
             <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 3px;">
               <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 100%, transparent);"></div>
@@ -659,11 +670,11 @@
           </div>
         </div>
         </div>
-        <div style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">Demo 02 · <span class="es">Servicios profesionales</span><span class="en">Professional services</span></div>
+        <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">Demo 02 · <span class="es">Servicios profesionales</span><span class="en">Professional services</span></div>
         <div style="font-family: var(--font-heading); font-size: 26px; text-transform: uppercase; line-height: 1.1; margin-bottom: 8px;">
           <span class="es">Pronóstico de ingresos y cohortes</span><span class="en">Revenue forecast and cohorts</span>
         </div>
-        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-700);">
+        <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
           <span class="bes">Proyección a 12 meses con escenarios, retención por cohorte de cliente y costo de adquisición contra valor de vida.</span>
           <span class="ben">A 12-month projection with scenarios, retention by customer cohort, and acquisition cost against lifetime value.</span>
         </p>
@@ -686,10 +697,10 @@
       </div>
       <div class="blueprint" style="padding: 26px; background: transparent;">
         <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-        <div style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">
+        <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">
           <span class="es">Perfil que buscamos</span><span class="en">Profile we're looking for</span>
         </div>
-        <ul style="margin: 0; padding-left: 18px; font-size: 15px; line-height: 1.7; color: var(--color-neutral-700); display: flex; flex-direction: column; gap: 6px;">
+        <ul style="margin: 0; padding-left: 18px; font-size: 16.5px; line-height: 1.7; color: var(--color-neutral-700); display: flex; flex-direction: column; gap: 6px;">
           <li><span class="es">Ingresos anuales entre $500K y $10M</span><span class="en">$500K to $10M in annual revenue</span></li>
           <li><span class="es">Datos ya digitales (Shopify, QuickBooks, CRM, hojas de cálculo)</span><span class="en">Data already digital (Shopify, QuickBooks, CRM, spreadsheets)</span></li>
           <li><span class="es">Una decisión concreta que hoy se toma a ciegas</span><span class="en">One concrete decision made blind today</span></li>
@@ -704,7 +715,7 @@
   <main style="max-width: 1160px; margin: 0 auto; padding: 72px 32px;">
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
       <div>
-        <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 18px;">
+        <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 18px;">
           <span class="es">Contacto</span><span class="en">Contact</span>
         </div>
         <h1 style="font-family: var(--font-heading); font-weight: 700; font-size: 56px; line-height: 0.98; text-transform: uppercase; margin: 0 0 20px;">
@@ -715,29 +726,29 @@
           <span class="ben">Tell us where your data lives and which decision is hard to make. We reply within 24 hours with times to meet.</span>
         </p>
         <div style="display: flex; flex-direction: column; gap: 14px; padding: 22px 0; border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); margin-bottom: 30px;">
-          <div style="display: flex; gap: 14px; font-size: 15px;">
-            <span style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); width: 92px; flex: none; padding-top: 3px;">Email</span>
+          <div style="display: flex; gap: 14px; font-size: 16.5px;">
+            <span style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); width: 92px; flex: none; padding-top: 3px;">Email</span>
             <a href="mailto:dxr1491@miami.edu">dxr1491@miami.edu</a>
           </div>
-          <div style="display: flex; gap: 14px; font-size: 15px;">
-            <span style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); width: 92px; flex: none; padding-top: 3px;">WhatsApp</span>
+          <div style="display: flex; gap: 14px; font-size: 16.5px;">
+            <span style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); width: 92px; flex: none; padding-top: 3px;">WhatsApp</span>
             <a href="https://wa.me/17867701820">+1 (786) 770-1820</a>
           </div>
-          <div style="display: flex; gap: 14px; font-size: 15px;">
-            <span style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); width: 92px; flex: none; padding-top: 3px;">
+          <div style="display: flex; gap: 14px; font-size: 16.5px;">
+            <span style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); width: 92px; flex: none; padding-top: 3px;">
               <span class="es">Base</span><span class="en">Based in</span>
             </span>
             <span>Miami, Florida &nbsp;·&nbsp; <span class="es">remoto en EE. UU. y LatAm</span><span class="en">remote across the US and LatAm</span></span>
           </div>
         </div>
 
-        <div style="font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 20px;">FAQ</div>
+        <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 20px;">FAQ</div>
         <div style="display: flex; flex-direction: column; gap: 22px;">
           <div>
             <div style="font-family: var(--font-heading); font-size: 21px; text-transform: uppercase; line-height: 1.15; margin-bottom: 6px;">
               <span class="es">¿Cuánto cuesta?</span><span class="en">How much does it cost?</span>
             </div>
-            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-700);">
+            <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
               <span class="bes">Depende del alcance, y preferimos no dar un número antes de entenderlo. En la llamada de 20 minutos salimos con un rango concreto y por escrito.</span>
               <span class="ben">It depends on scope, and we'd rather not quote before we understand it. The 20-minute call ends with a concrete range in writing.</span>
             </p>
@@ -746,7 +757,7 @@
             <div style="font-family: var(--font-heading); font-size: 21px; text-transform: uppercase; line-height: 1.15; margin-bottom: 6px;">
               <span class="es">¿Cuánto tarda el primer dashboard?</span><span class="en">How long until the first dashboard?</span>
             </div>
-            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-700);">
+            <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
               <span class="bes">Entre dos y cuatro semanas desde que tenemos acceso a los datos, con una revisión intermedia a mitad del camino.</span>
               <span class="ben">Two to four weeks from the moment we have data access, with a review at the mid-point.</span>
             </p>
@@ -755,7 +766,7 @@
             <div style="font-family: var(--font-heading); font-size: 21px; text-transform: uppercase; line-height: 1.15; margin-bottom: 6px;">
               <span class="es">¿Y si mis datos están hechos un desastre?</span><span class="en">What if my data is a mess?</span>
             </div>
-            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-700);">
+            <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
               <span class="bes">Es lo normal. Parte del proyecto es ordenar y consolidar las fuentes; sólo necesitamos que los datos existan en formato digital.</span>
               <span class="ben">That's the norm. Cleaning and consolidating sources is part of the project; we only need the data to exist digitally.</span>
             </p>
@@ -764,7 +775,7 @@
             <div style="font-family: var(--font-heading); font-size: 21px; text-transform: uppercase; line-height: 1.15; margin-bottom: 6px;">
               <span class="es">¿Quién es el equipo?</span><span class="en">Who is the team?</span>
             </div>
-            <p style="margin: 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-700);">
+            <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
               <span class="bes">Tres socios con maestría en Business Analytics de la Universidad de Miami. Cada proyecto tiene un responsable directo y los otros dos revisan la entrega.</span>
               <span class="ben">Three partners with a Business Analytics master's from the University of Miami. Every project has one direct owner and the other two review the delivery.</span>
             </p>
@@ -779,7 +790,7 @@
           <div style="font-family: var(--font-heading); font-size: 26px; text-transform: uppercase; line-height: 1.1;">
             <span class="es">Solicita tu llamada</span><span class="en">Request your call</span>
           </div>
-          <p style="margin: 0; font-size: 15px; line-height: 1.6; color: var(--color-neutral-700);">
+          <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
             <span class="bes">Escr&iacute;benos con tu nombre, empresa y d&oacute;nde viven tus datos hoy. Respondemos en menos de 24 horas.</span>
             <span class="ben">Write to us with your name, company and where your data lives today. We reply within 24 hours.</span>
           </p>
@@ -791,7 +802,7 @@
             <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
             <span class="es">Escribir por WhatsApp</span><span class="en">Message on WhatsApp</span>
           </a>
-          <div style="font-family: ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: var(--color-neutral-600);">
+          <div style="font-family: ui-monospace, monospace; font-size: 12.5px; line-height: 1.5; color: var(--color-neutral-600);">
             <span class="bes">Usamos tus datos s&oacute;lo para responderte. Sin listas de correo.</span>
             <span class="ben">We use your details only to reply. No mailing lists.</span>
           </div>
@@ -807,9 +818,9 @@
     <div style="max-width: 1160px; margin: 0 auto; padding: 34px 32px; display: flex; flex-wrap: wrap; gap: 24px; align-items: baseline; justify-content: space-between;">
       <div style="display: flex; align-items: baseline; gap: 12px;">
         <span style="font-family: var(--font-heading); font-weight: 700; font-size: 20px; letter-spacing: 0.06em; text-transform: uppercase;">Magnum</span>
-        <span style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Business Intelligence · Miami, FL</span>
+        <span style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);">Business Intelligence · Miami, FL</span>
       </div>
-      <div style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; color: var(--color-neutral-600);">© 2026 Magnum Analytics</div>
+      <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.1em; color: var(--color-neutral-600);">© 2026 Magnum Analytics</div>
     </div>
   </footer>
 </div>
