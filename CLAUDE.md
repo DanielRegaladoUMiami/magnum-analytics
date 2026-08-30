@@ -49,11 +49,25 @@ That format is NOT servable: it used `<x-dc>`, `<helmet>`, `<sc-if>` blocks, `{{
 template holes, `style-hover` attributes, and `<image-slot>` elements, all of which need
 a canvas runtime. The conversion replaced each with a static equivalent — `<sc-if>` became
 `<section class="page">`, `style-hover` became real `:hover` CSS rules (`.hv1`–`.hv4`),
-`<image-slot>` became `.img-slot` divs with an `onerror` fallback.
+`<image-slot>` became HTML/CSS dashboard mocks (see below).
 
 **If you re-export from the design tool, do not overwrite `index.html` directly** — it
 would reintroduce canvas markup that browsers cannot render. Re-run the conversion, or
 port the specific changes by hand. The canvas export is gitignored (`*.dc.html`).
+
+## The demo dashboards are markup, not images
+
+All three dashboards on the site — the hero mock and the two on the Demo page — are built
+from divs, CSS and one inline SVG. There are no screenshots anywhere. Consequences:
+
+- They inherit `--color-accent`, so retheming the design system retints them too.
+- The two Demo cards are height-matched by flex (`column: flex` + `card: flex 1`), not by
+  a fixed height. Adding content to one card grows both.
+- The bar-chart grid `repeat(14, 1fr)` and the cohort grid `repeat(6, 1fr)` are excluded
+  from the responsive column-collapse in `responsive.css` on purpose — collapsing them
+  would destroy the chart. Do not add them to those selectors.
+- Every mock is labelled "sample data" / "datos de ejemplo". Keep that label: the numbers
+  are illustrative and the site must not imply real client results.
 
 ## Contact details
 Email and WhatsApp are hardcoded in `index.html` (4 `mailto:` + 2 `wa.me` links). If they
@@ -63,6 +77,5 @@ change, update all of them — there is no single source of truth for them yet.
 - `index.html` — the entire site
 - `app.js` — routing + language toggle
 - `ds/styles.css` — design tokens; change `--color-accent` here to retheme
-- `assets/` — `favicon.svg`, plus `demo-01.png` / `demo-02.png` (dashboard screenshots,
-  not yet supplied — the slots fall back to a placeholder caption until they exist)
+- `assets/` — `favicon.svg` only; the site ships no raster images
 - `ROADMAP.md` — what's next

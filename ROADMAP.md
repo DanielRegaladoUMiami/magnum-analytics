@@ -6,7 +6,8 @@
 - [x] Client-side routing + ES/EN toggle
 - [x] Real contact details (email + WhatsApp)
 - [x] Publish on GitHub Pages
-- [ ] Add the two demo dashboard screenshots (`assets/demo-01.png`, `assets/demo-02.png`)
+- [x] Responsive layer + 44px touch targets (the export had zero media queries)
+- [x] Fill the two empty demo slots (built as HTML/CSS dashboards, not screenshots)
 - [ ] Replace the `@miami.edu` address with a business email
 
 ## Next up
@@ -16,10 +17,10 @@
   in `ds/styles.css` — it is a token change, not a rewrite.
 - **Custom domain.** Point `magnum-bi.com` (or whichever domain is registered) at Pages
   via a `CNAME` file and a DNS record. Do this before the URL is shared widely.
-- **Mobile pass.** The header wraps below 720px, but the rest of the layout has only been
-  reviewed at desktop width.
-- **Real proof.** The Demo page is the weakest section — placeholder screenshots and no
-  named clients or numbers.
+- **Real device testing.** The layout is verified at 360/390/768/1024/1440/1920px in a
+  desktop browser, but has not been opened on an actual iOS or Android handset.
+- **Real proof.** The Demo page now shows three credible dashboards, but they are all
+  sample data. The first real client case study replaces one of them.
 - **Contact form** once there is somewhere to receive submissions. GitHub Pages cannot
   process forms; this would need Formspree or similar. Deliberately deferred — the site
   currently uses direct mailto + WhatsApp links instead.

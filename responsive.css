@@ -144,10 +144,6 @@ svg {
   [style*="gap: 14px"] {
     gap: 12px !important;
   }
-
-  .img-slot {
-    min-height: 180px;
-  }
 }
 
 /* ---------- Touch targets -------------------------------------------------

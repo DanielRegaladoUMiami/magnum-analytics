@@ -23,17 +23,17 @@ but a server matches how GitHub Pages serves it.
 | `index.html` | The whole site — all four pages in one document |
 | `app.js` | Page routing (`#inicio`, `#servicios`, `#demo`, `#contacto`) and the ES/EN toggle |
 | `ds/styles.css` | Design-system tokens and component classes |
-| `assets/` | Favicon and demo screenshots |
+| `assets/` | Favicon |
 
-## Adding the demo screenshots
+## The demo dashboards
 
-The Demo page has two image slots that currently show a placeholder caption. Drop the real
-dashboard screenshots in and they appear automatically — no code change:
+The two dashboards on the Demo page are **built in HTML/CSS, not screenshots** — same
+technique as the hero mock on the home page. They use the design-system accent ramp, so
+they retheme automatically and stay crisp at any zoom. Each is labelled "sample data" in
+its header, because the numbers are illustrative rather than client work.
 
-```
-assets/demo-01.png    # sales & margin (Power BI)
-assets/demo-02.png    # forecast & cohorts (Tableau)
-```
+To swap one for a real client dashboard later, replace the mock markup in `index.html`
+with an `<img>`; nothing else depends on it.
 
 ## Retheming
 

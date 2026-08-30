@@ -52,16 +52,6 @@
   .hv3:hover { color: var(--color-accent-700); }
   .hv4:hover { border-color: var(--color-accent); color: var(--color-accent-700); }
 
-  /* Demo screenshots. Drop assets/demo-01.png and assets/demo-02.png to fill
-     these; until then the slot falls back to its placeholder caption. */
-  .img-slot { position: relative; display: flex; align-items: center; justify-content: center;
-    width: 100%; min-height: 260px; background: var(--color-surface);
-    border: 1px solid var(--color-divider); overflow: hidden; }
-  .img-slot img { width: 100%; height: auto; display: block; }
-  .img-slot-ph { display: none; padding: 28px; text-align: center;
-    font-family: ui-monospace, monospace; font-size: 11px; line-height: 1.6;
-    letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-neutral-600); }
-  .img-slot.is-empty .img-slot-ph { display: block; }
 
 </style>
 <script src="app.js" defer></script>
@@ -485,10 +475,89 @@
     </p>
 
     <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px;">
-      <div style="min-width: 0;">
-        <div class="blueprint" style="position: relative; min-width: 0; aspect-ratio: 16 / 10; margin-bottom: 18px; background: var(--color-neutral-200);">
+      <div style="min-width: 0; display: flex; flex-direction: column;">
+        <div class="blueprint" style="position: relative; min-width: 0; flex: 1; display: flex; margin-bottom: 18px; background: var(--color-neutral-100); overflow: hidden;">
           <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          <div class="img-slot"><img src="assets/demo-01.png" alt="Drop a real dashboard screenshot — sales &amp; margin (Power BI)" loading="lazy" onerror="this.closest('.img-slot').classList.add('is-empty'); this.remove();"><span class="img-slot-ph">Drop a real dashboard screenshot — sales &amp; margin (Power BI)</span></div>
+          <div style="display: flex; flex-direction: column; flex: 1; min-width: 0; background: var(--color-neutral-100);">
+          <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--color-divider);">
+            <span style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Magnum &middot; <span class="es">Retail</span><span class="en">Retail</span></span>
+            <span style="margin-left: auto; font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700);"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--color-divider);">
+            <div style="background: var(--color-neutral-100); padding: 14px 16px;">
+              <div style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 6px;"><span class="es">Ingresos del mes</span><span class="en">Revenue MTD</span></div>
+              <div style="font-family: var(--font-heading); font-size: 26px; line-height: 1;">$150,170</div>
+              <div style="font-size: 11px; color: var(--color-accent-700); margin-top: 4px;">+9.2% vs. Jul</div>
+            </div>
+            <div style="background: var(--color-neutral-100); padding: 14px 16px;">
+              <div style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 6px;"><span class="es">Margen mezclado</span><span class="en">Blended margin</span></div>
+              <div style="font-family: var(--font-heading); font-size: 26px; line-height: 1;">34.6%</div>
+              <div style="font-size: 11px; color: var(--color-accent-700); margin-top: 4px;">+2.1 pts</div>
+            </div>
+          </div>
+
+          <div style="padding: 16px; border-top: 1px solid var(--color-divider); flex: 1;">
+            <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 12px;">
+              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);"><span class="es">Ingresos por canal</span><span class="en">Revenue by channel</span></span>
+              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.1em; color: var(--color-neutral-500);">AUG 2026</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 9px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); width: 62px; flex: none;">Shopify</span>
+              <div style="flex: 1; min-width: 0; height: 12px; background: var(--color-neutral-200);">
+                <div style="width: 100%; height: 100%; background: var(--color-accent-800);"></div>
+              </div>
+              <span style="font-family: ui-monospace, monospace; font-size: 10px; color: var(--color-neutral-700); width: 54px; flex: none; text-align: right;">$61,240</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); width: 62px; flex: none;">Amazon</span>
+              <div style="flex: 1; min-width: 0; height: 12px; background: var(--color-neutral-200);">
+                <div style="width: 74%; height: 100%; background: var(--color-accent-700);"></div>
+              </div>
+              <span style="font-family: ui-monospace, monospace; font-size: 10px; color: var(--color-neutral-700); width: 54px; flex: none; text-align: right;">$45,310</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); width: 62px; flex: none;">Retail</span>
+              <div style="flex: 1; min-width: 0; height: 12px; background: var(--color-neutral-200);">
+                <div style="width: 46%; height: 100%; background: var(--color-accent-500);"></div>
+              </div>
+              <span style="font-family: ui-monospace, monospace; font-size: 10px; color: var(--color-neutral-700); width: 54px; flex: none; text-align: right;">$28,150</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); width: 62px; flex: none;">Wholesale</span>
+              <div style="flex: 1; min-width: 0; height: 12px; background: var(--color-neutral-200);">
+                <div style="width: 25%; height: 100%; background: var(--color-accent-300);"></div>
+              </div>
+              <span style="font-family: ui-monospace, monospace; font-size: 10px; color: var(--color-neutral-700); width: 54px; flex: none; text-align: right;">$15,470</span>
+            </div>
+            </div>
+
+            <div style="margin-top: 16px;">
+              <div style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 4px;"><span class="es">Margen por producto</span><span class="en">Margin by product</span></div>
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 5px 0; border-top: 1px solid var(--color-divider);">
+                <span style="font-size: 12px; color: var(--color-neutral-700);">Bundle A</span>
+                <span style="font-family: ui-monospace, monospace; font-size: 11px; color: var(--color-accent-700);">41.2%</span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 5px 0; border-top: 1px solid var(--color-divider);">
+                <span style="font-size: 12px; color: var(--color-neutral-700);">Refill kit</span>
+                <span style="font-family: ui-monospace, monospace; font-size: 11px; color: var(--color-accent-500);">36.8%</span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 5px 0; border-top: 1px solid var(--color-divider);">
+                <span style="font-size: 12px; color: var(--color-neutral-700);">Starter set</span>
+                <span style="font-family: ui-monospace, monospace; font-size: 11px; color: var(--color-neutral-500);">22.4%</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 8px; padding: 0 16px 16px; flex-wrap: wrap;">
+            <span class="tag tag-accent">Shopify</span>
+            <span class="tag tag-neutral">QuickBooks</span>
+            <span style="margin-left: auto; font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);">
+              <span class="es">Stock bajo &middot; 3 SKU</span><span class="en">Low stock &middot; 3 SKUs</span>
+            </span>
+          </div>
+        </div>
         </div>
         <div style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">Demo 01 · Retail / e-commerce</div>
         <div style="font-family: var(--font-heading); font-size: 26px; text-transform: uppercase; line-height: 1.1; margin-bottom: 8px;">
@@ -499,10 +568,82 @@
           <span class="ben">Shopify + spreadsheets consolidated into a daily view: revenue, margin by product and inventory alerts.</span>
         </p>
       </div>
-      <div style="min-width: 0;">
-        <div class="blueprint" style="position: relative; min-width: 0; aspect-ratio: 16 / 10; margin-bottom: 18px; background: var(--color-neutral-200);">
+      <div style="min-width: 0; display: flex; flex-direction: column;">
+        <div class="blueprint" style="position: relative; min-width: 0; flex: 1; display: flex; margin-bottom: 18px; background: var(--color-neutral-100); overflow: hidden;">
           <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          <div class="img-slot"><img src="assets/demo-02.png" alt="Drop a real dashboard screenshot — forecast &amp; cohorts (Tableau)" loading="lazy" onerror="this.closest('.img-slot').classList.add('is-empty'); this.remove();"><span class="img-slot-ph">Drop a real dashboard screenshot — forecast &amp; cohorts (Tableau)</span></div>
+          <div style="display: flex; flex-direction: column; flex: 1; min-width: 0; background: var(--color-neutral-100);">
+          <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--color-divider);">
+            <span style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);">Magnum &middot; <span class="es">Servicios</span><span class="en">Services</span></span>
+            <span style="margin-left: auto; font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700);"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--color-divider);">
+            <div style="background: var(--color-neutral-100); padding: 14px 16px;">
+              <div style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 6px;"><span class="es">Pron&oacute;stico 12 meses</span><span class="en">12-month forecast</span></div>
+              <div style="font-family: var(--font-heading); font-size: 26px; line-height: 1;">$1.24M</div>
+              <div style="font-size: 11px; color: var(--color-neutral-700); margin-top: 4px;">&plusmn;8% <span class="es">banda</span><span class="en">band</span></div>
+            </div>
+            <div style="background: var(--color-neutral-100); padding: 14px 16px;">
+              <div style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 6px;"><span class="es">Retenci&oacute;n neta</span><span class="en">Net retention</span></div>
+              <div style="font-family: var(--font-heading); font-size: 26px; line-height: 1;">112%</div>
+              <div style="font-size: 11px; color: var(--color-accent-700); margin-top: 4px;">+6 pts</div>
+            </div>
+          </div>
+
+          <div style="padding: 16px; border-top: 1px solid var(--color-divider);">
+            <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px;">
+              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);"><span class="es">Proyecci&oacute;n con escenarios</span><span class="en">Projection with scenarios</span></span>
+              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.1em; color: var(--color-neutral-500);">FY27</span>
+            </div>
+            <svg viewBox="0 0 300 76" width="100%" height="76" role="img" preserveAspectRatio="none"
+                 aria-label="Revenue projection with a confidence band widening over twelve months">
+              <polygon points="0,50 27,46 55,44 82,39 109,36 136,31 164,27 191,21 218,16 246,10 273,5 300,0 300,26 273,29 246,32 218,36 191,39 164,43 136,46 109,49 82,52 55,55 27,57 0,58"
+                       fill="var(--color-accent-300)" opacity="0.45"></polygon>
+              <polyline points="0,54 27,51 55,49 82,45 109,42 136,38 164,35 191,30 218,26 246,21 273,17 300,13"
+                        fill="none" stroke="var(--color-accent-700)" stroke-width="2"
+                        vector-effect="non-scaling-stroke"></polyline>
+            </svg>
+          </div>
+
+          <div style="padding: 0 16px 16px; flex: 1;">
+            <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px;">
+              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-600);"><span class="es">Retenci&oacute;n por cohorte</span><span class="en">Retention by cohort</span></span>
+              <span style="font-family: ui-monospace, monospace; font-size: 9px; letter-spacing: 0.1em; color: var(--color-neutral-500);">M0 &mdash; M5</span>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 3px;">
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 100%, transparent);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 73%, transparent);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 59%, transparent);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 46%, transparent);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 35%, transparent);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 28%, transparent);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 100%, transparent);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 66%, transparent);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 49%, transparent);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 39%, transparent);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 25%, transparent);"></div>
+              <div style="height: 18px; background: var(--color-neutral-200);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 100%, transparent);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 80%, transparent);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 63%, transparent);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 52%, transparent);"></div>
+              <div style="height: 18px; background: var(--color-neutral-200);"></div>
+              <div style="height: 18px; background: var(--color-neutral-200);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 100%, transparent);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 69%, transparent);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 56%, transparent);"></div>
+              <div style="height: 18px; background: var(--color-neutral-200);"></div>
+              <div style="height: 18px; background: var(--color-neutral-200);"></div>
+              <div style="height: 18px; background: var(--color-neutral-200);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 100%, transparent);"></div>
+              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 83%, transparent);"></div>
+              <div style="height: 18px; background: var(--color-neutral-200);"></div>
+              <div style="height: 18px; background: var(--color-neutral-200);"></div>
+              <div style="height: 18px; background: var(--color-neutral-200);"></div>
+              <div style="height: 18px; background: var(--color-neutral-200);"></div>
+            </div>
+          </div>
+        </div>
         </div>
         <div style="font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">Demo 02 · <span class="es">Servicios profesionales</span><span class="en">Professional services</span></div>
         <div style="font-family: var(--font-heading); font-size: 26px; text-transform: uppercase; line-height: 1.1; margin-bottom: 8px;">
