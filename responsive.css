@@ -78,18 +78,95 @@ svg {
   [style*="font-size: 34px"] { font-size: 24px !important; }
   [style*="font-size: 30px"] { font-size: 22px !important; }
 
-  /* Header: let the logo and nav occupy separate rows instead of overflowing. */
+  /* Header.
+   *
+   * Wrapping the nav onto its own rows made the sticky header 185px tall — 22%
+   * of a 844px phone screen, permanently, on every scroll. Below 860px the bar
+   * collapses to a single ~56px row (wordmark + menu button) and the links move
+   * into a dropdown panel that only exists while it is open.
+   */
   header > div {
-    flex-wrap: wrap;
     gap: 12px !important;
-    padding: 12px 20px !important;
+    padding: 10px 20px !important;
   }
+
+  #nav-toggle {
+    /* !important because index.html's inline <style> (which hides this button on
+       desktop) is parsed after this file and would otherwise win. */
+    display: inline-flex !important;
+    min-height: 44px;
+    min-width: 44px;
+  }
+
   header nav {
+    /* !important because the element carries display:flex as an inline
+       attribute, which outranks any stylesheet rule. */
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     margin-left: 0 !important;
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 4px !important;
+    padding: 8px 20px 16px;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-divider);
+    box-shadow: var(--shadow-lg);
+  }
+
+  [data-menu="open"] header nav {
+    display: flex !important;
+  }
+
+  /* Scrim. The panel shares the page background, so without this it reads as
+     part of the page rather than a layer over it. The header sits at z-index 20,
+     so the panel stays above the scrim; tapping the scrim closes the menu via
+     the document click handler in app.js. */
+  [data-menu="open"]::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(29, 31, 32, 0.32);
+    z-index: 15;
+  }
+
+  /* Links become full-width rows, which are far easier to hit than inline text. */
+  header nav > a:not(.btn) {
+    border-bottom: 1px solid var(--color-divider) !important;
+    padding: 4px 0 !important;
     width: 100%;
-    gap: 16px !important;
-    flex-wrap: wrap;
-    row-gap: 12px;
+  }
+
+  /* The language toggle is not a nav destination; set it apart from the links. */
+  header nav > button {
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+
+  header nav > .btn {
+    margin-top: 8px;
+    justify-content: center;
+    width: 100% !important;
+  }
+
+  /* Open state: the three bars fold into a close icon. */
+  [data-menu="open"] #nav-toggle .bar-top {
+    transform: translateY(5px) rotate(45deg);
+  }
+  [data-menu="open"] #nav-toggle .bar-mid {
+    opacity: 0;
+  }
+  [data-menu="open"] #nav-toggle .bar-bot {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+
+  /* Respect a reduced-motion preference: state still changes, just not animated. */
+  @media (prefers-reduced-motion: reduce) {
+    #nav-toggle .bar {
+      transition: none;
+    }
   }
 
   /* The hero dashboard mock is decorative; shrink its inner padding so the
@@ -134,10 +211,11 @@ svg {
     box-sizing: border-box;
     text-align: center;
   }
-  /* ...except the two in the header, which must stay on the nav row. */
-  header .btn {
-    display: inline-block !important;
-    width: auto;
+  /* The header CTA now lives inside the dropdown, where full width is right —
+     so it keeps the rule above rather than opting out of it. */
+  header nav > .btn {
+    display: block !important;
+    width: 100% !important;
   }
 
   /* Hero button pair stacks; keep them from touching. */

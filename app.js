@@ -44,8 +44,28 @@
     document.title = TITLES[lang][page];
   }
 
+  /* ---- mobile menu ------------------------------------------------------
+   * Below 860px the nav lives in a dropdown. The open state is an attribute on
+   * #app so CSS owns all the presentation; this only flips the flag and keeps
+   * the button's aria-expanded in sync for screen readers.
+   */
+  var navToggle = document.getElementById("nav-toggle");
+
+  function setMenu(open) {
+    if (open) app.setAttribute("data-menu", "open");
+    else app.removeAttribute("data-menu");
+    if (navToggle) navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+
+  function toggleMenu() {
+    setMenu(app.getAttribute("data-menu") !== "open");
+  }
+
   function go(page, opts) {
     if (PAGES.indexOf(page) === -1) page = "home";
+    // Navigating always dismisses the menu; leaving it open over the new page
+    // would hide the content the user just asked for.
+    setMenu(false);
     render(page, currentLang());
 
     var hash = "#" + PAGE_TO_HASH[page];
@@ -88,6 +108,28 @@
   // Inline handlers in the markup call these.
   window.go = go;
   window.toggleLang = toggleLang;
+  window.toggleMenu = toggleMenu;
+
+  // Escape closes the menu, and so does tapping outside it — both are what a
+  // dropdown is expected to do, and without them the panel can feel stuck.
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && app.getAttribute("data-menu") === "open") {
+      setMenu(false);
+      if (navToggle) navToggle.focus();
+    }
+  });
+
+  document.addEventListener("click", function (e) {
+    if (app.getAttribute("data-menu") !== "open") return;
+    if (e.target.closest("header")) return;
+    setMenu(false);
+  });
+
+  // Widening past the breakpoint reveals the desktop nav; a stale open flag
+  // would otherwise leave the dropdown styles applied on the next narrowing.
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 860) setMenu(false);
+  });
 
   window.addEventListener("popstate", function () {
     render(pageFromHash(), currentLang());
