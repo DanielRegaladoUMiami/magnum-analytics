@@ -37,6 +37,11 @@
 - **Business email** — decided against 2026-08-30. `dxr1491@miami.edu` stays for now, as
   a deliberate choice rather than an oversight. Worth revisiting only when the address is
   actually close to expiring, or if the practice incorporates.
+- **Prices on the site** — decided against 2026-08-30. No figures, no "starting from", no
+  ranges. The cost FAQ commits to the *shape* instead (fixed scope, 2–4 weeks, agreed
+  before starting, never hourly), which is the strongest answer available without a
+  number. Qualification is carried by the audience line in the hero ($500K–$10M
+  businesses in Miami) and the profile list on the Demo page. Do not re-raise this.
 
 ## Done
 

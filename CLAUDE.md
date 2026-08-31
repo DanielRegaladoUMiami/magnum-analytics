@@ -84,6 +84,15 @@ appears there, and both are commented in `responsive.css`:
 2. The `<nav>` carries `display: flex` as an inline **attribute**, which outranks
    any stylesheet rule regardless of file order.
 
+## No prices on the site
+
+Decided 2026-08-30: no figures, no "from $X", no ranges anywhere in the public copy. The
+only dollar amounts in `index.html` are the client-revenue qualifier ($500K–$10M) and the
+sample numbers inside the dashboard mocks. Do not add a price, and do not suggest one.
+
+The cost FAQ answers with the shape of the deal rather than a number — keep it that way if
+you edit it.
+
 ## Contact details
 Email and WhatsApp are hardcoded in `index.html` (4 `mailto:` + 2 `wa.me` links). If they
 change, update all of them — there is no single source of truth for them yet.
