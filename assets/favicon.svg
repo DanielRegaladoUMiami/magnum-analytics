@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#1d1f20"/>
-  <text x="32" y="46" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="46"
-        font-weight="700" letter-spacing="1" text-anchor="middle" fill="#5980a6">M</text>
+  <rect width="64" height="64" rx="12" fill="#2563eb"/>
+  <text x="32" y="45" font-family="Fraunces, Georgia, serif" font-size="40"
+        font-weight="600" text-anchor="middle" fill="#ffffff">M</text>
 </svg>

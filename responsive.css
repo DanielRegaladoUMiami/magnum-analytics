@@ -1,297 +1,110 @@
-/* Responsive layer.
+/* Responsive layer — v0.2.
  *
- * The design canvas was authored at a single desktop width: every dimension in
- * index.html is an inline style, and ds/styles.css ships no media queries at all.
- * Inline styles beat stylesheets, so the only way to adapt them without rewriting
- * the markup is to match the literal inline value and override it with !important.
- * That is why these selectors look the way they do — each one targets an exact
- * string that appears in a style="" attribute.
+ * The v0.1 file targeted literal inline-style strings with !important because the
+ * markup carried every dimension inline. index.html now uses classes from
+ * ds/styles.css, so this file is plain media queries again.
  *
- * Keep in sync with index.html: if a value there changes, its rule here stops
- * matching and that element silently reverts to its desktop size.
+ * Breakpoints:
+ *   960px — grids collapse to fewer columns, section rhythm tightens
+ *   860px — header nav becomes a dropdown menu
+ *   640px — single column, display type steps down, full-width buttons
  */
 
-html {
-  /* Stop iOS from inflating body copy in landscape. */
-  -webkit-text-size-adjust: 100%;
+/* ───────────── Tablet ───────────── */
+@media (max-width: 960px) {
+  :root { --gutter: 22px; }
+
+  .hero { grid-template-columns: 1fr; gap: 36px; }
+
+  .grid-3,
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+
+  .steps--4 { grid-template-columns: repeat(2, 1fr); }
+
+  .grid-2 { gap: 32px !important; }
 }
 
-img,
-svg {
-  max-width: 100%;
-}
-
-/* ---------- Tablet and below ---------------------------------------------- */
+/* ───────────── Header → dropdown menu ───────────── */
 @media (max-width: 860px) {
-  /* Collapse the multi-column grids to a single column. The 14-column grid is
-     deliberately excluded — it is the bar chart in the hero dashboard mock and
-     must keep its columns at every width. */
-  [style*="grid-template-columns: 1fr 1fr"],
-  [style*="grid-template-columns: repeat(3, 1fr)"],
-  [style*="grid-template-columns: repeat(4, 1fr)"],
-  [style*="grid-template-columns: minmax(0, 1fr) minmax(0, 1fr)"],
-  [style*="grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr)"] {
-    grid-template-columns: 1fr !important;
-  }
+  .site-header .wrap { gap: 12px; }
 
-  /* Section rhythm: the generous desktop padding wastes most of a phone screen. */
-  [style*="padding: 72px 32px"],
-  [style*="padding: 76px 32px"],
-  [style*="padding: 68px 32px"] {
-    padding: 44px 20px !important;
-  }
-  [style*="padding: 84px 32px 64px"] {
-    padding: 48px 20px 40px !important;
-  }
-  [style*="padding: 34px 32px"] {
-    padding: 26px 20px !important;
-  }
-  [style*="padding: 0 32px"] {
-    padding: 0 20px !important;
-  }
+  #nav-toggle { display: inline-flex; }
 
-  /* Comparison rows carry asymmetric padding that only reads as columns.
-     Once stacked, even it out. */
-  [style*="padding: 26px 30px 26px 0"],
-  [style*="padding: 26px 0 26px 30px"],
-  [style*="padding: 26px 30px"] {
-    padding: 22px 0 !important;
-  }
-
-  /* Large gaps become dead space once everything is stacked. */
-  [style*="gap: 64px"],
-  [style*="gap: 56px"] {
-    gap: 32px !important;
-  }
-  [style*="gap: 40px"] {
-    gap: 26px !important;
-  }
-
-  /* Display type. Scaled by eye to keep the same visual hierarchy at phone size
-     rather than by a single ratio — the biggest sizes need the steepest cut. */
-  [style*="font-size: 68px"] { font-size: 36px !important; }
-  [style*="font-size: 60px"] { font-size: 33px !important; }
-  [style*="font-size: 56px"] { font-size: 31px !important; }
-  [style*="font-size: 46px"] { font-size: 28px !important; }
-  [style*="font-size: 44px"] { font-size: 27px !important; }
-  [style*="font-size: 40px"] { font-size: 26px !important; }
-  [style*="font-size: 34px"] { font-size: 24px !important; }
-  [style*="font-size: 30px"] { font-size: 22px !important; }
-
-  /* Header.
-   *
-   * Wrapping the nav onto its own rows made the sticky header 185px tall — 22%
-   * of a 844px phone screen, permanently, on every scroll. Below 860px the bar
-   * collapses to a single ~56px row (wordmark + menu button) and the links move
-   * into a dropdown panel that only exists while it is open.
-   */
-  header > div {
-    gap: 12px !important;
-    padding: 10px 20px !important;
-  }
-
-  #nav-toggle {
-    /* !important because index.html's inline <style> (which hides this button on
-       desktop) is parsed after this file and would otherwise win. */
-    display: inline-flex !important;
-    min-height: 44px;
-    min-width: 44px;
-  }
-
-  header nav {
-    /* !important because the element carries display:flex as an inline
-       attribute, which outranks any stylesheet rule. */
-    display: none !important;
+  .nav {
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    margin-left: 0 !important;
     flex-direction: column;
-    align-items: stretch !important;
-    gap: 4px !important;
-    padding: 8px 20px 16px;
-    background: var(--color-bg);
-    border-bottom: 1px solid var(--color-divider);
+    align-items: stretch;
+    gap: 4px;
+    margin: 0;
+    padding: 10px var(--gutter) 18px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
     box-shadow: var(--shadow-lg);
   }
+  [data-menu="open"] .nav { display: flex; }
 
-  [data-menu="open"] header nav {
-    display: flex !important;
+  .nav a.nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    padding: 4px 0;
   }
+  .nav .lang-toggle { align-self: flex-start; margin-top: 10px; min-height: 44px; }
+  .nav .btn { margin-top: 8px; width: 100%; }
 
-  /* Scrim. The panel shares the page background, so without this it reads as
-     part of the page rather than a layer over it. The header sits at z-index 20,
-     so the panel stays above the scrim; tapping the scrim closes the menu via
-     the document click handler in app.js. */
+  /* Scrim behind the open panel. Header is z-index 30; the panel sits above
+     this, the click handler in app.js closes the menu on a scrim tap. */
   [data-menu="open"]::after {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(29, 31, 32, 0.32);
-    z-index: 15;
+    background: rgba(28, 27, 25, 0.34);
+    z-index: 20;
   }
 
-  /* Links become full-width rows, which are far easier to hit than inline text. */
-  header nav > a:not(.btn) {
-    border-bottom: 1px solid var(--color-divider) !important;
-    padding: 4px 0 !important;
-    width: 100%;
-  }
-
-  /* The language toggle is not a nav destination; set it apart from the links. */
-  header nav > button {
-    align-self: flex-start;
-    margin-top: 8px;
-  }
-
-  header nav > .btn {
-    margin-top: 8px;
-    justify-content: center;
-    width: 100% !important;
-  }
-
-  /* Open state: the three bars fold into a close icon. */
-  [data-menu="open"] #nav-toggle .bar-top {
-    transform: translateY(5px) rotate(45deg);
-  }
-  [data-menu="open"] #nav-toggle .bar-mid {
-    opacity: 0;
-  }
-  [data-menu="open"] #nav-toggle .bar-bot {
-    transform: translateY(-5px) rotate(-45deg);
-  }
-
-  /* Respect a reduced-motion preference: state still changes, just not animated. */
-  @media (prefers-reduced-motion: reduce) {
-    #nav-toggle .bar {
-      transition: none;
-    }
-  }
-
-  /* The hero dashboard mock is decorative; shrink its inner padding so the
-     numbers inside stay on one line. */
-  [style*="padding: 28px 24px"],
-  [style*="padding: 22px 26px"] {
-    padding: 18px 16px !important;
-  }
+  /* Hamburger folds into a close icon. */
+  [data-menu="open"] #nav-toggle .bar-top { transform: translateY(4px) rotate(45deg); }
+  [data-menu="open"] #nav-toggle .bar-mid { opacity: 0; }
+  [data-menu="open"] #nav-toggle .bar-bot { transform: translateY(-4px) rotate(-45deg); }
 }
 
-/* ---------- Phone --------------------------------------------------------- */
-@media (max-width: 560px) {
-  [style*="padding: 72px 32px"],
-  [style*="padding: 76px 32px"],
-  [style*="padding: 68px 32px"] {
-    padding: 36px 16px !important;
-  }
-  [style*="padding: 84px 32px 64px"] {
-    padding: 36px 16px 32px !important;
-  }
-  [style*="padding: 0 32px"] {
-    padding: 0 16px !important;
-  }
-  header > div {
-    padding: 12px 16px !important;
-  }
+/* ───────────── Phone ───────────── */
+@media (max-width: 640px) {
+  :root { --gutter: 18px; }
 
-  [style*="font-size: 68px"] { font-size: 30px !important; }
-  [style*="font-size: 60px"] { font-size: 28px !important; }
-  [style*="font-size: 56px"] { font-size: 27px !important; }
-  [style*="font-size: 46px"] { font-size: 25px !important; }
-  [style*="font-size: 44px"] { font-size: 24px !important; }
-  [style*="font-size: 40px"] { font-size: 23px !important; }
-  [style*="font-size: 34px"] { font-size: 22px !important; }
-  [style*="font-size: 30px"] { font-size: 21px !important; }
-  [style*="font-size: 26px"] { font-size: 20px !important; }
+  .grid-2,
+  .grid-3,
+  .grid-4 { grid-template-columns: 1fr; }
 
-  /* Full-width call-to-action buttons are easier to hit than inline ones. */
-  .btn {
-    display: block !important;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-  }
-  /* The header CTA now lives inside the dropdown, where full width is right —
-     so it keeps the rule above rather than opting out of it. */
-  header nav > .btn {
-    display: block !important;
-    width: 100% !important;
-  }
+  .steps--4 { grid-template-columns: 1fr; }
 
-  /* Hero button pair stacks; keep them from touching. */
-  [style*="gap: 14px"] {
-    gap: 12px !important;
-  }
+  .grid-2 { gap: 28px !important; }
+
+  h1 { font-size: clamp(2rem, 1.4rem + 4vw, 2.6rem); }
+
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta .btn { width: 100%; }
+
+  .cta-band .wrap { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .cta-band .btn { width: 100%; }
+
+  .card { padding: 22px; }
+  .step { padding: 22px 20px; }
+
+  .contact-row { flex-direction: column; gap: 4px; }
+  .contact-row .k { width: auto; padding-top: 0; }
+
+  /* Tap targets for the standalone contact links. */
+  a[href^="mailto:"]:not(.btn),
+  a[href*="wa.me"]:not(.btn) { display: inline-block; padding: 8px 0; }
 }
 
-/* ---------- Touch targets -------------------------------------------------
- * Anything tappable needs roughly 44px of height to hit reliably with a thumb.
- * The desktop design sizes these by text alone, which lands around 23-28px.
- *
- * Gated on width rather than (pointer: coarse) on purpose: width is what the
- * rest of this file keys on, it can be verified in a normal desktop browser by
- * narrowing the window, and it still covers every phone and tablet. The cost is
- * that a narrow window on a mouse-driven machine also gets the roomier hit
- * areas, which is harmless.
- */
+/* ───────────── Touch targets (any narrow viewport) ───────────── */
 @media (max-width: 860px) {
-  header nav > a:not(.btn),
-  header nav > button {
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-  }
-
-  header nav > .btn {
-    min-height: 44px;
-    display: inline-flex !important;
-    align-items: center;
-    width: auto;
-  }
-
-  /* The wordmark doubles as the link home. */
-  header > div > a:first-child {
-    min-height: 44px;
-    align-items: center !important;
-  }
-
-  /* Standalone text links that sit outside a button. */
-  .page a:not(.btn):not([href^="mailto:"]):not([href*="wa.me"]) {
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-  }
-
-  /* Ghost buttons carry almost no padding of their own, so they land well under
-     the target height even though they are styled as buttons. */
-  .btn {
-    min-height: 44px;
-    box-sizing: border-box;
-  }
-  .btn-ghost {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Email and WhatsApp links in the contact block. */
-  a[href^="mailto:"],
-  a[href*="wa.me"] {
-    display: inline-block;
-    padding: 10px 0;
-  }
-
-  /* That padding makes the link taller than its label, so re-center the row it
-     sits in (the EMAIL / WHATSAPP / BASED IN rows on the contact page). */
-  [style*="display: flex; gap: 14px; font-size: 15px"] {
-    align-items: center;
-  }
-
-  a[href^="mailto:"].btn,
-  a[href*="wa.me"].btn {
-    /* Buttons already have their own padding; do not double it. */
-    padding: 14px 22px;
-    min-height: 44px;
-    box-sizing: border-box;
-  }
+  .wordmark { min-height: 44px; align-items: center; }
 }
