@@ -7,15 +7,20 @@ https://danielregaladoumiami.github.io/magnum-analytics/
 
 ## Stack
 - Static HTML/CSS/JS — no build step, no framework, no package manager
-- `ds/styles.css` — design-system tokens and component classes (the "Industry" system)
-- Fonts: Barlow + Barlow Condensed from Google Fonts
+- `ds/styles.css` — design-system tokens + component classes. `index.html` uses these
+  classes; it carries almost no inline styles (a few one-off `style="margin…"` only).
+- Fonts: Fraunces (display, sentence case) + Inter (text/UI), from Google Fonts
+- Palette (v0.2): warm off-white ground, vivid blue `--brand: #2563eb`, warm coral
+  `--accent: #ea6a3a`, green/red for dashboard deltas. All tokens at the top of
+  `ds/styles.css`; retheme there.
 - Hosting: GitHub Pages, served from `main` branch root
 
 There is deliberately no `pyproject.toml`, no `uv`, and no pre-commit here — this repo
 has no Python. Do not add them.
 
 ## Current milestone
-v0.1 — site live on GitHub Pages
+v0.2 — redesign for clarity + warmth (see ROADMAP.md). The v0.1 "blueprint" look
+(cold greys, monospace labels, corner marks, all-caps Barlow Condensed) was replaced.
 
 ## Local rules
 - Conventional Commits (feat:, fix:, docs:, refactor:, chore:)
@@ -44,45 +49,31 @@ it follows `navigator.language`, defaulting to Spanish.
 
 ## Provenance — this started as a design canvas
 
-`index.html` was converted from a Claude Design canvas export (`Magnum Website.dc.html`).
-That format is NOT servable: it used `<x-dc>`, `<helmet>`, `<sc-if>` blocks, `{{ var }}`
-template holes, `style-hover` attributes, and `<image-slot>` elements, all of which need
-a canvas runtime. The conversion replaced each with a static equivalent — `<sc-if>` became
-`<section class="page">`, `style-hover` became real `:hover` CSS rules (`.hv1`–`.hv4`),
-`<image-slot>` became HTML/CSS dashboard mocks (see below).
-
-**If you re-export from the design tool, do not overwrite `index.html` directly** — it
-would reintroduce canvas markup that browsers cannot render. Re-run the conversion, or
-port the specific changes by hand. The canvas export is gitignored (`*.dc.html`).
+`index.html` began as a Claude Design canvas export (`Magnum Website.dc.html`), converted
+to static HTML for v0.1. The v0.2 redesign rebuilt it from scratch with real CSS classes,
+so the old canvas artifacts (`.hv1`–`.hv4` hover classes, `.blueprint`/`.corner` marks,
+inline styles on every element) are gone. The canvas export is still gitignored
+(`*.dc.html`) and is no longer a useful base — any new work goes straight into `index.html`.
 
 ## The demo dashboards are markup, not images
 
-All three dashboards on the site — the hero mock and the two on the Demo page — are built
-from divs, CSS and one inline SVG. There are no screenshots anywhere. Consequences:
+All three dashboards — the hero mock and the two on the Demo page — are built from divs,
+CSS and one inline SVG (the `.mock*` classes in `ds/styles.css`). No screenshots anywhere.
 
-- They inherit `--color-accent`, so retheming the design system retints them too.
-- The two Demo cards are height-matched by flex (`column: flex` + `card: flex 1`), not by
-  a fixed height. Adding content to one card grows both.
-- The bar-chart grid `repeat(14, 1fr)` and the cohort grid `repeat(6, 1fr)` are excluded
-  from the responsive column-collapse in `responsive.css` on purpose — collapsing them
-  would destroy the chart. Do not add them to those selectors.
+- They use the `--chart-*` blue ramp and `--pos`/`--neg` for deltas, so retheming retints them.
+- The `.bars` chart uses `grid-auto-flow: column` and the `.cohort` grid is a fixed
+  `repeat(6, 1fr)` — neither is in `responsive.css`'s column-collapse, on purpose.
+  Collapsing them would destroy the chart.
 - Every mock is labelled "sample data" / "datos de ejemplo". Keep that label: the numbers
   are illustrative and the site must not imply real client results.
 
 ## Mobile navigation
 
-Below 860px the header collapses to a wordmark plus a menu button, and the nav
-becomes a dropdown. The open state is `data-menu="open"` on `#app`; `app.js` only
-flips that attribute and keeps `aria-expanded` in sync, so CSS owns the presentation.
-It closes on navigate, Escape, an outside tap, and on widening past the breakpoint.
-
-Two cascade traps to know before editing header styles — both are why `!important`
-appears there, and both are commented in `responsive.css`:
-
-1. The inline `<style>` block in `index.html` is parsed **after** `responsive.css`,
-   so a plain rule in the stylesheet loses to it.
-2. The `<nav>` carries `display: flex` as an inline **attribute**, which outranks
-   any stylesheet rule regardless of file order.
+Below 860px the header collapses to a wordmark plus a menu button, and `.nav` becomes an
+absolutely-positioned dropdown. The open state is `data-menu="open"` on `#app`; `app.js`
+only flips that attribute and keeps `aria-expanded` in sync, so CSS owns the presentation.
+It closes on navigate, Escape, an outside tap, and on widening past the breakpoint. The
+v0.1 `!important` cascade traps are gone now that the markup has no inline styles.
 
 ## No prices on the site
 
@@ -94,12 +85,16 @@ The cost FAQ answers with the shape of the deal rather than a number — keep it
 you edit it.
 
 ## Contact details
-Email and WhatsApp are hardcoded in `index.html` (4 `mailto:` + 2 `wa.me` links). If they
-change, update all of them — there is no single source of truth for them yet.
+Hardcoded in `index.html`, no single source of truth — if they change, update every copy:
+- `mailto:` — two addresses, `dxr1491@miami.edu` and `augustoriverof@hotmail.com`. The
+  "Email us" CTAs send to both (`mailto:a,b`); the contact page and footer list them
+  separately. ~6 links total.
+- `wa.me/17867701820` — 2 links.
 
 ## Where things live
-- `index.html` — the entire site
-- `app.js` — routing + language toggle
-- `ds/styles.css` — design tokens; change `--color-accent` here to retheme
+- `index.html` — the entire site (4 pages, one document)
+- `app.js` — routing (`#inicio`/`#servicios`/`#demo`/`#contacto`) + ES/EN toggle + mobile menu
+- `ds/styles.css` — design tokens + component classes; retheme via the `:root` tokens
+- `responsive.css` — plain media queries (960 / 860 / 640px)
 - `assets/` — `favicon.svg` only; the site ships no raster images
 - `ROADMAP.md` — what's next

@@ -4,631 +4,488 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Magnum Analytics — Business Intelligence · Miami</title>
-<meta name="description" content="Magnum Analytics — dashboards, reporting automation and forecasting for teams in the US and LatAm. Based in Miami, Florida.">
-<meta name="theme-color" content="#f2f2f3">
+<meta name="description" content="Magnum Analytics builds dashboards, automates reporting and forecasts for $500K–$10M businesses in Miami. See your sales, margins and forecast in one place — in two to four weeks.">
+<meta name="theme-color" content="#fbfaf8">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://danielregaladoumiami.github.io/magnum-analytics/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Magnum Analytics — Business Intelligence">
-<meta property="og:description" content="Dashboards, reporting automation and forecasting. Miami, Florida — remote across the US and LatAm.">
+<meta property="og:title" content="Magnum Analytics — Business Intelligence · Miami">
+<meta property="og:description" content="Dashboards, automated reporting and forecasting for small and mid-sized businesses. Miami, Florida — remote across the US and LatAm.">
+<meta property="og:url" content="https://danielregaladoumiami.github.io/magnum-analytics/">
 <meta property="og:locale" content="es_ES">
 <meta property="og:locale:alternate" content="en_US">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="ds/styles.css">
 <link rel="stylesheet" href="responsive.css">
-<style>
-  html, body { margin: 0; padding: 0; }
-  body { background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); }
-  a { color: var(--color-accent-700); }
-  a:hover { color: var(--color-accent-800); }
-
-  /* Bilingual toggle: .es/.en are inline spans, .bes/.ben are block-level. */
-  .en, .ben { display: none; }
-  .es { display: inline; }
-  .bes { display: block; }
-  [data-l="en"] .es { display: none; }
-  [data-l="en"] .bes { display: none; }
-  [data-l="en"] .en { display: inline; }
-  [data-l="en"] .ben { display: block; }
-
-  [data-p="home"] .n-home, [data-p="services"] .n-services, [data-p="work"] .n-work, [data-p="contact"] .n-contact {
-    color: var(--color-accent-700); border-bottom-color: var(--color-accent);
-  }
-
-  /* Readability.
-     Running text was reaching 86 characters per line on a wide screen; past
-     roughly 70 the eye loses its place returning to the next line. Body copy is
-     capped here rather than per-element because every paragraph in this file
-     carries its own inline style. */
-  p { max-width: 68ch; }
-
-  /* Small monospace labels sit at 10.5-12.5px. They need more leading than body
-     copy, not less, or the uppercase forms crowd each other. */
-  [style*="ui-monospace"] { line-height: 1.55; }
-
-  /* Mobile menu button. Hidden here; responsive.css reveals it below 860px. */
-  #nav-toggle { display: none; margin-left: auto; background: none; border: 1px solid var(--color-divider);
-    border-radius: var(--radius-md); padding: 7px 8px; cursor: pointer; color: var(--color-neutral-700);
-    align-items: center; justify-content: center; }
-  #nav-toggle .bar { stroke: currentColor; stroke-width: 1.6; stroke-linecap: square;
-    transition: transform 140ms ease, opacity 140ms ease; transform-origin: center; }
-
-  /* Page routing. The canvas rendered one artboard at a time; here every page
-     ships in the same document and CSS shows the one that matches data-p. */
-  .page { display: none; }
-  [data-p="home"] .page[data-page="home"],
-  [data-p="services"] .page[data-page="services"],
-  [data-p="work"] .page[data-page="work"],
-  [data-p="contact"] .page[data-page="contact"] { display: block; }
-
-  /* Hover states: the canvas expressed these as style-hover attributes. */
-  .hv1:hover { color: var(--color-accent-700); }
-  .hv2:hover { color: var(--color-accent-700); }
-  .hv3:hover { color: var(--color-accent-700); }
-  .hv4:hover { border-color: var(--color-accent); color: var(--color-accent-700); }
-
-
-</style>
 <script src="app.js" defer></script>
 </head>
 <body>
-<div id="app" data-l="es" data-p="home" style="min-height: 100vh; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body);">
+<div id="app" data-l="es" data-p="home">
 
-  <header style="position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--color-bg) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--color-divider);">
-    <div id="header-bar" style="position: relative; max-width: 1160px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 32px;">
-      <a href="#" onclick="go('home'); return false;" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: var(--color-text);">
-        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 26px; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1;">Magnum</span>
-        <span style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-neutral-600);">Business Intelligence</span>
+  <!-- ─────────────── Header ─────────────── -->
+  <header class="site-header">
+    <div class="wrap">
+      <a href="#" class="wordmark" onclick="go('home'); return false;">
+        <b>Magnum</b><span>Analytics</span>
       </a>
+
       <button id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menú" onclick="toggleMenu()">
         <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
-          <line class="bar bar-top" x1="3" y1="6" x2="19" y2="6"></line>
+          <line class="bar bar-top" x1="3" y1="7" x2="19" y2="7"></line>
           <line class="bar bar-mid" x1="3" y1="11" x2="19" y2="11"></line>
-          <line class="bar bar-bot" x1="3" y1="16" x2="19" y2="16"></line>
+          <line class="bar bar-bot" x1="3" y1="15" x2="19" y2="15"></line>
         </svg>
       </button>
-      <nav id="site-nav" style="margin-left: auto; display: flex; align-items: center; gap: 26px;">
-        <a href="#" onclick="go('services'); return false;" class="hv1 n-services" style="font-family: var(--font-heading); font-size: 16.5px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--color-neutral-700); border-bottom: 2px solid transparent; padding-bottom: 3px;">
-          <span class="es">Servicios</span><span class="en">Services</span>
-        </a>
-        <a href="#" onclick="go('work'); return false;" class="hv2 n-work" style="font-family: var(--font-heading); font-size: 16.5px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--color-neutral-700); border-bottom: 2px solid transparent; padding-bottom: 3px;">
-          <span class="es">Demo</span><span class="en">Demo</span>
-        </a>
-        <a href="#" onclick="go('contact'); return false;" class="hv3 n-contact" style="font-family: var(--font-heading); font-size: 16.5px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--color-neutral-700); border-bottom: 2px solid transparent; padding-bottom: 3px;">
-          <span class="es">Contacto</span><span class="en">Contact</span>
-        </a>
-        <button onclick="toggleLang()" style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.1em; background: none; border: 1px solid var(--color-divider); border-radius: var(--radius-md); padding: 6px 10px; cursor: pointer; color: var(--color-neutral-700);" class="hv4">
-          <span class="es">EN</span><span class="en">ES</span>
-        </button>
-        <a href="#" onclick="go('contact'); return false;" class="btn btn-primary blueprint" style="font-family: var(--font-heading); font-size: 16.5px; letter-spacing: 0.08em; text-transform: uppercase; padding: 9px 18px; border-radius: 0;">
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          <span class="es">Agendar llamada</span><span class="en">Book a call</span>
-        </a>
+
+      <nav id="site-nav" class="nav">
+        <a href="#" class="nav-link n-services" onclick="go('services'); return false;"><span class="es">Servicios</span><span class="en">Services</span></a>
+        <a href="#" class="nav-link n-work" onclick="go('work'); return false;"><span class="es">Demo</span><span class="en">Demo</span></a>
+        <a href="#" class="nav-link n-contact" onclick="go('contact'); return false;"><span class="es">Contacto</span><span class="en">Contact</span></a>
+        <button class="lang-toggle" onclick="toggleLang()"><span class="es">EN</span><span class="en">ES</span></button>
+        <a href="#" class="btn btn-primary" onclick="go('contact'); return false;"><span class="es">Agendar llamada</span><span class="en">Book a call</span></a>
       </nav>
     </div>
   </header>
 
+  <!-- ═══════════════ HOME ═══════════════ -->
   <section class="page" data-page="home">
   <main>
-    <section style="max-width: 1160px; margin: 0 auto; padding: 84px 32px 64px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 56px; align-items: start;">
-      <div>
-        <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 22px;">
-          01 &nbsp;/&nbsp; Miami, FL &nbsp;·&nbsp; <span class="es">Analítica para negocios pequeños</span><span class="en">Analytics for small business</span>
-        </div>
-        <h1 style="font-family: var(--font-heading); font-weight: 700; font-size: 68px; line-height: 0.98; letter-spacing: -0.01em; text-transform: uppercase; margin: 0 0 26px; text-wrap: balance;">
-          <span class="bes">Tus números, claros. En dos semanas.</span>
-          <span class="ben">Your numbers, clear. In two weeks.</span>
-        </h1>
-        <p style="font-size: 18px; line-height: 1.55; max-width: 54ch; color: var(--color-neutral-700); margin: 0 0 34px; text-wrap: pretty;">
-          <span class="bes">Sabe qué está impulsando tus ventas, dónde se está fugando el dinero y qué hacer después — con dashboards y reportes automatizados.</span>
-          <span class="ben">One dashboard that pulls Shopify, QuickBooks and your spreadsheets into a single view. For $500K–$10M businesses in Miami.</span>
-        </p>
-        <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
-          <a href="#" onclick="go('contact'); return false;" class="btn btn-primary blueprint" style="font-family: var(--font-heading); font-size: 17px; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 26px; border-radius: 0;">
-            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-            <span class="es">Agendar llamada de 20 min</span><span class="en">Book a 20-min call</span>
-          </a>
-          <a href="mailto:dxr1491@miami.edu" class="btn btn-secondary" style="font-family: var(--font-heading); font-size: 17px; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 22px; border-radius: 0;">
-            <span class="es">Escríbenos</span><span class="en">Email us</span>
-          </a>
-        </div>
-        <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.06em; color: var(--color-neutral-600); margin-top: 18px;">
-          <span class="es">Sin compromiso · 20 minutos · Salimos con un alcance claro</span><span class="en">No commitment · 20 minutes · You leave with a clear scope</span>
-        </div>
-      </div>
-      <div class="blueprint" style="position: relative; min-width: 0; background: var(--color-neutral-100); box-shadow: var(--shadow-lg);">
-        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-        <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--color-divider);">
-          <span style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);">Magnum · Retail Ops</span>
-          <span style="margin-left: auto; font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.1em; color: var(--color-accent-700);">LIVE · AUG 2026</span>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--color-divider);">
-          <div style="background: var(--color-neutral-100); padding: 16px 18px;">
-            <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 8px;">Sales this month</div>
-            <div style="font-family: var(--font-heading); font-size: 34px; line-height: 1;">$184,320</div>
-            <div style="font-size: 12px; color: var(--color-accent-700); margin-top: 4px;">+12.4% vs. Jul</div>
-          </div>
-          <div style="background: var(--color-neutral-100); padding: 16px 18px;">
-            <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 8px;">Profit margin</div>
-            <div style="font-family: var(--font-heading); font-size: 34px; line-height: 1;">31.8%</div>
-            <div style="font-size: 12px; color: var(--color-accent-700); margin-top: 4px;">+1.9 pts vs. Jul</div>
-          </div>
-          <div style="background: var(--color-neutral-100); padding: 16px 18px;">
-            <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 8px;">Top acquisition channel</div>
-            <div style="font-family: var(--font-heading); font-size: 34px; line-height: 1;">Paid social</div>
-            <div style="font-size: 12px; color: var(--color-neutral-700); margin-top: 4px;">38% of new customers</div>
-          </div>
-          <div style="background: var(--color-neutral-100); padding: 16px 18px;">
-            <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 8px;">Forecast · next 30 days</div>
-            <div style="font-family: var(--font-heading); font-size: 34px; line-height: 1;">$196,400</div>
-            <div style="font-size: 12px; color: var(--color-neutral-700); margin-top: 4px;">±6% confidence band</div>
-          </div>
-        </div>
-        <div style="padding: 18px; border-top: 1px solid var(--color-divider);">
-          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px;">
-            <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);">Revenue by week</span>
-            <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; color: var(--color-neutral-600);">W22 — W35</span>
-          </div>
-          <div style="display: grid; grid-template-columns: repeat(14, 1fr); gap: 5px; align-items: end; height: 96px;">
-            <div style="height: 42%; background: var(--color-accent-300);"></div>
-            <div style="height: 51%; background: var(--color-accent-300);"></div>
-            <div style="height: 46%; background: var(--color-accent-300);"></div>
-            <div style="height: 58%; background: var(--color-accent-300);"></div>
-            <div style="height: 63%; background: var(--color-accent-400);"></div>
-            <div style="height: 55%; background: var(--color-accent-400);"></div>
-            <div style="height: 69%; background: var(--color-accent-400);"></div>
-            <div style="height: 74%; background: var(--color-accent-500);"></div>
-            <div style="height: 66%; background: var(--color-accent-500);"></div>
-            <div style="height: 81%; background: var(--color-accent-600);"></div>
-            <div style="height: 88%; background: var(--color-accent-600);"></div>
-            <div style="height: 79%; background: var(--color-accent-700);"></div>
-            <div style="height: 94%; background: var(--color-accent-700);"></div>
-            <div style="height: 100%; background: var(--color-accent-800);"></div>
-          </div>
-        </div>
-        <div style="display: flex; gap: 8px; padding: 0 18px 18px;">
-          <span class="tag tag-accent">Shopify</span>
-          <span class="tag tag-neutral">QuickBooks</span>
-          <span class="tag tag-neutral">Meta Ads</span>
-        </div>
-      </div>
-    </section>
 
-    <section style="border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider);">
-      <div style="max-width: 1160px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: repeat(3, 1fr);">
-        <div style="padding: 26px 30px 26px 0; border-right: 1px solid var(--color-divider);">
-          <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">01</div>
-          <div style="font-family: var(--font-heading); font-size: 21px; line-height: 1.15; text-transform: uppercase;">
-            <span class="es">Formación formal en analítica</span><span class="en">Formal analytics training</span>
+    <!-- Hero -->
+    <section class="section wrap">
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Business Intelligence &nbsp;·&nbsp; Miami, FL</p>
+          <h1 style="margin:14px 0 0;">
+            <span class="bes">Mira qué impulsa tus ventas — en un dashboard, en dos semanas.</span>
+            <span class="ben">See what's driving your sales — one dashboard, two weeks.</span>
+          </h1>
+          <p class="lead" style="margin-top:22px;">
+            <span class="bes">Conectamos tu Shopify, tu QuickBooks y tus hojas de cálculo en una sola vista, y automatizamos los reportes y pronósticos que hoy armas a mano. Para negocios de $500K–$10M en Miami.</span>
+            <span class="ben">We pull your Shopify, QuickBooks and spreadsheets into a single view, then automate the reports and forecasts you build by hand today. For $500K–$10M businesses in Miami.</span>
+          </p>
+          <div class="hero-cta">
+            <a href="#" class="btn btn-primary btn-lg" onclick="go('contact'); return false;">
+              <span class="es">Agendar llamada de 20 min</span><span class="en">Book a 20-min call</span>
+            </a>
+            <a href="mailto:dxr1491@miami.edu,augustoriverof@hotmail.com" class="btn btn-ghost btn-lg">
+              <span class="es">Escríbenos</span><span class="en">Email us</span>
+            </a>
           </div>
-          <div style="font-size: 14px; color: var(--color-neutral-700); margin-top: 6px;">MS Business Analytics, UMiami</div>
+          <p class="fineprint" style="margin-top:16px;">
+            <span class="bes">Sin compromiso · 20 minutos · Te vas con un alcance claro.</span>
+            <span class="ben">No commitment · 20 minutes · You leave with a clear scope.</span>
+          </p>
         </div>
-        <div style="padding: 26px 30px; border-right: 1px solid var(--color-divider);">
-          <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">02</div>
-          <div style="font-family: var(--font-heading); font-size: 21px; line-height: 1.15; text-transform: uppercase;">
-            <span class="es">Cuatro capacidades, un solo equipo</span><span class="en">Four capabilities, one team</span>
+
+        <!-- Hero dashboard mock — HTML/CSS, not a screenshot. Sample data. -->
+        <div class="mock" aria-hidden="true">
+          <div class="mock-bar">
+            <span>Magnum · Retail Ops</span>
+            <span class="tag-sample"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
           </div>
-          <div style="font-size: 14px; color: var(--color-neutral-700); margin-top: 6px;">
-            <span class="es">Dashboards · Automatización · Modelado · Machine learning</span><span class="en">Dashboards · Automation · Modeling · Machine learning</span>
+          <div class="mock-grid">
+            <div class="mock-cell">
+              <div class="k"><span class="es">Ventas del mes</span><span class="en">Sales this month</span></div>
+              <div class="v">$184,320</div>
+              <div class="d d-pos">+12.4% vs. Jul</div>
+            </div>
+            <div class="mock-cell">
+              <div class="k"><span class="es">Margen</span><span class="en">Profit margin</span></div>
+              <div class="v">31.8%</div>
+              <div class="d d-pos">+1.9 pts vs. Jul</div>
+            </div>
+            <div class="mock-cell">
+              <div class="k"><span class="es">Canal principal</span><span class="en">Top channel</span></div>
+              <div class="v" style="font-size:1.4rem;"><span class="es">Redes pagadas</span><span class="en">Paid social</span></div>
+              <div class="d d-flat"><span class="es">38% de clientes nuevos</span><span class="en">38% of new customers</span></div>
+            </div>
+            <div class="mock-cell">
+              <div class="k"><span class="es">Pronóstico · 30 días</span><span class="en">Forecast · 30 days</span></div>
+              <div class="v">$196,400</div>
+              <div class="d d-flat"><span class="es">±6% de confianza</span><span class="en">±6% confidence band</span></div>
+            </div>
           </div>
-        </div>
-        <div style="padding: 26px 0 26px 30px;">
-          <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">03</div>
-          <div style="font-family: var(--font-heading); font-size: 21px; line-height: 1.15; text-transform: uppercase;">
-            <span class="es">Alcance hecho para tu tamaño</span><span class="en">Scope built for your size</span>
+          <div class="mock-section">
+            <div class="hd">
+              <span><span class="es">Ingresos por semana</span><span class="en">Revenue by week</span></span>
+              <span>W22 — W35</span>
+            </div>
+            <div class="bars">
+              <i style="height:42%"></i><i style="height:51%"></i><i style="height:46%"></i>
+              <i style="height:58%"></i><i style="height:63%"></i><i style="height:55%"></i>
+              <i style="height:69%"></i><i style="height:74%"></i><i style="height:66%"></i>
+              <i style="height:81%"></i><i style="height:88%"></i><i style="height:79%"></i>
+              <i style="height:94%;background:var(--chart-6)"></i><i style="height:100%;background:var(--chart-7)"></i>
+            </div>
           </div>
-          <div style="font-size: 14px; color: var(--color-neutral-700); margin-top: 6px;">
-            <span class="es">$500K a $10M en ingresos</span><span class="en">$500K to $10M in revenue</span>
+          <div class="tags-row">
+            <span class="pill pill--brand">Shopify</span>
+            <span class="pill">QuickBooks</span>
+            <span class="pill">Meta Ads</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section style="max-width: 1160px; margin: 0 auto; padding: 76px 32px;">
-      <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 18px;">
-        02 &nbsp;/&nbsp; <span class="es">El problema</span><span class="en">The problem</span>
+    <!-- What we do -->
+    <section class="section--tight wrap">
+      <p class="eyebrow eyebrow--muted"><span class="es">Qué hacemos</span><span class="en">What we do</span></p>
+      <h2 style="margin:10px 0 6px; max-width:20ch;">
+        <span class="bes">Tres cosas, un solo equipo.</span>
+        <span class="ben">Three things, one team.</span>
+      </h2>
+      <div class="grid grid-3" style="margin-top:32px;">
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3><span class="es">Dashboards</span><span class="en">Dashboards</span></h3>
+          <p>
+            <span class="bes">Una pantalla con los números que de verdad usas para decidir, conectada a tus fuentes actuales.</span>
+            <span class="ben">One screen with the numbers you actually decide on, connected to your current sources.</span>
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
+          </div>
+          <h3><span class="es">Reportes automatizados</span><span class="en">Automated reporting</span></h3>
+          <p>
+            <span class="bes">El trabajo semanal de consolidar, limpiar y enviar, convertido en un proceso que corre solo.</span>
+            <span class="ben">The weekly work of consolidating, cleaning and sending, turned into a process that runs itself.</span>
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+          </div>
+          <h3><span class="es">Pronóstico y modelado</span><span class="en">Forecasting &amp; modeling</span></h3>
+          <p>
+            <span class="bes">Saber cómo se ve el próximo trimestre, con un rango de confianza en vez de una corazonada.</span>
+            <span class="ben">Know what next quarter looks like, with a confidence range instead of a hunch.</span>
+          </p>
+        </div>
       </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start;">
-        <h2 style="font-family: var(--font-heading); font-weight: 600; font-size: 44px; line-height: 1.02; text-transform: uppercase; margin: 0; text-wrap: balance;">
+      <p class="fineprint" style="margin-top:20px;">
+        <span class="bes">Formación formal: maestría en Business Analytics, Universidad de Miami.</span>
+        <span class="ben">Formal training: MS in Business Analytics, University of Miami.</span>
+      </p>
+    </section>
+
+    <hr class="rule">
+
+    <!-- The problem -->
+    <section class="section wrap">
+      <p class="eyebrow eyebrow--muted"><span class="es">El problema</span><span class="en">The problem</span></p>
+      <div class="grid grid-2" style="gap:56px; align-items:start; margin-top:14px;">
+        <h2 style="max-width:16ch;">
           <span class="bes">Tus datos existen. Nadie tiene tiempo de leerlos.</span>
           <span class="ben">Your data exists. Nobody has time to read it.</span>
         </h2>
-        <div style="display: flex; flex-direction: column; gap: 18px; font-size: 17px; line-height: 1.6; color: var(--color-neutral-700);">
-          <p style="margin: 0;">
-            <span class="bes">Ventas en Shopify, contabilidad en QuickBooks, campañas en una hoja de cálculo, un CRM que nadie actualiza. La información está ahí, pero revisarla toma horas cada semana y las decisiones se toman por intuición.</span>
-            <span class="ben">Sales in Shopify, books in QuickBooks, campaigns in a spreadsheet, a CRM nobody updates. The information is there, but reviewing it takes hours every week and decisions get made on instinct.</span>
+        <div class="stack" style="gap:18px;">
+          <p>
+            <span class="bes">Ventas en Shopify, contabilidad en QuickBooks, campañas en una hoja de cálculo, un CRM que nadie actualiza. La información está ahí, pero revisarla toma horas cada semana y las decisiones terminan tomándose por intuición.</span>
+            <span class="ben">Sales in Shopify, books in QuickBooks, campaigns in a spreadsheet, a CRM nobody updates. The information is there, but reviewing it takes hours every week and decisions end up being made on instinct.</span>
           </p>
-          <p style="margin: 0;">
-            <span class="bes">Contratar un analista resuelve el problema y crea otro: salario, beneficios y overhead para una función que todavía no es de tiempo completo. Nosotros entregamos ese mismo trabajo por proyecto o por membresía mensual.</span>
+          <p>
+            <span class="bes">Contratar un analista resuelve el problema y crea otro: sueldo, prestaciones y overhead para una función que todavía no es de tiempo completo. Nosotros entregamos ese mismo trabajo por proyecto o por membresía mensual.</span>
+            <span class="ben">Hiring an analyst solves the problem and creates another: salary, benefits and overhead for a role that isn't full-time yet. We deliver that same work by project or on a monthly membership.</span>
           </p>
         </div>
       </div>
     </section>
 
-    <section style="max-width: 1160px; margin: 0 auto; padding: 76px 32px;">
-      <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 18px;">
-        03 &nbsp;/&nbsp; <span class="es">Cómo trabajamos</span><span class="en">How we work</span>
-      </div>
-      <h2 style="font-family: var(--font-heading); font-weight: 600; font-size: 44px; line-height: 1.02; text-transform: uppercase; margin: 0 0 40px; max-width: 26ch;">
-        <span class="bes">Cuatro pasos, sin transformación digital de seis meses</span>
-        <span class="ben">Four steps, no six-month digital transformation</span>
+    <!-- How we work -->
+    <section class="section wrap">
+      <p class="eyebrow eyebrow--muted"><span class="es">Cómo trabajamos</span><span class="en">How we work</span></p>
+      <h2 style="margin:10px 0 36px; max-width:24ch;">
+        <span class="bes">Cuatro pasos, sin transformación digital de seis meses.</span>
+        <span class="ben">Four steps, no six-month digital transformation.</span>
       </h2>
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--color-divider); border: 1px solid var(--color-divider);">
-        <div style="background: var(--color-bg); padding: 28px 24px;">
-          <div style="font-family: var(--font-heading); font-size: 46px; line-height: 1; color: var(--color-accent-400); margin-bottom: 14px;">01</div>
-          <div style="font-family: var(--font-heading); font-size: 22px; text-transform: uppercase; line-height: 1.1; margin-bottom: 8px;">
-            <span class="es">Llamada de diagnóstico</span><span class="en">Diagnostic call</span>
-          </div>
-          <p style="margin: 0; font-size: 16.5px; line-height: 1.55; color: var(--color-neutral-700);">
+      <div class="steps steps--4">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3><span class="es">Llamada de diagnóstico</span><span class="en">Diagnostic call</span></h3>
+          <p>
             <span class="bes">20 minutos: qué datos tienes, dónde viven y qué decisión quieres tomar con ellos.</span>
             <span class="ben">20 minutes: what data you have, where it lives, and what decision you want to make with it.</span>
           </p>
         </div>
-        <div style="background: var(--color-bg); padding: 28px 24px;">
-          <div style="font-family: var(--font-heading); font-size: 46px; line-height: 1; color: var(--color-accent-400); margin-bottom: 14px;">02</div>
-          <div style="font-family: var(--font-heading); font-size: 22px; text-transform: uppercase; line-height: 1.1; margin-bottom: 8px;">
-            <span class="es">Propuesta de alcance fijo</span><span class="en">Fixed-scope proposal</span>
-          </div>
-          <p style="margin: 0; font-size: 16.5px; line-height: 1.55; color: var(--color-neutral-700);">
-            <span class="bes">Entregables, métricas y fecha por escrito antes de que se firme nada.</span>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3><span class="es">Propuesta de alcance fijo</span><span class="en">Fixed-scope proposal</span></h3>
+          <p>
+            <span class="bes">Entregables, métricas y fechas por escrito antes de que se firme nada.</span>
             <span class="ben">Deliverables, metrics and dates in writing before anything is signed.</span>
           </p>
         </div>
-        <div style="background: var(--color-bg); padding: 28px 24px;">
-          <div style="font-family: var(--font-heading); font-size: 46px; line-height: 1; color: var(--color-accent-400); margin-bottom: 14px;">03</div>
-          <div style="font-family: var(--font-heading); font-size: 22px; text-transform: uppercase; line-height: 1.1; margin-bottom: 8px;">
-            <span class="es">Construcción en sprints</span><span class="en">Build in sprints</span>
-          </div>
-          <p style="margin: 0; font-size: 16.5px; line-height: 1.55; color: var(--color-neutral-700);">
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3><span class="es">Construcción en sprints</span><span class="en">Build in sprints</span></h3>
+          <p>
             <span class="bes">Ciclos de dos semanas con una revisión intermedia, para que veas avance real y corrijas rumbo.</span>
             <span class="ben">Two-week cycles with a mid-point review, so you see real progress and can correct course.</span>
           </p>
         </div>
-        <div style="background: var(--color-bg); padding: 28px 24px;">
-          <div style="font-family: var(--font-heading); font-size: 46px; line-height: 1; color: var(--color-accent-400); margin-bottom: 14px;">04</div>
-          <div style="font-family: var(--font-heading); font-size: 22px; text-transform: uppercase; line-height: 1.1; margin-bottom: 8px;">
-            <span class="es">Entrega y traspaso</span><span class="en">Handover</span>
-          </div>
-          <p style="margin: 0; font-size: 16.5px; line-height: 1.55; color: var(--color-neutral-700);">
+        <div class="step">
+          <div class="step-num">04</div>
+          <h3><span class="es">Entrega y traspaso</span><span class="en">Handover</span></h3>
+          <p>
             <span class="bes">Dashboard en producción, documentación corta y una sesión de capacitación con tu equipo.</span>
             <span class="ben">Dashboard in production, short documentation and one training session with your team.</span>
           </p>
         </div>
       </div>
     </section>
-
-    <section style="border-top: 1px solid var(--color-divider);">
-      <div style="max-width: 1160px; margin: 0 auto; padding: 68px 32px; display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between;">
-        <h2 style="font-family: var(--font-heading); font-weight: 600; font-size: 40px; line-height: 1.02; text-transform: uppercase; margin: 0; max-width: 30ch;">
-          <span class="bes">¿Empezamos con una llamada de 20 minutos?</span>
-          <span class="ben">Shall we start with a 20-minute call?</span>
-        </h2>
-        <a href="#" onclick="go('contact'); return false;" class="btn btn-primary blueprint" style="font-family: var(--font-heading); font-size: 17px; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 26px; border-radius: 0;">
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          <span class="es">Agendar llamada</span><span class="en">Book a call</span>
-        </a>
-      </div>
-    </section>
   </main>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>
+        <span class="bes">¿Empezamos con una llamada de 20 minutos?</span>
+        <span class="ben">Shall we start with a 20-minute call?</span>
+      </h2>
+      <a href="#" class="btn btn-primary btn-lg" onclick="go('contact'); return false;">
+        <span class="es">Agendar llamada</span><span class="en">Book a call</span>
+      </a>
+    </div>
+  </section>
   </section>
 
+  <!-- ═══════════════ SERVICES ═══════════════ -->
   <section class="page" data-page="services">
-  <main style="max-width: 1160px; margin: 0 auto; padding: 72px 32px;">
-    <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 18px;">
-      <span class="es">Servicios</span><span class="en">Services</span>
-    </div>
-    <h1 style="font-family: var(--font-heading); font-weight: 700; font-size: 60px; line-height: 0.98; text-transform: uppercase; margin: 0 0 22px; max-width: 24ch;">
-      <span class="bes">Tres formas de contratarnos</span>
-      <span class="ben">Start with one dashboard</span>
+  <main class="section wrap">
+    <p class="eyebrow"><span class="es">Servicios</span><span class="en">Services</span></p>
+    <h1 style="margin:14px 0 0; max-width:18ch;">
+      <span class="bes">Tres formas de trabajar con nosotros.</span>
+      <span class="ben">Three ways to work with us.</span>
     </h1>
-    <p style="font-size: 18px; line-height: 1.55; max-width: 60ch; color: var(--color-neutral-700); margin: 0 0 48px;">
-      <span class="bes">Empezamos por lo tangible —un dashboard que puedes ver— y avanzamos hacia automatización y modelado sólo cuando los datos justifican el siguiente paso. El precio se define por alcance en la llamada de diagnóstico.</span>
-      <span class="ben">Almost everyone starts the same way: one dashboard with the metrics you actually decide on. Automation and modeling come later, and only if the data justifies it.</span>
+    <p class="lead" style="margin-top:22px;">
+      <span class="bes">Casi todos empiezan igual: un dashboard con las métricas sobre las que realmente decides. La automatización y el modelado vienen después, y solo si los datos lo justifican. El precio se define por alcance en la llamada de diagnóstico.</span>
+      <span class="ben">Almost everyone starts the same way: one dashboard with the metrics you actually decide on. Automation and modeling come later, and only if the data justifies it. Price is set by scope on the diagnostic call.</span>
     </p>
 
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 28px;">
-      <div class="blueprint" style="display: flex; flex-direction: column; padding: 28px; background: transparent;">
-        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-        <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">
-          01 &nbsp;·&nbsp; <span class="es">Empezá aquí</span><span class="en">Start here</span>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 30px; line-height: 1.05; text-transform: uppercase; margin-bottom: 12px;">Dashboard Starter</div>
-        <p style="margin: 0 0 18px; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
-          <span class="bes">Un tablero en Power BI o Tableau con las métricas que realmente usas para decidir, conectado a tus fuentes actuales.</span>
-          <span class="ben">One Power BI or Tableau dashboard with the metrics you actually decide on, connected to your current sources.</span>
+    <div class="grid grid-3" style="margin-top:44px; align-items:stretch;">
+      <div class="card">
+        <p class="eyebrow"><span class="es">01 · Empieza aquí</span><span class="en">01 · Start here</span></p>
+        <h3>Dashboard Starter</h3>
+        <p>
+          <span class="bes">Un tablero en Power BI o Tableau con las métricas que usas para decidir, conectado a tus fuentes actuales.</span>
+          <span class="ben">One Power BI or Tableau dashboard with the metrics you decide on, connected to your current sources.</span>
         </p>
-        <ul style="margin: 0 0 22px; padding-left: 18px; font-size: 16.5px; line-height: 1.7; color: var(--color-neutral-700); display: flex; flex-direction: column; gap: 4px;">
+        <ul>
           <li><span class="es">Auditoría de fuentes de datos</span><span class="en">Data-source audit</span></li>
           <li><span class="es">Definición de KPIs con tu equipo</span><span class="en">KPI definition with your team</span></li>
           <li><span class="es">Dashboard en producción + capacitación</span><span class="en">Dashboard in production + training</span></li>
         </ul>
-        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px;">
-          <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.06em; color: var(--color-neutral-600);">
-            <span class="es">Proyecto de alcance fijo · 2–4 semanas</span><span class="en">Fixed-scope project · 2–4 weeks</span>
-          </div>
-          <a href="#" onclick="go('contact'); return false;" class="btn btn-primary" style="font-family: var(--font-heading); font-size: 16.5px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 18px; border-radius: 0;">
-            <span class="es">Agendar llamada</span><span class="en">Book a call</span>
-          </a>
+        <div class="card-foot">
+          <p class="fineprint"><span class="es">Proyecto de alcance fijo · 2–4 semanas</span><span class="en">Fixed-scope project · 2–4 weeks</span></p>
+          <a href="#" class="btn btn-primary btn-block" onclick="go('contact'); return false;"><span class="es">Agendar llamada</span><span class="en">Book a call</span></a>
         </div>
       </div>
 
-      <div class="blueprint" style="display: flex; flex-direction: column; padding: 28px; background: transparent;">
-        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-        <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">
-          02 &nbsp;·&nbsp; <span class="es">Membresía mensual</span><span class="en">Monthly membership</span>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 30px; line-height: 1.05; text-transform: uppercase; margin-bottom: 12px;">
-          <span class="es">Reportes &amp; Automatización</span><span class="en">Reporting &amp; Automation</span>
-        </div>
-        <p style="margin: 0 0 18px; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
+      <div class="card">
+        <p class="eyebrow"><span class="es">02 · Membresía mensual</span><span class="en">02 · Monthly membership</span></p>
+        <h3><span class="es">Reportes &amp; Automatización</span><span class="en">Reporting &amp; Automation</span></h3>
+        <p>
           <span class="bes">Tomamos el trabajo manual que aparece cada semana —consolidar, limpiar, enviar— y lo convertimos en un proceso que corre solo.</span>
           <span class="ben">We take the manual work that shows up every week — consolidating, cleaning, sending — and turn it into a process that runs itself.</span>
         </p>
-        <ul style="margin: 0 0 22px; padding-left: 18px; font-size: 16.5px; line-height: 1.7; color: var(--color-neutral-700); display: flex; flex-direction: column; gap: 4px;">
+        <ul>
           <li><span class="es">Reportes recurrentes automatizados</span><span class="en">Automated recurring reports</span></li>
-          <li><span class="es">Pipelines entre tus herramientas</span><span class="en">Pipelines across your tools</span></li>
+          <li><span class="es">Conexiones entre tus herramientas</span><span class="en">Pipelines across your tools</span></li>
           <li><span class="es">Mantenimiento y ajustes continuos</span><span class="en">Ongoing maintenance and changes</span></li>
         </ul>
-        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px;">
-          <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.06em; color: var(--color-neutral-600);">
-            <span class="es">Mes a mes · Cancelable</span><span class="en">Month to month · Cancel anytime</span>
-          </div>
-          <a href="#" onclick="go('contact'); return false;" class="btn btn-secondary" style="font-family: var(--font-heading); font-size: 16.5px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 18px; border-radius: 0;">
-            <span class="es">Agendar llamada</span><span class="en">Book a call</span>
-          </a>
+        <div class="card-foot">
+          <p class="fineprint"><span class="es">Mes a mes · Cancelable cuando quieras</span><span class="en">Month to month · Cancel anytime</span></p>
+          <a href="#" class="btn btn-ghost btn-block" onclick="go('contact'); return false;"><span class="es">Agendar llamada</span><span class="en">Book a call</span></a>
         </div>
       </div>
 
-      <div class="blueprint" style="display: flex; flex-direction: column; padding: 28px; background: transparent;">
-        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-        <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">
-          03 &nbsp;·&nbsp; <span class="es">Oferta premium</span><span class="en">Premium offer</span>
-        </div>
-        <div style="font-family: var(--font-heading); font-size: 30px; line-height: 1.05; text-transform: uppercase; margin-bottom: 12px;">
-          <span class="es">Modelado &amp; Forecasting</span><span class="en">Modeling &amp; Forecasting</span>
-        </div>
-        <p style="margin: 0 0 18px; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
-          <span class="bes">Donde la maestría en Business Analytics se nota: pronósticos, optimización, cohortes y unit economics sobre tus propios datos.</span>
-          <span class="ben">Where the Business Analytics master's shows: forecasting, optimization, cohorts and unit economics on your own data.</span>
+      <div class="card">
+        <p class="eyebrow"><span class="es">03 · Oferta premium</span><span class="en">03 · Premium offer</span></p>
+        <h3><span class="es">Modelado &amp; Forecasting</span><span class="en">Modeling &amp; Forecasting</span></h3>
+        <p>
+          <span class="bes">Donde se nota la maestría en Business Analytics: pronósticos, optimización y las cuentas de cuánto te cuesta un cliente frente a cuánto te deja.</span>
+          <span class="ben">Where the Business Analytics master's shows: forecasting, optimization, and the math of what a customer costs you versus what they're worth.</span>
         </p>
-        <ul style="margin: 0 0 22px; padding-left: 18px; font-size: 16.5px; line-height: 1.7; color: var(--color-neutral-700); display: flex; flex-direction: column; gap: 4px;">
+        <ul>
           <li><span class="es">Pronóstico de demanda e ingresos</span><span class="en">Demand and revenue forecasting</span></li>
           <li><span class="es">Optimización de inventario y precios</span><span class="en">Inventory and pricing optimization</span></li>
-          <li><span class="es">Cohortes, retención y unit economics</span><span class="en">Cohorts, retention and unit economics</span></li>
+          <li><span class="es">Cómo se quedan los clientes que entraron cada mes</span><span class="en">How each month's new customers stick around</span></li>
         </ul>
-        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 12px;">
-          <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.06em; color: var(--color-neutral-600);">
-            <span class="es">Proyecto independiente · 4–8 semanas</span><span class="en">Standalone project · 4–8 weeks</span>
-          </div>
-          <a href="#" onclick="go('contact'); return false;" class="btn btn-secondary" style="font-family: var(--font-heading); font-size: 16.5px; letter-spacing: 0.08em; text-transform: uppercase; padding: 11px 18px; border-radius: 0;">
-            <span class="es">Agendar llamada</span><span class="en">Book a call</span>
-          </a>
+        <div class="card-foot">
+          <p class="fineprint"><span class="es">Proyecto independiente · 4–8 semanas</span><span class="en">Standalone project · 4–8 weeks</span></p>
+          <a href="#" class="btn btn-ghost btn-block" onclick="go('contact'); return false;"><span class="es">Agendar llamada</span><span class="en">Book a call</span></a>
         </div>
       </div>
     </div>
 
+    <p class="lead" style="margin-top:36px;">
+      <span class="bes">¿No sabes cuál necesitas? Empieza por la llamada — salimos de ahí con una recomendación.</span>
+      <span class="ben">Not sure which one you need? Start with the call — we leave it with a recommendation.</span>
+    </p>
   </main>
   </section>
 
+  <!-- ═══════════════ WORK / DEMO ═══════════════ -->
   <section class="page" data-page="work">
-  <main style="max-width: 1160px; margin: 0 auto; padding: 72px 32px;">
-    <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 18px;">
-      <span class="es">Demo &amp; portafolio</span><span class="en">Demo &amp; portfolio</span>
-    </div>
-    <h1 style="font-family: var(--font-heading); font-weight: 700; font-size: 60px; line-height: 0.98; text-transform: uppercase; margin: 0 0 22px; max-width: 26ch;">
-      <span class="bes">Mira lo que recibes antes de comprarlo</span>
-      <span class="ben">See what you get before you buy it</span>
+  <main class="section wrap">
+    <p class="eyebrow"><span class="es">Demo &amp; portafolio</span><span class="en">Demo &amp; portfolio</span></p>
+    <h1 style="margin:14px 0 0; max-width:20ch;">
+      <span class="bes">Mira lo que recibes antes de comprarlo.</span>
+      <span class="ben">See what you get before you buy it.</span>
     </h1>
-    <p style="font-size: 18px; line-height: 1.55; max-width: 62ch; color: var(--color-neutral-700); margin: 0 0 46px;">
-      <span class="bes">Estos son tableros de demostración construidos con datos de muestra. En la llamada de diagnóstico los recorremos en vivo y te mostramos cómo se verían con tus propias fuentes.</span>
-      <span class="ben">Demo dashboards built on sample data. On the call we walk through them with your real sources.</span>
+    <p class="lead" style="margin-top:22px;">
+      <span class="bes">Estos son tableros de demostración con datos de muestra. En la llamada de diagnóstico los recorremos en vivo y te mostramos cómo se verían con tus propias fuentes.</span>
+      <span class="ben">These are demo dashboards built on sample data. On the diagnostic call we walk through them live and show how they'd look with your own sources.</span>
     </p>
 
-    <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px;">
-      <div style="min-width: 0; display: flex; flex-direction: column;">
-        <div class="blueprint" style="position: relative; min-width: 0; flex: 1; display: flex; margin-bottom: 18px; background: var(--color-neutral-100); overflow: hidden;">
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          <div style="display: flex; flex-direction: column; flex: 1; min-width: 0; background: var(--color-neutral-100);">
-          <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--color-divider);">
-            <span style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);">Magnum &middot; <span class="es">Retail</span><span class="en">Retail</span></span>
-            <span style="margin-left: auto; font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700);"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
+    <div class="grid grid-2" style="margin-top:44px; gap:40px; align-items:start;">
+      <!-- Demo 01 -->
+      <div class="stack" style="gap:16px;">
+        <div class="mock">
+          <div class="mock-bar">
+            <span>Magnum · <span class="es">Retail</span><span class="en">Retail</span></span>
+            <span class="tag-sample"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
           </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--color-divider);">
-            <div style="background: var(--color-neutral-100); padding: 14px 16px;">
-              <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 6px;"><span class="es">Ingresos del mes</span><span class="en">Revenue MTD</span></div>
-              <div style="font-family: var(--font-heading); font-size: 26px; line-height: 1;">$150,170</div>
-              <div style="font-size: 12.5px; color: var(--color-accent-700); margin-top: 4px;">+9.2% vs. Jul</div>
+          <div class="mock-grid">
+            <div class="mock-cell">
+              <div class="k"><span class="es">Ingresos del mes</span><span class="en">Revenue MTD</span></div>
+              <div class="v">$150,170</div>
+              <div class="d d-pos">+9.2% vs. Jul</div>
             </div>
-            <div style="background: var(--color-neutral-100); padding: 14px 16px;">
-              <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 6px;"><span class="es">Margen mezclado</span><span class="en">Blended margin</span></div>
-              <div style="font-family: var(--font-heading); font-size: 26px; line-height: 1;">34.6%</div>
-              <div style="font-size: 12.5px; color: var(--color-accent-700); margin-top: 4px;">+2.1 pts</div>
+            <div class="mock-cell">
+              <div class="k"><span class="es">Margen mezclado</span><span class="en">Blended margin</span></div>
+              <div class="v">34.6%</div>
+              <div class="d d-pos">+2.1 pts</div>
             </div>
           </div>
-
-          <div style="padding: 16px; border-top: 1px solid var(--color-divider); flex: 1;">
-            <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 12px;">
-              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);"><span class="es">Ingresos por canal</span><span class="en">Revenue by channel</span></span>
-              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; color: var(--color-neutral-600);">AUG 2026</span>
+          <div class="mock-section">
+            <div class="hd">
+              <span><span class="es">Ingresos por canal</span><span class="en">Revenue by channel</span></span>
+              <span>AUG 2026</span>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 9px;">
-            <div style="display: flex; align-items: center; gap: 10px;">
-              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); width: 62px; flex: none;">Shopify</span>
-              <div style="flex: 1; min-width: 0; height: 12px; background: var(--color-neutral-200);">
-                <div style="width: 100%; height: 100%; background: var(--color-accent-800);"></div>
-              </div>
-              <span style="font-family: ui-monospace, monospace; font-size: 11.5px; color: var(--color-neutral-700); width: 54px; flex: none; text-align: right;">$61,240</span>
+            <div class="bar-row">
+              <span class="lbl">Shopify</span>
+              <span class="track"><span style="width:100%"></span></span>
+              <span class="amt">$61,240</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 10px;">
-              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); width: 62px; flex: none;">Amazon</span>
-              <div style="flex: 1; min-width: 0; height: 12px; background: var(--color-neutral-200);">
-                <div style="width: 74%; height: 100%; background: var(--color-accent-700);"></div>
-              </div>
-              <span style="font-family: ui-monospace, monospace; font-size: 11.5px; color: var(--color-neutral-700); width: 54px; flex: none; text-align: right;">$45,310</span>
+            <div class="bar-row">
+              <span class="lbl">Amazon</span>
+              <span class="track"><span style="width:74%"></span></span>
+              <span class="amt">$45,310</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 10px;">
-              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); width: 62px; flex: none;">Retail</span>
-              <div style="flex: 1; min-width: 0; height: 12px; background: var(--color-neutral-200);">
-                <div style="width: 46%; height: 100%; background: var(--color-accent-500);"></div>
-              </div>
-              <span style="font-family: ui-monospace, monospace; font-size: 11.5px; color: var(--color-neutral-700); width: 54px; flex: none; text-align: right;">$28,150</span>
+            <div class="bar-row">
+              <span class="lbl">Retail</span>
+              <span class="track"><span style="width:46%;background:var(--chart-3)"></span></span>
+              <span class="amt">$28,150</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 10px;">
-              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); width: 62px; flex: none;">Wholesale</span>
-              <div style="flex: 1; min-width: 0; height: 12px; background: var(--color-neutral-200);">
-                <div style="width: 25%; height: 100%; background: var(--color-accent-300);"></div>
-              </div>
-              <span style="font-family: ui-monospace, monospace; font-size: 11.5px; color: var(--color-neutral-700); width: 54px; flex: none; text-align: right;">$15,470</span>
-            </div>
-            </div>
-
-            <div style="margin-top: 16px;">
-              <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 4px;"><span class="es">Margen por producto</span><span class="en">Margin by product</span></div>
-              <div style="display: flex; align-items: center; justify-content: space-between; padding: 5px 0; border-top: 1px solid var(--color-divider);">
-                <span style="font-size: 12px; color: var(--color-neutral-700);">Bundle A</span>
-                <span style="font-family: ui-monospace, monospace; font-size: 12.5px; color: var(--color-accent-700);">41.2%</span>
-              </div>
-              <div style="display: flex; align-items: center; justify-content: space-between; padding: 5px 0; border-top: 1px solid var(--color-divider);">
-                <span style="font-size: 12px; color: var(--color-neutral-700);">Refill kit</span>
-                <span style="font-family: ui-monospace, monospace; font-size: 12.5px; color: var(--color-accent-700);">36.8%</span>
-              </div>
-              <div style="display: flex; align-items: center; justify-content: space-between; padding: 5px 0; border-top: 1px solid var(--color-divider);">
-                <span style="font-size: 12px; color: var(--color-neutral-700);">Starter set</span>
-                <span style="font-family: ui-monospace, monospace; font-size: 12.5px; color: var(--color-neutral-600);">22.4%</span>
-              </div>
+            <div class="bar-row" style="margin-bottom:0;">
+              <span class="lbl">Wholesale</span>
+              <span class="track"><span style="width:25%;background:var(--chart-2)"></span></span>
+              <span class="amt">$15,470</span>
             </div>
           </div>
-
-          <div style="display: flex; align-items: center; gap: 8px; padding: 0 16px 16px; flex-wrap: wrap;">
-            <span class="tag tag-accent">Shopify</span>
-            <span class="tag tag-neutral">QuickBooks</span>
-            <span style="margin-left: auto; font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);">
-              <span class="es">Stock bajo &middot; 3 SKU</span><span class="en">Low stock &middot; 3 SKUs</span>
-            </span>
+          <div class="tags-row">
+            <span class="pill pill--brand">Shopify</span>
+            <span class="pill">QuickBooks</span>
+            <span class="pill pill--accent"><span class="es">Stock bajo · 3 SKU</span><span class="en">Low stock · 3 SKUs</span></span>
           </div>
         </div>
-        </div>
-        <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">Demo 01 · Retail / e-commerce</div>
-        <div style="font-family: var(--font-heading); font-size: 26px; text-transform: uppercase; line-height: 1.1; margin-bottom: 8px;">
-          <span class="es">Ventas y margen por canal</span><span class="en">Sales and margin by channel</span>
-        </div>
-        <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
-          <span class="bes">Shopify + hojas de cálculo consolidadas en una vista diaria: ingresos, margen por producto y alertas de inventario.</span>
-          <span class="ben">Shopify + spreadsheets consolidated into a daily view: revenue, margin by product and inventory alerts.</span>
+        <p class="eyebrow eyebrow--muted">Demo 01 · Retail / e-commerce</p>
+        <h3><span class="es">Ventas y margen por canal</span><span class="en">Sales and margin by channel</span></h3>
+        <p>
+          <span class="bes">Shopify y hojas de cálculo consolidados en una vista diaria: ingresos, margen por producto y alertas de inventario.</span>
+          <span class="ben">Shopify and spreadsheets consolidated into a daily view: revenue, margin by product and inventory alerts.</span>
+        </p>
+        <p class="fineprint">
+          <span class="bes">Responde a: ¿qué canal realmente deja dinero, y qué producto lo está drenando?</span>
+          <span class="ben">Answers: which channel actually makes money, and which product is draining it?</span>
         </p>
       </div>
-      <div style="min-width: 0; display: flex; flex-direction: column;">
-        <div class="blueprint" style="position: relative; min-width: 0; flex: 1; display: flex; margin-bottom: 18px; background: var(--color-neutral-100); overflow: hidden;">
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-          <div style="display: flex; flex-direction: column; flex: 1; min-width: 0; background: var(--color-neutral-100);">
-          <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--color-divider);">
-            <span style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);">Magnum &middot; <span class="es">Servicios</span><span class="en">Services</span></span>
-            <span style="margin-left: auto; font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700);"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
-          </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--color-divider);">
-            <div style="background: var(--color-neutral-100); padding: 14px 16px;">
-              <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 6px;"><span class="es">Pron&oacute;stico 12 meses</span><span class="en">12-month forecast</span></div>
-              <div style="font-family: var(--font-heading); font-size: 26px; line-height: 1;">$1.24M</div>
-              <div style="font-size: 12.5px; color: var(--color-neutral-700); margin-top: 4px;">&plusmn;8% <span class="es">banda</span><span class="en">band</span></div>
+      <!-- Demo 02 -->
+      <div class="stack" style="gap:16px;">
+        <div class="mock">
+          <div class="mock-bar">
+            <span>Magnum · <span class="es">Servicios</span><span class="en">Services</span></span>
+            <span class="tag-sample"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
+          </div>
+          <div class="mock-grid">
+            <div class="mock-cell">
+              <div class="k"><span class="es">Pronóstico 12 meses</span><span class="en">12-month forecast</span></div>
+              <div class="v">$1.24M</div>
+              <div class="d d-flat">±8% <span class="es">banda</span><span class="en">band</span></div>
             </div>
-            <div style="background: var(--color-neutral-100); padding: 14px 16px;">
-              <div style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); margin-bottom: 6px;"><span class="es">Retenci&oacute;n neta</span><span class="en">Net retention</span></div>
-              <div style="font-family: var(--font-heading); font-size: 26px; line-height: 1;">112%</div>
-              <div style="font-size: 12.5px; color: var(--color-accent-700); margin-top: 4px;">+6 pts</div>
+            <div class="mock-cell">
+              <div class="k"><span class="es">Retención neta</span><span class="en">Net retention</span></div>
+              <div class="v">112%</div>
+              <div class="d d-pos">+6 pts</div>
             </div>
           </div>
-
-          <div style="padding: 16px; border-top: 1px solid var(--color-divider);">
-            <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px;">
-              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);"><span class="es">Proyecci&oacute;n con escenarios</span><span class="en">Projection with scenarios</span></span>
-              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; color: var(--color-neutral-600);">FY27</span>
+          <div class="mock-section">
+            <div class="hd">
+              <span><span class="es">Proyección con escenarios</span><span class="en">Projection with scenarios</span></span>
+              <span>FY27</span>
             </div>
             <svg viewBox="0 0 300 76" width="100%" height="76" role="img" preserveAspectRatio="none"
                  aria-label="Revenue projection with a confidence band widening over twelve months">
               <polygon points="0,50 27,46 55,44 82,39 109,36 136,31 164,27 191,21 218,16 246,10 273,5 300,0 300,26 273,29 246,32 218,36 191,39 164,43 136,46 109,49 82,52 55,55 27,57 0,58"
-                       fill="var(--color-accent-300)" opacity="0.45"></polygon>
+                       fill="var(--chart-2)" opacity="0.5"></polygon>
               <polyline points="0,54 27,51 55,49 82,45 109,42 136,38 164,35 191,30 218,26 246,21 273,17 300,13"
-                        fill="none" stroke="var(--color-accent-700)" stroke-width="2"
-                        vector-effect="non-scaling-stroke"></polyline>
+                        fill="none" stroke="var(--chart-6)" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
             </svg>
           </div>
-
-          <div style="padding: 0 16px 16px; flex: 1;">
-            <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px;">
-              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);"><span class="es">Retenci&oacute;n por cohorte</span><span class="en">Retention by cohort</span></span>
-              <span style="font-family: ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; color: var(--color-neutral-600);">M0 &mdash; M5</span>
+          <div class="mock-section">
+            <div class="hd">
+              <span><span class="es">Retención por grupo de clientes</span><span class="en">Retention by customer group</span></span>
+              <span>M0 — M5</span>
             </div>
-            <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 3px;">
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 100%, transparent);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 73%, transparent);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 59%, transparent);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 46%, transparent);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 35%, transparent);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 28%, transparent);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 100%, transparent);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 66%, transparent);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 49%, transparent);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 39%, transparent);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 25%, transparent);"></div>
-              <div style="height: 18px; background: var(--color-neutral-200);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 100%, transparent);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 80%, transparent);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 63%, transparent);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 52%, transparent);"></div>
-              <div style="height: 18px; background: var(--color-neutral-200);"></div>
-              <div style="height: 18px; background: var(--color-neutral-200);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 100%, transparent);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 69%, transparent);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 56%, transparent);"></div>
-              <div style="height: 18px; background: var(--color-neutral-200);"></div>
-              <div style="height: 18px; background: var(--color-neutral-200);"></div>
-              <div style="height: 18px; background: var(--color-neutral-200);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 100%, transparent);"></div>
-              <div style="height: 18px; background: color-mix(in srgb, var(--color-accent-700) 83%, transparent);"></div>
-              <div style="height: 18px; background: var(--color-neutral-200);"></div>
-              <div style="height: 18px; background: var(--color-neutral-200);"></div>
-              <div style="height: 18px; background: var(--color-neutral-200);"></div>
-              <div style="height: 18px; background: var(--color-neutral-200);"></div>
+            <div class="cohort">
+              <i style="background:var(--chart-6)"></i><i style="background:color-mix(in srgb,var(--chart-6) 73%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 59%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 46%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 35%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 28%,#fff)"></i>
+              <i style="background:var(--chart-6)"></i><i style="background:color-mix(in srgb,var(--chart-6) 66%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 49%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 39%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 25%,#fff)"></i><i style="background:var(--surface-2)"></i>
+              <i style="background:var(--chart-6)"></i><i style="background:color-mix(in srgb,var(--chart-6) 80%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 63%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 52%,#fff)"></i><i style="background:var(--surface-2)"></i><i style="background:var(--surface-2)"></i>
+              <i style="background:var(--chart-6)"></i><i style="background:color-mix(in srgb,var(--chart-6) 69%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 56%,#fff)"></i><i style="background:var(--surface-2)"></i><i style="background:var(--surface-2)"></i><i style="background:var(--surface-2)"></i>
+              <i style="background:var(--chart-6)"></i><i style="background:color-mix(in srgb,var(--chart-6) 83%,#fff)"></i><i style="background:var(--surface-2)"></i><i style="background:var(--surface-2)"></i><i style="background:var(--surface-2)"></i><i style="background:var(--surface-2)"></i>
             </div>
           </div>
         </div>
-        </div>
-        <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 8px;">Demo 02 · <span class="es">Servicios profesionales</span><span class="en">Professional services</span></div>
-        <div style="font-family: var(--font-heading); font-size: 26px; text-transform: uppercase; line-height: 1.1; margin-bottom: 8px;">
-          <span class="es">Pronóstico de ingresos y cohortes</span><span class="en">Revenue forecast and cohorts</span>
-        </div>
-        <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
-          <span class="bes">Proyección a 12 meses con escenarios, retención por cohorte de cliente y costo de adquisición contra valor de vida.</span>
-          <span class="ben">A 12-month projection with scenarios, retention by customer cohort, and acquisition cost against lifetime value.</span>
+        <p class="eyebrow eyebrow--muted">Demo 02 · <span class="es">Servicios profesionales</span><span class="en">Professional services</span></p>
+        <h3><span class="es">Pronóstico de ingresos y retención</span><span class="en">Revenue forecast and retention</span></h3>
+        <p>
+          <span class="bes">Proyección a 12 meses con escenarios, retención por grupo de clientes y costo de adquisición contra valor de vida.</span>
+          <span class="ben">A 12-month projection with scenarios, retention by customer group, and acquisition cost against lifetime value.</span>
+        </p>
+        <p class="fineprint">
+          <span class="bes">Responde a: ¿podemos permitirnos contratar el próximo trimestre?</span>
+          <span class="ben">Answers: can we afford to hire next quarter?</span>
         </p>
       </div>
     </div>
 
-    <div style="margin-top: 52px; padding-top: 40px; border-top: 1px solid var(--color-divider); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+    <div class="grid grid-2" style="margin-top:52px; gap:40px; align-items:center; padding-top:40px; border-top:1px solid var(--line);">
       <div>
-        <div style="font-family: var(--font-heading); font-size: 34px; text-transform: uppercase; line-height: 1.05; margin-bottom: 12px;">
-          <span class="es">Buscamos dos casos de estudio</span><span class="en">We're looking for two case studies</span>
-        </div>
-        <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.6; color: var(--color-neutral-700);">
+        <h2 style="font-size:1.9rem;">
+          <span class="bes">Buscamos dos casos de estudio.</span>
+          <span class="ben">We're looking for two case studies.</span>
+        </h2>
+        <p style="margin-top:12px;">
           <span class="bes">Estamos abriendo dos lugares para proyectos iniciales a precio reducido, a cambio de un testimonio y permiso para publicar el caso. Si tu negocio encaja con el perfil, es la forma más económica de trabajar con nosotros.</span>
-          <span class="ben">Two slots at a reduced rate, in exchange for a testimonial and permission to publish the case.</span>
+          <span class="ben">We're opening two slots for early projects at a reduced rate, in exchange for a testimonial and permission to publish the case. If your business fits the profile, it's the most affordable way to work with us.</span>
         </p>
-        <a href="#" onclick="go('contact'); return false;" class="btn btn-primary blueprint" style="font-family: var(--font-heading); font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px 22px; border-radius: 0;">
-          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <a href="#" class="btn btn-primary" style="margin-top:8px;" onclick="go('contact'); return false;">
           <span class="es">Agendar llamada</span><span class="en">Book a call</span>
         </a>
       </div>
-      <div class="blueprint" style="padding: 26px; background: transparent;">
-        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-        <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 14px;">
-          <span class="es">Perfil que buscamos</span><span class="en">Profile we're looking for</span>
-        </div>
-        <ul style="margin: 0; padding-left: 18px; font-size: 16.5px; line-height: 1.7; color: var(--color-neutral-700); display: flex; flex-direction: column; gap: 6px;">
+      <div class="card card--wash">
+        <p class="eyebrow"><span class="es">Perfil que buscamos</span><span class="en">Profile we're looking for</span></p>
+        <ul>
           <li><span class="es">Ingresos anuales entre $500K y $10M</span><span class="en">$500K to $10M in annual revenue</span></li>
           <li><span class="es">Datos ya digitales (Shopify, QuickBooks, CRM, hojas de cálculo)</span><span class="en">Data already digital (Shopify, QuickBooks, CRM, spreadsheets)</span></li>
           <li><span class="es">Una decisión concreta que hoy se toma a ciegas</span><span class="en">One concrete decision made blind today</span></li>
@@ -639,71 +496,64 @@
   </main>
   </section>
 
+  <!-- ═══════════════ CONTACT ═══════════════ -->
   <section class="page" data-page="contact">
-  <main style="max-width: 1160px; margin: 0 auto; padding: 72px 32px;">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
+  <main class="section wrap">
+    <div class="grid grid-2" style="gap:64px; align-items:start;">
       <div>
-        <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 18px;">
-          <span class="es">Contacto</span><span class="en">Contact</span>
-        </div>
-        <h1 style="font-family: var(--font-heading); font-weight: 700; font-size: 56px; line-height: 0.98; text-transform: uppercase; margin: 0 0 20px;">
-          <span class="bes">Agenda 20 minutos</span><span class="ben">Book 20 minutes</span>
+        <p class="eyebrow"><span class="es">Contacto</span><span class="en">Contact</span></p>
+        <h1 style="margin:14px 0 0;">
+          <span class="bes">Agenda 20 minutos.</span><span class="ben">Book 20 minutes.</span>
         </h1>
-        <p style="font-size: 17px; line-height: 1.6; color: var(--color-neutral-700); margin: 0 0 30px; max-width: 46ch;">
-          <span class="bes">Cuéntanos dónde viven tus datos y qué decisión te cuesta tomar. Respondemos en menos de 24 horas con una propuesta de agenda.</span>
+        <p class="lead" style="margin-top:20px;">
+          <span class="bes">Cuéntanos dónde viven tus datos y qué decisión te cuesta tomar. Respondemos en menos de 24 horas con horarios para reunirnos.</span>
           <span class="ben">Tell us where your data lives and which decision is hard to make. We reply within 24 hours with times to meet.</span>
         </p>
-        <div style="display: flex; flex-direction: column; gap: 14px; padding: 22px 0; border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider); margin-bottom: 30px;">
-          <div style="display: flex; gap: 14px; font-size: 16.5px;">
-            <span style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); width: 92px; flex: none; padding-top: 3px;">Email</span>
-            <a href="mailto:dxr1491@miami.edu">dxr1491@miami.edu</a>
-          </div>
-          <div style="display: flex; gap: 14px; font-size: 16.5px;">
-            <span style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); width: 92px; flex: none; padding-top: 3px;">WhatsApp</span>
-            <a href="https://wa.me/17867701820">+1 (786) 770-1820</a>
-          </div>
-          <div style="display: flex; gap: 14px; font-size: 16.5px;">
-            <span style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600); width: 92px; flex: none; padding-top: 3px;">
-              <span class="es">Base</span><span class="en">Based in</span>
+
+        <div style="margin:28px 0 32px;">
+          <div class="contact-row">
+            <span class="k">Email</span>
+            <span class="v">
+              <a href="mailto:dxr1491@miami.edu">dxr1491@miami.edu</a>
+              <a href="mailto:augustoriverof@hotmail.com">augustoriverof@hotmail.com</a>
             </span>
-            <span>Miami, Florida &nbsp;·&nbsp; <span class="es">remoto en EE. UU. y LatAm</span><span class="en">remote across the US and LatAm</span></span>
+          </div>
+          <div class="contact-row">
+            <span class="k">WhatsApp</span>
+            <span class="v"><a href="https://wa.me/17867701820">+1 (786) 770-1820</a></span>
+          </div>
+          <div class="contact-row">
+            <span class="k"><span class="es">Base</span><span class="en">Based in</span></span>
+            <span class="v"><span>Miami, Florida &nbsp;·&nbsp; <span class="es">remoto en EE. UU. y LatAm</span><span class="en">remote across the US and LatAm</span></span></span>
           </div>
         </div>
 
-        <div style="font-family: ui-monospace, monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 20px;">FAQ</div>
-        <div style="display: flex; flex-direction: column; gap: 22px;">
+        <p class="eyebrow" style="margin-bottom:16px;">FAQ</p>
+        <div class="faq">
           <div>
-            <div style="font-family: var(--font-heading); font-size: 21px; text-transform: uppercase; line-height: 1.15; margin-bottom: 6px;">
-              <span class="es">¿Cuánto cuesta?</span><span class="en">How much does it cost?</span>
-            </div>
-            <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
-              <span class="bes">Depende del alcance, y preferimos no dar un número antes de entenderlo. En la llamada de 20 minutos salimos con un rango concreto y por escrito.</span>
+            <h3><span class="es">¿Cuánto cuesta?</span><span class="en">How much does it cost?</span></h3>
+            <p>
+              <span class="bes">Un dashboard es un proyecto de alcance fijo de 2 a 4 semanas, a un precio acordado antes de empezar — nunca por hora. La llamada de 20 minutos termina con ese número por escrito.</span>
               <span class="ben">A dashboard is a fixed-scope project of 2 to 4 weeks, at a price agreed before we start — never hourly. The 20-minute call ends with that number in writing.</span>
             </p>
           </div>
           <div>
-            <div style="font-family: var(--font-heading); font-size: 21px; text-transform: uppercase; line-height: 1.15; margin-bottom: 6px;">
-              <span class="es">¿Cuánto tarda el primer dashboard?</span><span class="en">How long until the first dashboard?</span>
-            </div>
-            <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
-              <span class="bes">Entre dos y cuatro semanas desde que tenemos acceso a los datos, con una revisión intermedia a mitad del camino.</span>
+            <h3><span class="es">¿Cuánto tarda el primer dashboard?</span><span class="en">How long until the first dashboard?</span></h3>
+            <p>
+              <span class="bes">Entre dos y cuatro semanas desde que tenemos acceso a los datos, con una revisión a mitad del camino.</span>
               <span class="ben">Two to four weeks from the moment we have data access, with a review at the mid-point.</span>
             </p>
           </div>
           <div>
-            <div style="font-family: var(--font-heading); font-size: 21px; text-transform: uppercase; line-height: 1.15; margin-bottom: 6px;">
-              <span class="es">¿Y si mis datos están hechos un desastre?</span><span class="en">What if my data is a mess?</span>
-            </div>
-            <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
-              <span class="bes">Es lo normal. Parte del proyecto es ordenar y consolidar las fuentes; sólo necesitamos que los datos existan en formato digital.</span>
+            <h3><span class="es">¿Y si mis datos están hechos un desastre?</span><span class="en">What if my data is a mess?</span></h3>
+            <p>
+              <span class="bes">Es lo normal. Ordenar y consolidar las fuentes es parte del proyecto; solo necesitamos que los datos existan en formato digital.</span>
               <span class="ben">That's the norm. Cleaning and consolidating sources is part of the project; we only need the data to exist digitally.</span>
             </p>
           </div>
           <div>
-            <div style="font-family: var(--font-heading); font-size: 21px; text-transform: uppercase; line-height: 1.15; margin-bottom: 6px;">
-              <span class="es">¿Quién es el equipo?</span><span class="en">Who is the team?</span>
-            </div>
-            <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
+            <h3><span class="es">¿Quién es el equipo?</span><span class="en">Who is the team?</span></h3>
+            <p>
               <span class="bes">Tres socios con maestría en Business Analytics de la Universidad de Miami.</span>
               <span class="ben">Three partners with a Business Analytics master's from the University of Miami.</span>
             </p>
@@ -711,44 +561,41 @@
         </div>
       </div>
 
-      <div class="blueprint" style="padding: 32px; background: transparent;">
-        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
-        
-        <div style="display: flex; flex-direction: column; gap: 18px;">
-          <div style="font-family: var(--font-heading); font-size: 26px; text-transform: uppercase; line-height: 1.1;">
-            <span class="es">Solicita tu llamada</span><span class="en">Request your call</span>
-          </div>
-          <p style="margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--color-neutral-700);">
-            <span class="bes">Escr&iacute;benos con tu nombre, empresa y d&oacute;nde viven tus datos hoy. Respondemos en menos de 24 horas.</span>
-            <span class="ben">Pick whichever channel you prefer.</span>
-          </p>
-          <a href="mailto:dxr1491@miami.edu?subject=Solicitud%20de%20llamada%20-%20Magnum%20Analytics" class="btn btn-primary btn-block blueprint" style="font-family: var(--font-heading); font-size: 17px; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 22px; border-radius: 0; text-align: center;">
-            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div class="card">
+        <h3><span class="es">Solicita tu llamada</span><span class="en">Request your call</span></h3>
+        <p>
+          <span class="bes">Escríbenos con tu nombre, tu empresa y dónde viven tus datos hoy. Respondemos en menos de 24 horas.</span>
+          <span class="ben">Write to us with your name, your company and where your data lives today. We reply within 24 hours.</span>
+        </p>
+        <div class="card-foot">
+          <a href="mailto:dxr1491@miami.edu,augustoriverof@hotmail.com?subject=Solicitud%20de%20llamada%20-%20Magnum%20Analytics" class="btn btn-primary btn-block">
             <span class="es">Escribir por email</span><span class="en">Email us</span>
           </a>
-          <a href="https://wa.me/17867701820" class="btn btn-secondary btn-block blueprint" style="font-family: var(--font-heading); font-size: 17px; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px 22px; border-radius: 0; text-align: center;">
-            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <a href="https://wa.me/17867701820" class="btn btn-ghost btn-block">
             <span class="es">Escribir por WhatsApp</span><span class="en">Message on WhatsApp</span>
           </a>
-          <div style="font-family: ui-monospace, monospace; font-size: 12.5px; line-height: 1.5; color: var(--color-neutral-600);">
-            <span class="bes">Usamos tus datos s&oacute;lo para responderte. Sin listas de correo.</span>
+          <p class="fineprint">
+            <span class="bes">Usamos tus datos solo para responderte. Sin listas de correo.</span>
             <span class="ben">We use your details only to reply. No mailing lists.</span>
-          </div>
+          </p>
         </div>
-
-        
       </div>
     </div>
   </main>
   </section>
 
-  <footer style="border-top: 1px solid var(--color-divider); margin-top: 40px;">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 34px 32px; display: flex; flex-wrap: wrap; gap: 24px; align-items: baseline; justify-content: space-between;">
-      <div style="display: flex; align-items: baseline; gap: 12px;">
-        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 20px; letter-spacing: 0.06em; text-transform: uppercase;">Magnum</span>
-        <span style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-600);">Business Intelligence · Miami, FL</span>
+  <!-- ─────────────── Footer ─────────────── -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="wordmark" style="cursor:default;">
+        <b>Magnum</b><span>Business Intelligence · Miami, FL</span>
       </div>
-      <div style="font-family: ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.1em; color: var(--color-neutral-600);">© 2026 Magnum Analytics</div>
+      <div style="display:flex; gap:20px; flex-wrap:wrap; font-size:0.9rem;">
+        <a href="mailto:dxr1491@miami.edu">dxr1491@miami.edu</a>
+        <a href="mailto:augustoriverof@hotmail.com">augustoriverof@hotmail.com</a>
+        <a href="https://wa.me/17867701820">WhatsApp</a>
+      </div>
+      <div class="muted" style="font-size:0.85rem;">© 2026 Magnum Analytics</div>
     </div>
   </footer>
 </div>
