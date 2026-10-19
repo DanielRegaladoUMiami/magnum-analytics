@@ -22,6 +22,8 @@
   .steps--4 { grid-template-columns: repeat(2, 1fr); }
 
   .grid-2 { gap: 32px !important; }
+
+  .service { grid-template-columns: 1fr; gap: 28px; padding-block: 44px; }
 }
 
 /* ───────────── Header → dropdown menu ───────────── */
@@ -95,6 +97,12 @@
 
   .card { padding: 22px; }
   .step { padding: 22px 20px; }
+
+  .tasks-hd { display: none; }
+  .task { grid-template-columns: 1fr; gap: 4px; }
+  .task .r::before { content: "Recibes · "; font-weight: 600; color: var(--brand-ink); }
+  [data-l="en"] .task .r::before { content: "You get · "; }
+  .tasks .btn { width: 100%; }
 
   .contact-row { flex-direction: column; gap: 4px; }
   .contact-row .k { width: auto; padding-top: 0; }

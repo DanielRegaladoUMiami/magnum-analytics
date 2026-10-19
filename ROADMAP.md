@@ -1,6 +1,30 @@
 # Roadmap — magnum-analytics
 
-## Current milestone: v0.2 — redesign (clarity + warmth)
+## Current milestone: v0.3 — services repositioned (BI / ML / AI)
+
+Driven by Daniel, Oct 2026. The offer is consulting + execution: we do the task and
+deliver the result; we do not sell software for the client to run. The site had been
+organised by package (Starter / Membership / Premium) and the home strip listed only BI
+work.
+
+- [x] Services page rebuilt around three practice areas: Business Intelligence, Machine
+  Learning, Inteligencia artificial — each a "what we do → what you get" task list
+- [x] H1 + lead state the thesis outright ("Hacemos el trabajo. Tú recibes el resultado.")
+- [x] Engagement shape moved to a cross-cutting strip (fixed-scope project / monthly
+  membership / no software to learn)
+- [x] Home "What we do" strip mirrors the three areas; links to Services
+- [x] Cost FAQ generalised to all three areas; new FAQ "¿Tengo que comprar o aprender
+  algún software?"
+- [x] Meta / OG descriptions name the three areas
+- [ ] **Brand descriptor.** Hero eyebrow, `<title>`, OG title and footer still say
+  "Business Intelligence · Miami". With three areas the descriptor is narrower than the
+  offer. Daniel is working on the brand image; decide the line there, then update all
+  four copies together.
+- [ ] **Third demo for the AI area.** The Demo page covers BI (Demo 01) and ML (Demo 02)
+  but nothing for assistants/agents. An HTML/CSS mock of an assistant answering from a
+  policy document, with a citation, would complete the set — same "sample data" rule.
+
+## v0.2 — redesign (clarity + warmth) — complete
 
 Driven by Augusto (site co-owner), Sep 2026. Two problems with v0.1: the site did not
 say plainly *what we do*, and the ES/EN copy had drifted apart; and the cold-grey +

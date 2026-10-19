@@ -339,6 +339,72 @@ img, svg { display: block; max-width: 100%; }
 .tags-row { display: flex; align-items: center; gap: 8px; padding: 14px 18px 18px; flex-wrap: wrap; }
 
 /* ─────────────────────────────────────────────────────────────────────────
+   Services page — three practice areas (BI / ML / AI), each a two-column
+   block: what the area is for on the left, a "what we do → what you get"
+   task list on the right. The deliverable column is the point of the page:
+   Magnum sells finished work, not software.
+   ───────────────────────────────────────────────────────────────────────── */
+
+.services { margin-top: 48px; border-bottom: 1px solid var(--line); }
+
+.service {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 40px 64px;
+  padding-block: 52px;
+  border-top: 1px solid var(--line);
+}
+
+.service-head { display: flex; flex-direction: column; gap: 12px; }
+.service-head .card-icon { margin-bottom: 6px; }
+.service-head h2 { font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.25rem); }
+.service-head p { margin: 0; }
+.service-fit { font-size: 0.98rem; }
+.service-head .fineprint { margin-top: 6px; }
+
+.tasks { display: flex; flex-direction: column; }
+
+.tasks-hd,
+.task {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 24px;
+}
+.tasks-hd {
+  padding-bottom: 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.tasks-hd span:last-child { color: var(--brand-ink); }
+
+.task {
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+.task .t { color: var(--ink); font-weight: 600; }
+.task .r { color: var(--ink-soft); }
+
+.service-note {
+  margin: 20px 0 0;
+  padding: 14px 16px;
+  background: var(--brand-wash);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--brand-ink);
+  max-width: none;
+}
+.tasks .btn { align-self: flex-start; margin-top: 24px; }
+
+.service-shapes { margin-top: 56px; }
+.service-shapes .card p:last-child { margin: 0; }
+
+/* ─────────────────────────────────────────────────────────────────────────
    Contact rows / FAQ
    ───────────────────────────────────────────────────────────────────────── */
 

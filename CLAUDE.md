@@ -19,8 +19,9 @@ There is deliberately no `pyproject.toml`, no `uv`, and no pre-commit here — t
 has no Python. Do not add them.
 
 ## Current milestone
-v0.2 — redesign for clarity + warmth (see ROADMAP.md). The v0.1 "blueprint" look
-(cold greys, monospace labels, corner marks, all-caps Barlow Condensed) was replaced.
+v0.3 — services repositioned (see ROADMAP.md). The Services page now sells finished
+work in three practice areas (BI / Machine Learning / AI), each as a "what we do →
+what you get" list. v0.2 (clarity + warmth redesign) replaced the v0.1 "blueprint" look.
 
 ## Local rules
 - Conventional Commits (feat:, fix:, docs:, refactor:, chore:)
@@ -74,6 +75,28 @@ absolutely-positioned dropdown. The open state is `data-menu="open"` on `#app`; 
 only flips that attribute and keeps `aria-expanded` in sync, so CSS owns the presentation.
 It closes on navigate, Escape, an outside tap, and on widening past the breakpoint. The
 v0.1 `!important` cascade traps are gone now that the markup has no inline styles.
+
+## The Services page sells work, not software
+
+Decided 2026-10-19 (Daniel): Magnum sells consulting and execution — we do the task and
+hand over the deliverable. We do not sell software for the client to operate. The copy
+is organised to say exactly that:
+
+- **Three practice areas, not three packages**: `01 · Business Intelligence`,
+  `02 · Machine Learning`, `03 · Inteligencia artificial`. Each is a `.service` block
+  (left: what it's for, "Ideal si…", project length; right: the task list).
+- **Every task is paired with its deliverable** — the `.task` rows have a `.t` (what we
+  do) and `.r` (what you get) column. When adding a task, always write the deliverable
+  as a thing the client receives (a list, a report, a live dashboard, an assistant),
+  never as a tool or a licence. Below 640px the column header hides and each row gets a
+  "Recibes ·" / "You get ·" prefix from CSS `content` in `responsive.css`, switched by
+  `[data-l]`.
+- ML and AI blocks carry a `.service-note` saying the model/assistant runs on our side.
+  Keep it: it is the "no software to maintain" promise in one sentence.
+- **Engagement shape is cross-cutting**, in the "Cómo se contrata" strip (fixed-scope
+  project / monthly membership / no software to learn) — not baked into each area.
+- The home "What we do" strip mirrors the same three areas with one sentence each.
+- Week counts (2–4, 4–8) are fine; prices are not (see below).
 
 ## No prices on the site
 
