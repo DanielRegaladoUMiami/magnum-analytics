@@ -1,6 +1,31 @@
-# Roadmap — magnum-analytics
+# Roadmap — Magnum Data Consulting (repo: magnum-analytics)
 
-## Current milestone: v0.3 — services repositioned (BI / ML / AI)
+## Current milestone: v1.0 — official brand kit + rename to Magnum Data Consulting
+
+Driven by Daniel, Oct 2026. The brand kit (Paleta 5 monochrome & silver, Manrope 800 +
+Spectral SemiBold Italic, the "M Imperial con Ascenso" isotipo) replaced the v0.2 look,
+and the company was renamed from Magnum Analytics to Magnum Data Consulting.
+
+- [x] Kit tokens copied into `ds/styles.css` with the kit's own names and values; every
+  component restyled to them (square corners, hairlines, 2px carbon section rules)
+- [x] Isotipo, dark isotipo and favicon in `assets/`; HTML wordmark "Magnum" + "Data
+  Consulting" in the header and footer, sized to fit beside the menu button down to 320px
+- [x] Dark "hero ejecutivo" bands: home hero, every page intro, closing CTA, footer
+- [x] Home hero leads with the promise: "Hacemos el trabajo. Tú recibes el resultado."
+- [x] Rename everywhere: titles in both languages, meta/OG, wordmark, footer, the email
+  subject line, docs. Repo slug and Pages URL keep `magnum-analytics`
+- [x] Brand descriptor (was "Business Intelligence · Miami"): now "BI · Machine Learning
+  · IA" in the hero eyebrow, titles and footer
+- [x] Demo page → "Ejemplos / Examples": one sample deliverable per area, including a new
+  AI mock (assistant answering from a policy document, citing the page, handing an
+  exception to a person). Hash stays `#demo`
+- [x] Fixes found in review: the nav's current-page underline never showed (selector
+  specificity, since v0.2); Back/Forward left the mobile menu open; the translucent
+  header turned grey over dark bands
+- [x] Verified: 4 pages × ES/EN × 320/360/390/820/1024/1440px — no console errors, no
+  failed requests, no horizontal overflow, every text element passes WCAG AA contrast
+
+## v0.3 — services repositioned (BI / ML / AI) — complete
 
 Driven by Daniel, Oct 2026. The offer is consulting + execution: we do the task and
 deliver the result; we do not sell software for the client to run. The site had been
@@ -16,13 +41,7 @@ work.
 - [x] Cost FAQ generalised to all three areas; new FAQ "¿Tengo que comprar o aprender
   algún software?"
 - [x] Meta / OG descriptions name the three areas
-- [ ] **Brand descriptor.** Hero eyebrow, `<title>`, OG title and footer still say
-  "Business Intelligence · Miami". With three areas the descriptor is narrower than the
-  offer. Daniel is working on the brand image; decide the line there, then update all
-  four copies together.
-- [ ] **Third demo for the AI area.** The Demo page covers BI (Demo 01) and ML (Demo 02)
-  but nothing for assistants/agents. An HTML/CSS mock of an assistant answering from a
-  policy document, with a citation, would complete the set — same "sample data" rule.
+- [x] Brand descriptor and a third (AI) example — both done in v1.0
 
 ## v0.2 — redesign (clarity + warmth) — complete
 
@@ -46,12 +65,21 @@ two HTML/CSS demo dashboards.
 
 ## Next up
 
-- **Custom domain.** Point `magnum-bi.com` (or whichever domain is registered) at Pages
-  via a `CNAME` file and a DNS record. Do this before the URL is shared widely.
-- **Real device testing.** The layout is verified at 360/390/768/1024/1440/1920px in a
-  desktop browser, but has not been opened on an actual iOS or Android handset.
-- **Real proof.** The Demo page now shows three credible dashboards, but they are all
-  sample data. The first real client case study replaces one of them.
+- **Custom domain.** Register one that matches the new name and point it at the host
+  (for Pages: a `CNAME` file and a DNS record). Then update `canonical` and `og:url`.
+  Do this before the URL is shared widely.
+- **"Quiénes somos".** The site says "three partners with a Business Analytics master's"
+  and nothing more. Names, a photo and one line per partner is the cheapest trust there
+  is for this audience. Needs the material from the partners; do not invent it.
+- **Horizontal logo files with the new name.** The kit's `logo-horizontal-*.svg` say
+  "Magnum Analytics". Regenerate them with "Data Consulting", text converted to outlines
+  so they render without the fonts installed.
+- **Social share image.** There is no `og:image`, so links shared on WhatsApp/LinkedIn
+  show no picture. Needs a 1200×630 raster, the first in a repo that ships none.
+- **Real device testing.** The layout is verified at 320–1440px in a desktop browser,
+  but has not been opened on an actual iOS or Android handset.
+- **Real proof.** The Examples page shows three credible sample deliverables. The first
+  real client case study replaces one of them.
 - **Contact form** once there is somewhere to receive submissions. GitHub Pages cannot
   process forms; this would need Formspree or similar. Deliberately deferred — the site
   currently uses direct mailto + WhatsApp links instead.
@@ -72,7 +100,9 @@ two HTML/CSS demo dashboards.
   ranges. The cost FAQ commits to the *shape* instead (fixed scope, 2–4 weeks, agreed
   before starting, never hourly), which is the strongest answer available without a
   number. Qualification is carried by the audience line in the hero ($500K–$10M
-  businesses in Miami) and the profile list on the Demo page. Do not re-raise this.
+  businesses in Miami) and the profile list on the Examples page. Do not re-raise this.
+- **The v0.2 look** (warm off-white, blue + coral, Fraunces + Inter) — replaced 2026-10 by
+  the official brand kit. Do not reintroduce blue or coral.
 
 ## Done
 

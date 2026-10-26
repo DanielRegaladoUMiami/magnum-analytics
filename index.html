@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Magnum Analytics — Business Intelligence · Miami</title>
-<meta name="description" content="Magnum Analytics does the data work for $500K–$10M businesses in Miami: dashboards and automated reporting (BI), forecasts and customer models (machine learning), and AI assistants and agents. You get the finished deliverable, not software to learn.">
-<meta name="theme-color" content="#fbfaf8">
+<title>Magnum Data Consulting — BI, Machine Learning e IA · Miami</title>
+<meta name="description" content="Magnum Data Consulting does the data work for $500K–$10M businesses in Miami: dashboards and automated reporting (BI), forecasts and customer models (machine learning), and AI assistants and agents. You get the finished deliverable, not software to learn.">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://danielregaladoumiami.github.io/magnum-analytics/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Magnum Analytics — Business Intelligence · Miami">
+<meta property="og:title" content="Magnum Data Consulting — BI, Machine Learning &amp; AI · Miami">
 <meta property="og:description" content="Business intelligence, machine learning and AI assistants for small and mid-sized businesses, delivered as finished work rather than software. Miami, Florida — remote across the US and LatAm.">
 <meta property="og:url" content="https://danielregaladoumiami.github.io/magnum-analytics/">
 <meta property="og:locale" content="es_ES">
@@ -18,7 +18,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Spectral:ital,wght@0,600;1,600&display=swap">
 <link rel="stylesheet" href="ds/styles.css">
 <link rel="stylesheet" href="responsive.css">
 <script src="app.js" defer></script>
@@ -29,8 +29,12 @@
   <!-- ─────────────── Header ─────────────── -->
   <header class="site-header">
     <div class="wrap">
-      <a href="#" class="wordmark" onclick="go('home'); return false;">
-        <b>Magnum</b><span>Analytics</span>
+      <a href="#" class="magnum-wordmark" aria-label="Magnum Data Consulting" onclick="go('home'); return false;">
+        <img src="assets/logo-isotipo.svg" alt="" width="34" height="34">
+        <span class="magnum-wordmark__text">
+          <span class="magnum-wordmark__main">Magnum</span>
+          <span class="magnum-wordmark__sub">Data Consulting</span>
+        </span>
       </a>
 
       <button id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menú" onclick="toggleMenu()">
@@ -43,9 +47,9 @@
 
       <nav id="site-nav" class="nav">
         <a href="#" class="nav-link n-services" onclick="go('services'); return false;"><span class="es">Servicios</span><span class="en">Services</span></a>
-        <a href="#" class="nav-link n-work" onclick="go('work'); return false;"><span class="es">Demo</span><span class="en">Demo</span></a>
+        <a href="#" class="nav-link n-work" onclick="go('work'); return false;"><span class="es">Ejemplos</span><span class="en">Examples</span></a>
         <a href="#" class="nav-link n-contact" onclick="go('contact'); return false;"><span class="es">Contacto</span><span class="en">Contact</span></a>
-        <button class="lang-toggle" onclick="toggleLang()"><span class="es">EN</span><span class="en">ES</span></button>
+        <button type="button" class="lang-toggle" onclick="toggleLang()"><span class="es">EN</span><span class="en">ES</span></button>
         <a href="#" class="btn btn-primary" onclick="go('contact'); return false;"><span class="es">Agendar llamada</span><span class="en">Book a call</span></a>
       </nav>
     </div>
@@ -55,18 +59,18 @@
   <section class="page" data-page="home">
   <main>
 
-    <!-- Hero -->
-    <section class="section wrap">
-      <div class="hero">
-        <div>
-          <p class="eyebrow">Business Intelligence &nbsp;·&nbsp; Miami, FL</p>
-          <h1 style="margin:14px 0 0;">
-            <span class="bes">Mira qué impulsa tus ventas — en un dashboard, en dos semanas.</span>
-            <span class="ben">See what's driving your sales — one dashboard, two weeks.</span>
+    <!-- Hero — dark band with the brand promise, as in the identity manual -->
+    <section class="hero-band band-dark">
+      <div class="wrap hero">
+        <div class="on-dark">
+          <p class="eyebrow"><span class="es">BI · Machine Learning · IA</span><span class="en">BI · Machine Learning · AI</span> &nbsp;·&nbsp; Miami, FL</p>
+          <h1 style="margin:16px 0 0;">
+            <span class="bes">Hacemos el trabajo.<br class="br-wide"> <em>Tú recibes el resultado.</em></span>
+            <span class="ben">We do the work.<br class="br-wide"> <em>You get the result.</em></span>
           </h1>
-          <p class="lead" style="margin-top:22px;">
-            <span class="bes">Conectamos tu Shopify, tu QuickBooks y tus hojas de cálculo en una sola vista, y automatizamos los reportes y pronósticos que hoy armas a mano. Para negocios de $500K–$10M en Miami.</span>
-            <span class="ben">We pull your Shopify, QuickBooks and spreadsheets into a single view, then automate the reports and forecasts you build by hand today. For $500K–$10M businesses in Miami.</span>
+          <p class="lead" style="margin-top:24px;">
+            <span class="bes">Dashboards, pronósticos y asistentes de IA para negocios de $500K–$10M en Miami. Los construimos con los datos que ya tienes y te los entregamos funcionando, sin software que aprender.</span>
+            <span class="ben">Dashboards, forecasts and AI assistants for $500K–$10M businesses in Miami. We build them from the data you already have and hand them over working, with no software to learn.</span>
           </p>
           <div class="hero-cta">
             <a href="#" class="btn btn-primary btn-lg" onclick="go('contact'); return false;">
@@ -101,7 +105,7 @@
             </div>
             <div class="mock-cell">
               <div class="k"><span class="es">Canal principal</span><span class="en">Top channel</span></div>
-              <div class="v" style="font-size:1.4rem;"><span class="es">Redes pagadas</span><span class="en">Paid social</span></div>
+              <div class="v v--text"><span class="es">Redes pagadas</span><span class="en">Paid social</span></div>
               <div class="d d-flat"><span class="es">38% de clientes nuevos</span><span class="en">38% of new customers</span></div>
             </div>
             <div class="mock-cell">
@@ -124,7 +128,7 @@
             </div>
           </div>
           <div class="tags-row">
-            <span class="pill pill--brand">Shopify</span>
+            <span class="pill pill--strong">Shopify</span>
             <span class="pill">QuickBooks</span>
             <span class="pill">Meta Ads</span>
           </div>
@@ -133,20 +137,21 @@
     </section>
 
     <!-- What we do — mirrors the three areas on the Services page -->
-    <section class="section--tight wrap">
-      <p class="eyebrow eyebrow--muted"><span class="es">Qué hacemos</span><span class="en">What we do</span></p>
-      <h2 style="margin:10px 0 6px; max-width:20ch;">
-        <span class="bes">Tres áreas, un solo equipo.</span>
-        <span class="ben">Three areas, one team.</span>
-      </h2>
-      <p class="lead" style="margin-top:12px;">
-        <span class="bes">Consultoría y ejecución: hacemos el trabajo y te entregamos el resultado, no un software para que lo resuelvas tú.</span>
-        <span class="ben">Consulting and execution: we do the work and hand you the result, not software for you to figure out.</span>
-      </p>
-      <div class="grid grid-3" style="margin-top:32px;">
+    <section class="section wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow eyebrow--muted"><span class="es">Qué hacemos</span><span class="en">What we do</span></p>
+          <h2>
+            <span class="bes">Tres áreas, un solo equipo.</span>
+            <span class="ben">Three areas, one team.</span>
+          </h2>
+        </div>
+        <a href="#" class="section-link" onclick="go('services'); return false;"><span class="es">Ver qué incluye cada área</span><span class="en">See what each area includes</span> <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="grid grid-3">
         <div class="card">
           <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
           </div>
           <h3>Business Intelligence</h3>
           <p>
@@ -156,7 +161,7 @@
         </div>
         <div class="card">
           <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
           </div>
           <h3>Machine Learning</h3>
           <p>
@@ -166,7 +171,7 @@
         </div>
         <div class="card">
           <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 16l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 16l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg>
           </div>
           <h3><span class="es">Inteligencia artificial</span><span class="en">Artificial intelligence</span></h3>
           <p>
@@ -176,41 +181,45 @@
         </div>
       </div>
       <p class="fineprint" style="margin-top:20px;">
-        <span class="bes"><a href="#" onclick="go('services'); return false;">Ver qué incluye cada área</a> &nbsp;·&nbsp; Formación formal: maestría en Business Analytics, Universidad de Miami.</span>
-        <span class="ben"><a href="#" onclick="go('services'); return false;">See what each area includes</a> &nbsp;·&nbsp; Formal training: MS in Business Analytics, University of Miami.</span>
+        <span class="bes">Formación formal: maestría en Business Analytics, Universidad de Miami.</span>
+        <span class="ben">Formal training: MS in Business Analytics, University of Miami.</span>
       </p>
     </section>
 
-    <hr class="rule">
-
-    <!-- The problem -->
-    <section class="section wrap">
-      <p class="eyebrow eyebrow--muted"><span class="es">El problema</span><span class="en">The problem</span></p>
-      <div class="grid grid-2" style="gap:56px; align-items:start; margin-top:14px;">
-        <h2 style="max-width:16ch;">
-          <span class="bes">Tus datos existen. Nadie tiene tiempo de leerlos.</span>
-          <span class="ben">Your data exists. Nobody has time to read it.</span>
-        </h2>
-        <div class="stack" style="gap:18px;">
-          <p>
-            <span class="bes">Ventas en Shopify, contabilidad en QuickBooks, campañas en una hoja de cálculo, un CRM que nadie actualiza. La información está ahí, pero revisarla toma horas cada semana y las decisiones terminan tomándose por intuición.</span>
-            <span class="ben">Sales in Shopify, books in QuickBooks, campaigns in a spreadsheet, a CRM nobody updates. The information is there, but reviewing it takes hours every week and decisions end up being made on instinct.</span>
-          </p>
-          <p>
-            <span class="bes">Contratar un analista resuelve el problema y crea otro: sueldo, prestaciones y overhead para una función que todavía no es de tiempo completo. Nosotros entregamos ese mismo trabajo por proyecto o por membresía mensual.</span>
-            <span class="ben">Hiring an analyst solves the problem and creates another: salary, benefits and overhead for a role that isn't full-time yet. We deliver that same work by project or on a monthly membership.</span>
-          </p>
+    <!-- The problem — alternate band on Plata Nieve -->
+    <section class="band-alt">
+      <div class="section wrap">
+        <p class="eyebrow eyebrow--muted"><span class="es">El problema</span><span class="en">The problem</span></p>
+        <div class="grid grid-2" style="gap:56px; align-items:start; margin-top:14px;">
+          <h2 style="max-width:16ch;">
+            <span class="bes">Tus datos existen. <em>Nadie tiene tiempo de leerlos.</em></span>
+            <span class="ben">Your data exists. <em>Nobody has time to read it.</em></span>
+          </h2>
+          <div class="stack" style="gap:18px;">
+            <p>
+              <span class="bes">Ventas en Shopify, contabilidad en QuickBooks, campañas en una hoja de cálculo, un CRM que nadie actualiza. La información está ahí, pero revisarla toma horas cada semana y las decisiones terminan tomándose por intuición.</span>
+              <span class="ben">Sales in Shopify, books in QuickBooks, campaigns in a spreadsheet, a CRM nobody updates. The information is there, but reviewing it takes hours every week and decisions end up being made on instinct.</span>
+            </p>
+            <p>
+              <span class="bes">Contratar un analista resuelve el problema y crea otro: sueldo, prestaciones y overhead para una función que todavía no es de tiempo completo. Nosotros entregamos ese mismo trabajo por proyecto o por membresía mensual.</span>
+              <span class="ben">Hiring an analyst solves the problem and creates another: salary, benefits and overhead for a role that isn't full-time yet. We deliver that same work by project or on a monthly membership.</span>
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- How we work -->
     <section class="section wrap">
-      <p class="eyebrow eyebrow--muted"><span class="es">Cómo trabajamos</span><span class="en">How we work</span></p>
-      <h2 style="margin:10px 0 36px; max-width:24ch;">
-        <span class="bes">Cuatro pasos, sin transformación digital de seis meses.</span>
-        <span class="ben">Four steps, no six-month digital transformation.</span>
-      </h2>
+      <div class="section-head">
+        <div>
+          <p class="eyebrow eyebrow--muted"><span class="es">Cómo trabajamos</span><span class="en">How we work</span></p>
+          <h2>
+            <span class="bes">Cuatro pasos, sin transformación digital de seis meses.</span>
+            <span class="ben">Four steps, no six-month digital transformation.</span>
+          </h2>
+        </div>
+      </div>
       <div class="steps steps--4">
         <div class="step">
           <div class="step-num">01</div>
@@ -248,11 +257,11 @@
     </section>
   </main>
 
-  <section class="cta-band">
-    <div class="wrap">
+  <section class="cta-band band-dark">
+    <div class="wrap on-dark">
       <h2>
-        <span class="bes">¿Empezamos con una llamada de 20 minutos?</span>
-        <span class="ben">Shall we start with a 20-minute call?</span>
+        <span class="bes">¿Empezamos con una <em>llamada de 20 minutos?</em></span>
+        <span class="ben">Shall we start with a <em>20-minute call?</em></span>
       </h2>
       <a href="#" class="btn btn-primary btn-lg" onclick="go('contact'); return false;">
         <span class="es">Agendar llamada</span><span class="en">Book a call</span>
@@ -266,389 +275,469 @@
        tasks we do, paired with the deliverable the client receives — the point
        of the page is that we sell the finished work, not software. -->
   <section class="page" data-page="services">
-  <main class="section wrap">
-    <p class="eyebrow"><span class="es">Servicios</span><span class="en">Services</span></p>
-    <h1 style="margin:14px 0 0; max-width:18ch;">
-      <span class="bes">Hacemos el trabajo. Tú recibes el resultado.</span>
-      <span class="ben">We do the work. You get the result.</span>
-    </h1>
-    <p class="lead" style="margin-top:22px;">
-      <span class="bes">No vendemos software para que lo aprendas. Cada servicio es una tarea que hacemos nosotros y termina en un entregable concreto: un dashboard funcionando, un pronóstico que se actualiza solo, un asistente que ya responde. Tres áreas, un solo equipo.</span>
-      <span class="ben">We don't sell software for you to learn. Every service is a task we do ourselves, and it ends in a concrete deliverable: a working dashboard, a forecast that refreshes itself, an assistant that already answers. Three areas, one team.</span>
-    </p>
-
-    <div class="services">
-
-      <!-- 01 · Business Intelligence -->
-      <section class="service">
-        <div class="service-head">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          </div>
-          <p class="eyebrow">01 · Business Intelligence</p>
-          <h2>
-            <span class="bes">Ver el negocio con claridad.</span>
-            <span class="ben">See the business clearly.</span>
-          </h2>
-          <p>
-            <span class="bes">Los números con los que decides, en un solo lugar, al día y sin que nadie los arme a mano. Es por donde empieza casi todo el mundo.</span>
-            <span class="ben">The numbers you decide on, in one place, up to date, with nobody assembling them by hand. It's where almost everyone starts.</span>
-          </p>
-          <p class="service-fit">
-            <span class="bes"><strong>Ideal si</strong> hoy armas los reportes a mano en Excel, o decides sin ver los números.</span>
-            <span class="ben"><strong>Right for you if</strong> you build reports by hand in Excel today, or decide without seeing the numbers.</span>
-          </p>
-          <p class="fineprint">
-            <span class="bes">Proyecto de 2–4 semanas · membresía para mantenerlo</span>
-            <span class="ben">2–4 week project · membership to keep it running</span>
-          </p>
-        </div>
-        <div class="tasks">
-          <div class="tasks-hd">
-            <span><span class="es">Qué hacemos</span><span class="en">What we do</span></span>
-            <span><span class="es">Qué recibes</span><span class="en">What you get</span></span>
-          </div>
-          <div class="task">
-            <span class="t"><span class="es">Dashboard de ventas, margen y operación (Power BI, Tableau o Looker Studio)</span><span class="en">Sales, margin and operations dashboard (Power BI, Tableau or Looker Studio)</span></span>
-            <span class="r"><span class="es">Un tablero en producción, conectado a tus fuentes, con capacitación para tu equipo.</span><span class="en">A live dashboard connected to your sources, with training for your team.</span></span>
-          </div>
-          <div class="task">
-            <span class="t"><span class="es">Consolidación de fuentes (Shopify, QuickBooks, CRM, hojas de cálculo)</span><span class="en">Source consolidation (Shopify, QuickBooks, CRM, spreadsheets)</span></span>
-            <span class="r"><span class="es">Una base limpia y única de la que salen todos los reportes.</span><span class="en">One clean, single source that every report draws from.</span></span>
-          </div>
-          <div class="task">
-            <span class="t"><span class="es">Reportes automatizados</span><span class="en">Automated reporting</span></span>
-            <span class="r"><span class="es">El reporte semanal o mensual llega solo, por email o PDF, sin que nadie lo arme.</span><span class="en">The weekly or monthly report arrives on its own, by email or PDF, with nobody assembling it.</span></span>
-          </div>
-          <div class="task">
-            <span class="t"><span class="es">Definición de KPIs y auditoría de datos</span><span class="en">KPI definition and data audit</span></span>
-            <span class="r"><span class="es">Un documento con cada métrica definida, quién la usa y qué tan confiable es hoy.</span><span class="en">One document with each metric defined, who uses it, and how reliable it is today.</span></span>
-          </div>
-          <div class="task">
-            <span class="t"><span class="es">Análisis puntual de una pregunta concreta</span><span class="en">One-off analysis of a specific question</span></span>
-            <span class="r"><span class="es">Un informe corto con la respuesta y una recomendación.</span><span class="en">A short report with the answer and a recommendation.</span></span>
-          </div>
-          <a href="#" class="btn btn-primary" onclick="go('contact'); return false;"><span class="es">Agendar llamada</span><span class="en">Book a call</span></a>
-        </div>
-      </section>
-
-      <!-- 02 · Machine Learning -->
-      <section class="service">
-        <div class="service-head">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
-          </div>
-          <p class="eyebrow">02 · Machine Learning</p>
-          <h2>
-            <span class="bes">Anticipar en vez de reaccionar.</span>
-            <span class="ben">Anticipate instead of react.</span>
-          </h2>
-          <p>
-            <span class="bes">Modelos que aprenden de tu historial para responder la misma pregunta cada mes: cuánto vas a vender, quién está por irse, cuánto comprar, a qué precio. Aquí es donde se nota la maestría en Business Analytics.</span>
-            <span class="ben">Models that learn from your history to answer the same question every month: how much you'll sell, who is about to leave, how much to buy, at what price. This is where the Business Analytics master's shows.</span>
-          </p>
-          <p class="service-fit">
-            <span class="bes"><strong>Ideal si</strong> ya tienes al menos un año de historial y una decisión que se repite y hoy se toma por intuición.</span>
-            <span class="ben"><strong>Right for you if</strong> you already have at least a year of history and a recurring decision that's made on instinct today.</span>
-          </p>
-          <p class="fineprint">
-            <span class="bes">Proyecto de 4–8 semanas · membresía para actualizar el modelo</span>
-            <span class="ben">4–8 week project · membership to keep the model current</span>
-          </p>
-        </div>
-        <div class="tasks">
-          <div class="tasks-hd">
-            <span><span class="es">Qué hacemos</span><span class="en">What we do</span></span>
-            <span><span class="es">Qué recibes</span><span class="en">What you get</span></span>
-          </div>
-          <div class="task">
-            <span class="t"><span class="es">Pronóstico de demanda e ingresos</span><span class="en">Demand and revenue forecasting</span></span>
-            <span class="r"><span class="es">Una proyección por mes con rango de confianza, actualizada cada mes.</span><span class="en">A monthly projection with a confidence range, refreshed every month.</span></span>
-          </div>
-          <div class="task">
-            <span class="t"><span class="es">Clientes en riesgo de irse</span><span class="en">Customers at risk of leaving</span></span>
-            <span class="r"><span class="es">Una lista mensual de quién está por irse, por qué, y qué hacer con cada uno.</span><span class="en">A monthly list of who is about to leave, why, and what to do about each one.</span></span>
-          </div>
-          <div class="task">
-            <span class="t"><span class="es">Segmentación de clientes</span><span class="en">Customer segmentation</span></span>
-            <span class="r"><span class="es">Grupos de clientes con su perfil y cómo tratar a cada uno en ventas y marketing.</span><span class="en">Customer groups with a profile and how to treat each one in sales and marketing.</span></span>
-          </div>
-          <div class="task">
-            <span class="t"><span class="es">Inventario y precios</span><span class="en">Inventory and pricing</span></span>
-            <span class="r"><span class="es">Niveles de stock y puntos de reorden recomendados; precios sugeridos por producto.</span><span class="en">Recommended stock levels and reorder points; suggested prices by product.</span></span>
-          </div>
-          <div class="task">
-            <span class="t"><span class="es">Priorización de prospectos</span><span class="en">Lead prioritization</span></span>
-            <span class="r"><span class="es">Una lista de prospectos ordenada por probabilidad de compra, para tu equipo de ventas.</span><span class="en">A list of prospects ranked by likelihood to buy, for your sales team.</span></span>
-          </div>
-          <div class="task">
-            <span class="t"><span class="es">Detección de anomalías</span><span class="en">Anomaly detection</span></span>
-            <span class="r"><span class="es">Una alerta cuando una venta, un gasto o una factura se sale de lo normal.</span><span class="en">An alert when a sale, an expense or an invoice falls outside the norm.</span></span>
-          </div>
-          <p class="service-note">
-            <span class="bes">El modelo corre de nuestro lado y se vuelve a entrenar con tus datos nuevos. Tú recibes el resultado en tu dashboard o en tu correo, no un modelo que mantener.</span>
-            <span class="ben">The model runs on our side and retrains on your new data. You get the result in your dashboard or your inbox, not a model to maintain.</span>
-          </p>
-          <a href="#" class="btn btn-primary" onclick="go('contact'); return false;"><span class="es">Agendar llamada</span><span class="en">Book a call</span></a>
-        </div>
-      </section>
-
-      <!-- 03 · AI -->
-      <section class="service">
-        <div class="service-head">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 16l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg>
-          </div>
-          <p class="eyebrow"><span class="es">03 · Inteligencia artificial</span><span class="en">03 · Artificial intelligence</span></p>
-          <h2>
-            <span class="bes">Asistentes y agentes que trabajan con tu equipo.</span>
-            <span class="ben">Assistants and agents that work alongside your team.</span>
-          </h2>
-          <p>
-            <span class="bes">Modelos de lenguaje adaptados a tu negocio y agentes que hacen el trabajo repetitivo de leer, clasificar, redactar y responder. Construidos sobre tus documentos y conectados a las herramientas que ya usas.</span>
-            <span class="ben">Language models adapted to your business, and agents that do the repetitive work of reading, sorting, drafting and answering. Built on your documents and connected to the tools you already use.</span>
-          </p>
-          <p class="service-fit">
-            <span class="bes"><strong>Ideal si</strong> tu equipo responde las mismas preguntas todos los días, clasifica correos a mano o pasa datos de PDFs a un sistema.</span>
-            <span class="ben"><strong>Right for you if</strong> your team answers the same questions every day, sorts emails by hand, or moves data from PDFs into a system.</span>
-          </p>
-          <p class="fineprint">
-            <span class="bes">Piloto de 2–4 semanas con un caso concreto · membresía para operarlo</span>
-            <span class="ben">2–4 week pilot on one concrete case · membership to run it</span>
-          </p>
-        </div>
-        <div class="tasks">
-          <div class="tasks-hd">
-            <span><span class="es">Qué hacemos</span><span class="en">What we do</span></span>
-            <span><span class="es">Qué recibes</span><span class="en">What you get</span></span>
-          </div>
-          <div class="task">
-            <span class="t"><span class="es">Asistente que responde desde tus documentos</span><span class="en">Assistant that answers from your documents</span></span>
-            <span class="r"><span class="es">Un asistente para tu equipo o tus clientes que contesta con tus manuales, políticas y catálogo, y dice de dónde sacó cada respuesta.</span><span class="en">An assistant for your team or your customers that answers from your manuals, policies and catalog, and says where each answer came from.</span></span>
-          </div>
-          <div class="task">
-            <span class="t"><span class="es">Agentes que ejecutan tareas</span><span class="en">Agents that carry out tasks</span></span>
-            <span class="r"><span class="es">Un agente que arma el reporte semanal, clasifica y enruta correos o tickets, o pasa datos de facturas y PDFs a tu sistema.</span><span class="en">An agent that assembles the weekly report, sorts and routes emails or tickets, or moves data from invoices and PDFs into your system.</span></span>
-          </div>
-          <div class="task">
-            <span class="t"><span class="es">Atención al cliente por WhatsApp o web</span><span class="en">Customer service on WhatsApp or the web</span></span>
-            <span class="r"><span class="es">Un bot que responde las preguntas frecuentes, agenda citas y pasa a una persona cuando hace falta.</span><span class="en">A bot that answers common questions, books appointments and hands off to a person when needed.</span></span>
-          </div>
-          <div class="task">
-            <span class="t"><span class="es">Modelo de lenguaje ajustado a tu negocio</span><span class="en">Language model tuned to your business</span></span>
-            <span class="r"><span class="es">Un modelo que habla con tu vocabulario, tu tono y tus reglas, listo para conectarse a tus herramientas.</span><span class="en">A model that speaks your vocabulary, your tone and your rules, ready to plug into your tools.</span></span>
-          </div>
-          <div class="task">
-            <span class="t"><span class="es">Pruebas y límites</span><span class="en">Testing and guardrails</span></span>
-            <span class="r"><span class="es">Cada asistente se entrega con pruebas, reglas de lo que puede y no puede hacer, y un registro de lo que responde.</span><span class="en">Every assistant ships with tests, rules for what it can and cannot do, and a log of what it answers.</span></span>
-          </div>
-          <p class="service-note">
-            <span class="bes">Lo construimos, lo probamos, lo conectamos y lo mantenemos. Tu equipo lo usa; nadie tiene que administrarlo.</span>
-            <span class="ben">We build it, test it, connect it and maintain it. Your team uses it; nobody has to run it.</span>
-          </p>
-          <a href="#" class="btn btn-primary" onclick="go('contact'); return false;"><span class="es">Agendar llamada</span><span class="en">Book a call</span></a>
-        </div>
-      </section>
-
-    </div>
-
-    <!-- How it's bought — the same two shapes across all three areas -->
-    <section class="service-shapes">
-      <p class="eyebrow eyebrow--muted"><span class="es">Cómo se contrata</span><span class="en">How it's bought</span></p>
-      <h2 style="margin:10px 0 0; max-width:22ch;">
-        <span class="bes">Dos formas de trabajar, en las tres áreas.</span>
-        <span class="ben">Two ways to work, across all three areas.</span>
-      </h2>
-      <div class="grid grid-3" style="margin-top:32px;">
-        <div class="card">
-          <p class="eyebrow"><span class="es">Proyecto de alcance fijo</span><span class="en">Fixed-scope project</span></p>
-          <p>
-            <span class="bes">Entregable, fechas y precio por escrito antes de empezar. Nunca por hora. Es la forma normal de hacer un primer dashboard, un modelo o un piloto de IA.</span>
-            <span class="ben">Deliverable, dates and price in writing before we start. Never hourly. It's the normal way to do a first dashboard, a model or an AI pilot.</span>
-          </p>
-        </div>
-        <div class="card">
-          <p class="eyebrow"><span class="es">Membresía mensual</span><span class="en">Monthly membership</span></p>
-          <p>
-            <span class="bes">Para lo que se repite: mantener el dashboard, volver a entrenar el modelo, responder preguntas nuevas, ajustar los reportes. Mes a mes.</span>
-            <span class="ben">For what recurs: keeping the dashboard current, retraining the model, answering new questions, adjusting the reports. Month to month.</span>
-          </p>
-        </div>
-        <div class="card card--wash">
-          <p class="eyebrow"><span class="es">Sin software que aprender</span><span class="en">No software to learn</span></p>
-          <p>
-            <span class="bes">Trabajamos con las herramientas que ya tienes (Power BI, Excel, Google Workspace, tu CRM) y montamos lo que falte. Todo se entrega en producción, con documentación corta y una sesión de capacitación.</span>
-            <span class="ben">We work with the tools you already have (Power BI, Excel, Google Workspace, your CRM) and set up whatever is missing. Everything is delivered in production, with short documentation and one training session.</span>
-          </p>
-        </div>
+  <main>
+    <section class="page-intro band-dark">
+      <div class="wrap on-dark">
+        <p class="eyebrow"><span class="es">Servicios</span><span class="en">Services</span></p>
+        <h1 style="margin:16px 0 0; max-width:18ch;">
+          <span class="bes">Qué hacemos y <em>qué recibes.</em></span>
+          <span class="ben">What we do, and <em>what you get.</em></span>
+        </h1>
+        <p class="lead" style="margin-top:24px;">
+          <span class="bes">No vendemos software para que lo aprendas. Cada servicio es una tarea que hacemos nosotros y termina en un entregable concreto: un dashboard funcionando, un pronóstico que se actualiza solo, un asistente que ya responde. Tres áreas, un solo equipo.</span>
+          <span class="ben">We don't sell software for you to learn. Every service is a task we do ourselves, and it ends in a concrete deliverable: a working dashboard, a forecast that refreshes itself, an assistant that already answers. Three areas, one team.</span>
+        </p>
       </div>
     </section>
 
-    <p class="lead" style="margin-top:44px;">
-      <span class="bes">¿No sabes cuál necesitas? Empieza por la llamada — salimos de ahí con una recomendación.</span>
-      <span class="ben">Not sure which one you need? Start with the call — we leave it with a recommendation.</span>
-    </p>
+    <div class="section wrap">
+      <div class="services">
+
+        <!-- 01 · Business Intelligence -->
+        <section class="service">
+          <div class="service-head">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <p class="eyebrow">01 · Business Intelligence</p>
+            <h2>
+              <span class="bes">Ver el negocio con claridad.</span>
+              <span class="ben">See the business clearly.</span>
+            </h2>
+            <p>
+              <span class="bes">Los números con los que decides, en un solo lugar, al día y sin que nadie los arme a mano. Es por donde empieza casi todo el mundo.</span>
+              <span class="ben">The numbers you decide on, in one place, up to date, with nobody assembling them by hand. It's where almost everyone starts.</span>
+            </p>
+            <p class="service-fit">
+              <span class="bes"><strong>Ideal si</strong> hoy armas los reportes a mano en Excel, o decides sin ver los números.</span>
+              <span class="ben"><strong>Right for you if</strong> you build reports by hand in Excel today, or decide without seeing the numbers.</span>
+            </p>
+            <p class="fineprint">
+              <span class="bes">Proyecto de 2–4 semanas · membresía para mantenerlo</span>
+              <span class="ben">2–4 week project · membership to keep it running</span>
+            </p>
+          </div>
+          <div class="tasks">
+            <div class="tasks-hd">
+              <span><span class="es">Qué hacemos</span><span class="en">What we do</span></span>
+              <span><span class="es">Qué recibes</span><span class="en">What you get</span></span>
+            </div>
+            <div class="task">
+              <span class="t"><span class="es">Dashboard de ventas, margen y operación (Power BI, Tableau o Looker Studio)</span><span class="en">Sales, margin and operations dashboard (Power BI, Tableau or Looker Studio)</span></span>
+              <span class="r"><span class="es">Un tablero en producción, conectado a tus fuentes, con capacitación para tu equipo.</span><span class="en">A live dashboard connected to your sources, with training for your team.</span></span>
+            </div>
+            <div class="task">
+              <span class="t"><span class="es">Consolidación de fuentes (Shopify, QuickBooks, CRM, hojas de cálculo)</span><span class="en">Source consolidation (Shopify, QuickBooks, CRM, spreadsheets)</span></span>
+              <span class="r"><span class="es">Una base limpia y única de la que salen todos los reportes.</span><span class="en">One clean, single source that every report draws from.</span></span>
+            </div>
+            <div class="task">
+              <span class="t"><span class="es">Reportes automatizados</span><span class="en">Automated reporting</span></span>
+              <span class="r"><span class="es">El reporte semanal o mensual llega solo, por email o PDF, sin que nadie lo arme.</span><span class="en">The weekly or monthly report arrives on its own, by email or PDF, with nobody assembling it.</span></span>
+            </div>
+            <div class="task">
+              <span class="t"><span class="es">Definición de KPIs y auditoría de datos</span><span class="en">KPI definition and data audit</span></span>
+              <span class="r"><span class="es">Un documento con cada métrica definida, quién la usa y qué tan confiable es hoy.</span><span class="en">One document with each metric defined, who uses it, and how reliable it is today.</span></span>
+            </div>
+            <div class="task">
+              <span class="t"><span class="es">Análisis puntual de una pregunta concreta</span><span class="en">One-off analysis of a specific question</span></span>
+              <span class="r"><span class="es">Un informe corto con la respuesta y una recomendación.</span><span class="en">A short report with the answer and a recommendation.</span></span>
+            </div>
+            <a href="#" class="btn btn-primary" onclick="go('contact'); return false;"><span class="es">Agendar llamada</span><span class="en">Book a call</span></a>
+          </div>
+        </section>
+
+        <!-- 02 · Machine Learning -->
+        <section class="service">
+          <div class="service-head">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+            </div>
+            <p class="eyebrow">02 · Machine Learning</p>
+            <h2>
+              <span class="bes">Anticipar en vez de reaccionar.</span>
+              <span class="ben">Anticipate instead of react.</span>
+            </h2>
+            <p>
+              <span class="bes">Modelos que aprenden de tu historial para responder la misma pregunta cada mes: cuánto vas a vender, quién está por irse, cuánto comprar, a qué precio. Aquí es donde se nota la maestría en Business Analytics.</span>
+              <span class="ben">Models that learn from your history to answer the same question every month: how much you'll sell, who is about to leave, how much to buy, at what price. This is where the Business Analytics master's shows.</span>
+            </p>
+            <p class="service-fit">
+              <span class="bes"><strong>Ideal si</strong> ya tienes al menos un año de historial y una decisión que se repite y hoy se toma por intuición.</span>
+              <span class="ben"><strong>Right for you if</strong> you already have at least a year of history and a recurring decision that's made on instinct today.</span>
+            </p>
+            <p class="fineprint">
+              <span class="bes">Proyecto de 4–8 semanas · membresía para actualizar el modelo</span>
+              <span class="ben">4–8 week project · membership to keep the model current</span>
+            </p>
+          </div>
+          <div class="tasks">
+            <div class="tasks-hd">
+              <span><span class="es">Qué hacemos</span><span class="en">What we do</span></span>
+              <span><span class="es">Qué recibes</span><span class="en">What you get</span></span>
+            </div>
+            <div class="task">
+              <span class="t"><span class="es">Pronóstico de demanda e ingresos</span><span class="en">Demand and revenue forecasting</span></span>
+              <span class="r"><span class="es">Una proyección por mes con rango de confianza, actualizada cada mes.</span><span class="en">A monthly projection with a confidence range, refreshed every month.</span></span>
+            </div>
+            <div class="task">
+              <span class="t"><span class="es">Clientes en riesgo de irse</span><span class="en">Customers at risk of leaving</span></span>
+              <span class="r"><span class="es">Una lista mensual de quién está por irse, por qué, y qué hacer con cada uno.</span><span class="en">A monthly list of who is about to leave, why, and what to do about each one.</span></span>
+            </div>
+            <div class="task">
+              <span class="t"><span class="es">Segmentación de clientes</span><span class="en">Customer segmentation</span></span>
+              <span class="r"><span class="es">Grupos de clientes con su perfil y cómo tratar a cada uno en ventas y marketing.</span><span class="en">Customer groups with a profile and how to treat each one in sales and marketing.</span></span>
+            </div>
+            <div class="task">
+              <span class="t"><span class="es">Inventario y precios</span><span class="en">Inventory and pricing</span></span>
+              <span class="r"><span class="es">Niveles de stock y puntos de reorden recomendados; precios sugeridos por producto.</span><span class="en">Recommended stock levels and reorder points; suggested prices by product.</span></span>
+            </div>
+            <div class="task">
+              <span class="t"><span class="es">Priorización de prospectos</span><span class="en">Lead prioritization</span></span>
+              <span class="r"><span class="es">Una lista de prospectos ordenada por probabilidad de compra, para tu equipo de ventas.</span><span class="en">A list of prospects ranked by likelihood to buy, for your sales team.</span></span>
+            </div>
+            <div class="task">
+              <span class="t"><span class="es">Detección de anomalías</span><span class="en">Anomaly detection</span></span>
+              <span class="r"><span class="es">Una alerta cuando una venta, un gasto o una factura se sale de lo normal.</span><span class="en">An alert when a sale, an expense or an invoice falls outside the norm.</span></span>
+            </div>
+            <p class="service-note">
+              <span class="bes">El modelo corre de nuestro lado y se vuelve a entrenar con tus datos nuevos. Tú recibes el resultado en tu dashboard o en tu correo, no un modelo que mantener.</span>
+              <span class="ben">The model runs on our side and retrains on your new data. You get the result in your dashboard or your inbox, not a model to maintain.</span>
+            </p>
+            <a href="#" class="btn btn-primary" onclick="go('contact'); return false;"><span class="es">Agendar llamada</span><span class="en">Book a call</span></a>
+          </div>
+        </section>
+
+        <!-- 03 · AI -->
+        <section class="service">
+          <div class="service-head">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 16l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg>
+            </div>
+            <p class="eyebrow"><span class="es">03 · Inteligencia artificial</span><span class="en">03 · Artificial intelligence</span></p>
+            <h2>
+              <span class="bes">Asistentes y agentes que trabajan con tu equipo.</span>
+              <span class="ben">Assistants and agents that work alongside your team.</span>
+            </h2>
+            <p>
+              <span class="bes">Modelos de lenguaje adaptados a tu negocio y agentes que hacen el trabajo repetitivo de leer, clasificar, redactar y responder. Construidos sobre tus documentos y conectados a las herramientas que ya usas.</span>
+              <span class="ben">Language models adapted to your business, and agents that do the repetitive work of reading, sorting, drafting and answering. Built on your documents and connected to the tools you already use.</span>
+            </p>
+            <p class="service-fit">
+              <span class="bes"><strong>Ideal si</strong> tu equipo responde las mismas preguntas todos los días, clasifica correos a mano o pasa datos de PDFs a un sistema.</span>
+              <span class="ben"><strong>Right for you if</strong> your team answers the same questions every day, sorts emails by hand, or moves data from PDFs into a system.</span>
+            </p>
+            <p class="fineprint">
+              <span class="bes">Piloto de 2–4 semanas con un caso concreto · membresía para operarlo</span>
+              <span class="ben">2–4 week pilot on one concrete case · membership to run it</span>
+            </p>
+          </div>
+          <div class="tasks">
+            <div class="tasks-hd">
+              <span><span class="es">Qué hacemos</span><span class="en">What we do</span></span>
+              <span><span class="es">Qué recibes</span><span class="en">What you get</span></span>
+            </div>
+            <div class="task">
+              <span class="t"><span class="es">Asistente que responde desde tus documentos</span><span class="en">Assistant that answers from your documents</span></span>
+              <span class="r"><span class="es">Un asistente para tu equipo o tus clientes que contesta con tus manuales, políticas y catálogo, y dice de dónde sacó cada respuesta.</span><span class="en">An assistant for your team or your customers that answers from your manuals, policies and catalog, and says where each answer came from.</span></span>
+            </div>
+            <div class="task">
+              <span class="t"><span class="es">Agentes que ejecutan tareas</span><span class="en">Agents that carry out tasks</span></span>
+              <span class="r"><span class="es">Un agente que arma el reporte semanal, clasifica y enruta correos o tickets, o pasa datos de facturas y PDFs a tu sistema.</span><span class="en">An agent that assembles the weekly report, sorts and routes emails or tickets, or moves data from invoices and PDFs into your system.</span></span>
+            </div>
+            <div class="task">
+              <span class="t"><span class="es">Atención al cliente por WhatsApp o web</span><span class="en">Customer service on WhatsApp or the web</span></span>
+              <span class="r"><span class="es">Un bot que responde las preguntas frecuentes, agenda citas y pasa a una persona cuando hace falta.</span><span class="en">A bot that answers common questions, books appointments and hands off to a person when needed.</span></span>
+            </div>
+            <div class="task">
+              <span class="t"><span class="es">Modelo de lenguaje ajustado a tu negocio</span><span class="en">Language model tuned to your business</span></span>
+              <span class="r"><span class="es">Un modelo que habla con tu vocabulario, tu tono y tus reglas, listo para conectarse a tus herramientas.</span><span class="en">A model that speaks your vocabulary, your tone and your rules, ready to plug into your tools.</span></span>
+            </div>
+            <div class="task">
+              <span class="t"><span class="es">Pruebas y límites</span><span class="en">Testing and guardrails</span></span>
+              <span class="r"><span class="es">Cada asistente se entrega con pruebas, reglas de lo que puede y no puede hacer, y un registro de lo que responde.</span><span class="en">Every assistant ships with tests, rules for what it can and cannot do, and a log of what it answers.</span></span>
+            </div>
+            <p class="service-note">
+              <span class="bes">Lo construimos, lo probamos, lo conectamos y lo mantenemos. Tu equipo lo usa; nadie tiene que administrarlo.</span>
+              <span class="ben">We build it, test it, connect it and maintain it. Your team uses it; nobody has to run it.</span>
+            </p>
+            <a href="#" class="btn btn-primary" onclick="go('contact'); return false;"><span class="es">Agendar llamada</span><span class="en">Book a call</span></a>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- How it's bought — the same two shapes across all three areas -->
+      <section class="service-shapes">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow eyebrow--muted"><span class="es">Cómo se contrata</span><span class="en">How it's bought</span></p>
+            <h2>
+              <span class="bes">Dos formas de trabajar, en las tres áreas.</span>
+              <span class="ben">Two ways to work, across all three areas.</span>
+            </h2>
+          </div>
+        </div>
+        <div class="grid grid-3">
+          <div class="card">
+            <p class="eyebrow"><span class="es">Proyecto de alcance fijo</span><span class="en">Fixed-scope project</span></p>
+            <p>
+              <span class="bes">Entregable, fechas y precio por escrito antes de empezar. Nunca por hora. Es la forma normal de hacer un primer dashboard, un modelo o un piloto de IA.</span>
+              <span class="ben">Deliverable, dates and price in writing before we start. Never hourly. It's the normal way to do a first dashboard, a model or an AI pilot.</span>
+            </p>
+          </div>
+          <div class="card">
+            <p class="eyebrow"><span class="es">Membresía mensual</span><span class="en">Monthly membership</span></p>
+            <p>
+              <span class="bes">Para lo que se repite: mantener el dashboard, volver a entrenar el modelo, responder preguntas nuevas, ajustar los reportes. Mes a mes.</span>
+              <span class="ben">For what recurs: keeping the dashboard current, retraining the model, answering new questions, adjusting the reports. Month to month.</span>
+            </p>
+          </div>
+          <div class="card card--dark on-dark">
+            <p class="eyebrow"><span class="es">Sin software que aprender</span><span class="en">No software to learn</span></p>
+            <p>
+              <span class="bes">Trabajamos con las herramientas que ya tienes (Power BI, Excel, Google Workspace, tu CRM) y montamos lo que falte. Todo se entrega en producción, con documentación corta y una sesión de capacitación.</span>
+              <span class="ben">We work with the tools you already have (Power BI, Excel, Google Workspace, your CRM) and set up whatever is missing. Everything is delivered in production, with short documentation and one training session.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="closing-cta">
+        <p class="lead">
+          <span class="bes">¿No sabes cuál necesitas? Empieza por la llamada — salimos de ahí con una recomendación.</span>
+          <span class="ben">Not sure which one you need? Start with the call — we leave it with a recommendation.</span>
+        </p>
+        <a href="#" class="btn btn-primary btn-lg" onclick="go('contact'); return false;"><span class="es">Agendar llamada</span><span class="en">Book a call</span></a>
+      </div>
+    </div>
   </main>
   </section>
 
-  <!-- ═══════════════ WORK / DEMO ═══════════════ -->
+  <!-- ═══════════════ WORK / EXAMPLES ═══════════════
+       One sample deliverable per practice area. All sample data, labelled as
+       such: the site must not imply real client results. The public hash stays
+       #demo so shared links keep working. -->
   <section class="page" data-page="work">
-  <main class="section wrap">
-    <p class="eyebrow"><span class="es">Demo &amp; portafolio</span><span class="en">Demo &amp; portfolio</span></p>
-    <h1 style="margin:14px 0 0; max-width:20ch;">
-      <span class="bes">Mira lo que recibes antes de comprarlo.</span>
-      <span class="ben">See what you get before you buy it.</span>
-    </h1>
-    <p class="lead" style="margin-top:22px;">
-      <span class="bes">Estos son tableros de demostración con datos de muestra. En la llamada de diagnóstico los recorremos en vivo y te mostramos cómo se verían con tus propias fuentes.</span>
-      <span class="ben">These are demo dashboards built on sample data. On the diagnostic call we walk through them live and show how they'd look with your own sources.</span>
-    </p>
+  <main>
+    <section class="page-intro band-dark">
+      <div class="wrap on-dark">
+        <p class="eyebrow"><span class="es">Ejemplos de entregables</span><span class="en">Sample deliverables</span></p>
+        <h1 style="margin:16px 0 0; max-width:20ch;">
+          <span class="bes">Mira lo que recibes <em>antes de comprarlo.</em></span>
+          <span class="ben">See what you get <em>before you buy it.</em></span>
+        </h1>
+        <p class="lead" style="margin-top:24px;">
+          <span class="bes">Un ejemplo por área, con datos inventados: así se ve lo que entregamos. En la llamada de diagnóstico los recorremos en vivo y te mostramos cómo se verían con tus propios datos.</span>
+          <span class="ben">One example per area, built on made-up data: this is what we deliver. On the diagnostic call we walk through them live and show how they'd look with your own data.</span>
+        </p>
+      </div>
+    </section>
 
-    <div class="grid grid-2" style="margin-top:44px; gap:40px; align-items:start;">
-      <!-- Demo 01 -->
-      <div class="stack" style="gap:16px;">
-        <div class="mock">
-          <div class="mock-bar">
-            <span>Magnum · <span class="es">Retail</span><span class="en">Retail</span></span>
-            <span class="tag-sample"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
+    <div class="section wrap">
+      <div class="examples">
+
+        <!-- Example 01 · BI -->
+        <article class="example">
+          <div class="mock">
+            <div class="mock-bar">
+              <span>Magnum · <span class="es">Retail</span><span class="en">Retail</span></span>
+              <span class="tag-sample"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
+            </div>
+            <div class="mock-grid">
+              <div class="mock-cell">
+                <div class="k"><span class="es">Ingresos del mes</span><span class="en">Revenue MTD</span></div>
+                <div class="v">$150,170</div>
+                <div class="d d-pos">+9.2% vs. Jul</div>
+              </div>
+              <div class="mock-cell">
+                <div class="k"><span class="es">Margen mezclado</span><span class="en">Blended margin</span></div>
+                <div class="v">34.6%</div>
+                <div class="d d-pos">+2.1 pts</div>
+              </div>
+            </div>
+            <div class="mock-section">
+              <div class="hd">
+                <span><span class="es">Ingresos por canal</span><span class="en">Revenue by channel</span></span>
+                <span>AUG 2026</span>
+              </div>
+              <div class="bar-row">
+                <span class="lbl">Shopify</span>
+                <span class="track"><span style="width:100%"></span></span>
+                <span class="amt">$61,240</span>
+              </div>
+              <div class="bar-row">
+                <span class="lbl">Amazon</span>
+                <span class="track"><span style="width:74%"></span></span>
+                <span class="amt">$45,310</span>
+              </div>
+              <div class="bar-row">
+                <span class="lbl">Retail</span>
+                <span class="track"><span style="width:46%;background:var(--chart-4)"></span></span>
+                <span class="amt">$28,150</span>
+              </div>
+              <div class="bar-row" style="margin-bottom:0;">
+                <span class="lbl">Wholesale</span>
+                <span class="track"><span style="width:25%;background:var(--chart-3)"></span></span>
+                <span class="amt">$15,470</span>
+              </div>
+            </div>
+            <div class="tags-row">
+              <span class="pill pill--strong">Shopify</span>
+              <span class="pill">QuickBooks</span>
+              <span class="pill pill--alert"><span class="es">Stock bajo · 3 SKU</span><span class="en">Low stock · 3 SKUs</span></span>
+            </div>
           </div>
-          <div class="mock-grid">
-            <div class="mock-cell">
-              <div class="k"><span class="es">Ingresos del mes</span><span class="en">Revenue MTD</span></div>
-              <div class="v">$150,170</div>
-              <div class="d d-pos">+9.2% vs. Jul</div>
+          <div class="example-body">
+            <p class="eyebrow">01 · Business Intelligence</p>
+            <h2 class="h3"><span class="es">Ventas y margen por canal</span><span class="en">Sales and margin by channel</span></h2>
+            <p>
+              <span class="bes">Shopify y hojas de cálculo consolidados en una vista diaria: ingresos, margen por producto y alertas de inventario.</span>
+              <span class="ben">Shopify and spreadsheets consolidated into a daily view: revenue, margin by product and inventory alerts.</span>
+            </p>
+            <p class="example-q">
+              <span class="bes"><strong>Responde a:</strong> ¿qué canal realmente deja dinero, y qué producto lo está drenando?</span>
+              <span class="ben"><strong>Answers:</strong> which channel actually makes money, and which product is draining it?</span>
+            </p>
+            <p class="fineprint"><span class="es">Ejemplo: retail / e-commerce</span><span class="en">Example: retail / e-commerce</span></p>
+          </div>
+        </article>
+
+        <!-- Example 02 · Machine Learning -->
+        <article class="example">
+          <div class="mock">
+            <div class="mock-bar">
+              <span>Magnum · <span class="es">Servicios</span><span class="en">Services</span></span>
+              <span class="tag-sample"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
             </div>
-            <div class="mock-cell">
-              <div class="k"><span class="es">Margen mezclado</span><span class="en">Blended margin</span></div>
-              <div class="v">34.6%</div>
-              <div class="d d-pos">+2.1 pts</div>
+            <div class="mock-grid">
+              <div class="mock-cell">
+                <div class="k"><span class="es">Pronóstico 12 meses</span><span class="en">12-month forecast</span></div>
+                <div class="v">$1.24M</div>
+                <div class="d d-flat">±8% <span class="es">banda</span><span class="en">band</span></div>
+              </div>
+              <div class="mock-cell">
+                <div class="k"><span class="es">Retención neta</span><span class="en">Net retention</span></div>
+                <div class="v">112%</div>
+                <div class="d d-pos">+6 pts</div>
+              </div>
+            </div>
+            <div class="mock-section">
+              <div class="hd">
+                <span><span class="es">Proyección con escenarios</span><span class="en">Projection with scenarios</span></span>
+                <span>FY27</span>
+              </div>
+              <svg viewBox="0 0 300 76" width="100%" height="76" role="img" preserveAspectRatio="none"
+                   aria-label="Revenue projection with a confidence band widening over twelve months">
+                <polygon points="0,50 27,46 55,44 82,39 109,36 136,31 164,27 191,21 218,16 246,10 273,5 300,0 300,26 273,29 246,32 218,36 191,39 164,43 136,46 109,49 82,52 55,55 27,57 0,58"
+                         fill="var(--chart-2)" opacity="0.75"></polygon>
+                <polyline points="0,54 27,51 55,49 82,45 109,42 136,38 164,35 191,30 218,26 246,21 273,17 300,13"
+                          fill="none" stroke="var(--chart-7)" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+              </svg>
+            </div>
+            <div class="mock-section">
+              <div class="hd">
+                <span><span class="es">Retención por grupo de clientes</span><span class="en">Retention by customer group</span></span>
+                <span>M0 — M5</span>
+              </div>
+              <div class="cohort">
+                <i style="background:var(--chart-6)"></i><i style="background:color-mix(in srgb,var(--chart-6) 73%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 59%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 46%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 35%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 28%,#fff)"></i>
+                <i style="background:var(--chart-6)"></i><i style="background:color-mix(in srgb,var(--chart-6) 66%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 49%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 39%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 25%,#fff)"></i><i style="background:var(--bg-tertiary)"></i>
+                <i style="background:var(--chart-6)"></i><i style="background:color-mix(in srgb,var(--chart-6) 80%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 63%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 52%,#fff)"></i><i style="background:var(--bg-tertiary)"></i><i style="background:var(--bg-tertiary)"></i>
+                <i style="background:var(--chart-6)"></i><i style="background:color-mix(in srgb,var(--chart-6) 69%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 56%,#fff)"></i><i style="background:var(--bg-tertiary)"></i><i style="background:var(--bg-tertiary)"></i><i style="background:var(--bg-tertiary)"></i>
+                <i style="background:var(--chart-6)"></i><i style="background:color-mix(in srgb,var(--chart-6) 83%,#fff)"></i><i style="background:var(--bg-tertiary)"></i><i style="background:var(--bg-tertiary)"></i><i style="background:var(--bg-tertiary)"></i><i style="background:var(--bg-tertiary)"></i>
+              </div>
             </div>
           </div>
-          <div class="mock-section">
-            <div class="hd">
-              <span><span class="es">Ingresos por canal</span><span class="en">Revenue by channel</span></span>
-              <span>AUG 2026</span>
+          <div class="example-body">
+            <p class="eyebrow">02 · Machine Learning</p>
+            <h2 class="h3"><span class="es">Pronóstico de ingresos y retención</span><span class="en">Revenue forecast and retention</span></h2>
+            <p>
+              <span class="bes">Proyección a 12 meses con escenarios, retención por grupo de clientes y costo de adquisición contra valor de vida.</span>
+              <span class="ben">A 12-month projection with scenarios, retention by customer group, and acquisition cost against lifetime value.</span>
+            </p>
+            <p class="example-q">
+              <span class="bes"><strong>Responde a:</strong> ¿podemos permitirnos contratar el próximo trimestre?</span>
+              <span class="ben"><strong>Answers:</strong> can we afford to hire next quarter?</span>
+            </p>
+            <p class="fineprint"><span class="es">Ejemplo: servicios profesionales</span><span class="en">Example: professional services</span></p>
+          </div>
+        </article>
+
+        <!-- Example 03 · AI — an assistant answering from documents -->
+        <article class="example">
+          <div class="mock">
+            <div class="mock-bar">
+              <span>Magnum · <span class="es">Asistente interno</span><span class="en">Internal assistant</span></span>
+              <span class="tag-sample"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
             </div>
-            <div class="bar-row">
-              <span class="lbl">Shopify</span>
-              <span class="track"><span style="width:100%"></span></span>
-              <span class="amt">$61,240</span>
+            <div class="chat">
+              <div class="msg msg--user">
+                <span class="es">¿Cuántos días tiene un cliente mayorista para devolver mercancía?</span><span class="en">How many days does a wholesale customer have to return goods?</span>
+              </div>
+              <div class="msg msg--bot">
+                <span class="es">30 días desde la entrega, si el producto está sin abrir. Los pedidos especiales no admiten devolución.</span><span class="en">30 days from delivery, if the product is unopened. Special orders can't be returned.</span>
+                <div class="cite">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+                  <span><span class="es">Política comercial 2026 · §4.2, p. 12</span><span class="en">Sales policy 2026 · §4.2, p. 12</span></span>
+                </div>
+              </div>
+              <div class="msg msg--user">
+                <span class="es">¿Le puedo dar 45 días a un cliente grande?</span><span class="en">Can I give a large customer 45 days?</span>
+              </div>
+              <div class="msg msg--bot">
+                <span class="es">Eso es una excepción y la aprueba Ventas. Ya le pasé tu caso al equipo con el resumen de esta conversación.</span><span class="en">That's an exception, and Sales approves it. I've passed your case to the team with a summary of this conversation.</span>
+                <div class="cite cite--handoff">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+                  <span><span class="es">Pasado a una persona · Ventas</span><span class="en">Handed to a person · Sales</span></span>
+                </div>
+              </div>
             </div>
-            <div class="bar-row">
-              <span class="lbl">Amazon</span>
-              <span class="track"><span style="width:74%"></span></span>
-              <span class="amt">$45,310</span>
-            </div>
-            <div class="bar-row">
-              <span class="lbl">Retail</span>
-              <span class="track"><span style="width:46%;background:var(--chart-3)"></span></span>
-              <span class="amt">$28,150</span>
-            </div>
-            <div class="bar-row" style="margin-bottom:0;">
-              <span class="lbl">Wholesale</span>
-              <span class="track"><span style="width:25%;background:var(--chart-2)"></span></span>
-              <span class="amt">$15,470</span>
+            <div class="tags-row">
+              <span class="pill pill--strong">PDF</span>
+              <span class="pill">Google Drive</span>
+              <span class="pill">WhatsApp</span>
             </div>
           </div>
-          <div class="tags-row">
-            <span class="pill pill--brand">Shopify</span>
-            <span class="pill">QuickBooks</span>
-            <span class="pill pill--accent"><span class="es">Stock bajo · 3 SKU</span><span class="en">Low stock · 3 SKUs</span></span>
+          <div class="example-body">
+            <p class="eyebrow"><span class="es">03 · Inteligencia artificial</span><span class="en">03 · Artificial intelligence</span></p>
+            <h2 class="h3"><span class="es">Asistente que responde desde tus documentos</span><span class="en">An assistant that answers from your documents</span></h2>
+            <p>
+              <span class="bes">Tu equipo pregunta en lenguaje normal. El asistente contesta con tus manuales y políticas, cita la página de donde sacó cada respuesta y pasa a una persona lo que no le toca decidir.</span>
+              <span class="ben">Your team asks in plain language. The assistant answers from your manuals and policies, cites the page behind every answer, and hands anything it shouldn't decide to a person.</span>
+            </p>
+            <p class="example-q">
+              <span class="bes"><strong>Responde a:</strong> ¿cuántas horas a la semana se van en contestar las mismas preguntas?</span>
+              <span class="ben"><strong>Answers:</strong> how many hours a week go to answering the same questions?</span>
+            </p>
+            <p class="fineprint"><span class="es">Ejemplo: distribución mayorista</span><span class="en">Example: wholesale distribution</span></p>
           </div>
+        </article>
+
+      </div>
+
+      <div class="case-study">
+        <div>
+          <h2>
+            <span class="bes">Buscamos dos casos de estudio.</span>
+            <span class="ben">We're looking for two case studies.</span>
+          </h2>
+          <p style="margin-top:12px;">
+            <span class="bes">Estamos abriendo dos lugares para proyectos iniciales a precio reducido, a cambio de un testimonio y permiso para publicar el caso. Si tu negocio encaja con el perfil, es la forma más económica de trabajar con nosotros.</span>
+            <span class="ben">We're opening two slots for early projects at a reduced rate, in exchange for a testimonial and permission to publish the case. If your business fits the profile, it's the most affordable way to work with us.</span>
+          </p>
+          <a href="#" class="btn btn-primary" style="margin-top:8px;" onclick="go('contact'); return false;">
+            <span class="es">Agendar llamada</span><span class="en">Book a call</span>
+          </a>
         </div>
-        <p class="eyebrow eyebrow--muted">Demo 01 · Retail / e-commerce</p>
-        <h3><span class="es">Ventas y margen por canal</span><span class="en">Sales and margin by channel</span></h3>
-        <p>
-          <span class="bes">Shopify y hojas de cálculo consolidados en una vista diaria: ingresos, margen por producto y alertas de inventario.</span>
-          <span class="ben">Shopify and spreadsheets consolidated into a daily view: revenue, margin by product and inventory alerts.</span>
-        </p>
-        <p class="fineprint">
-          <span class="bes">Responde a: ¿qué canal realmente deja dinero, y qué producto lo está drenando?</span>
-          <span class="ben">Answers: which channel actually makes money, and which product is draining it?</span>
-        </p>
-      </div>
-
-      <!-- Demo 02 -->
-      <div class="stack" style="gap:16px;">
-        <div class="mock">
-          <div class="mock-bar">
-            <span>Magnum · <span class="es">Servicios</span><span class="en">Services</span></span>
-            <span class="tag-sample"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
-          </div>
-          <div class="mock-grid">
-            <div class="mock-cell">
-              <div class="k"><span class="es">Pronóstico 12 meses</span><span class="en">12-month forecast</span></div>
-              <div class="v">$1.24M</div>
-              <div class="d d-flat">±8% <span class="es">banda</span><span class="en">band</span></div>
-            </div>
-            <div class="mock-cell">
-              <div class="k"><span class="es">Retención neta</span><span class="en">Net retention</span></div>
-              <div class="v">112%</div>
-              <div class="d d-pos">+6 pts</div>
-            </div>
-          </div>
-          <div class="mock-section">
-            <div class="hd">
-              <span><span class="es">Proyección con escenarios</span><span class="en">Projection with scenarios</span></span>
-              <span>FY27</span>
-            </div>
-            <svg viewBox="0 0 300 76" width="100%" height="76" role="img" preserveAspectRatio="none"
-                 aria-label="Revenue projection with a confidence band widening over twelve months">
-              <polygon points="0,50 27,46 55,44 82,39 109,36 136,31 164,27 191,21 218,16 246,10 273,5 300,0 300,26 273,29 246,32 218,36 191,39 164,43 136,46 109,49 82,52 55,55 27,57 0,58"
-                       fill="var(--chart-2)" opacity="0.5"></polygon>
-              <polyline points="0,54 27,51 55,49 82,45 109,42 136,38 164,35 191,30 218,26 246,21 273,17 300,13"
-                        fill="none" stroke="var(--chart-6)" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
-            </svg>
-          </div>
-          <div class="mock-section">
-            <div class="hd">
-              <span><span class="es">Retención por grupo de clientes</span><span class="en">Retention by customer group</span></span>
-              <span>M0 — M5</span>
-            </div>
-            <div class="cohort">
-              <i style="background:var(--chart-6)"></i><i style="background:color-mix(in srgb,var(--chart-6) 73%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 59%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 46%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 35%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 28%,#fff)"></i>
-              <i style="background:var(--chart-6)"></i><i style="background:color-mix(in srgb,var(--chart-6) 66%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 49%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 39%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 25%,#fff)"></i><i style="background:var(--surface-2)"></i>
-              <i style="background:var(--chart-6)"></i><i style="background:color-mix(in srgb,var(--chart-6) 80%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 63%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 52%,#fff)"></i><i style="background:var(--surface-2)"></i><i style="background:var(--surface-2)"></i>
-              <i style="background:var(--chart-6)"></i><i style="background:color-mix(in srgb,var(--chart-6) 69%,#fff)"></i><i style="background:color-mix(in srgb,var(--chart-6) 56%,#fff)"></i><i style="background:var(--surface-2)"></i><i style="background:var(--surface-2)"></i><i style="background:var(--surface-2)"></i>
-              <i style="background:var(--chart-6)"></i><i style="background:color-mix(in srgb,var(--chart-6) 83%,#fff)"></i><i style="background:var(--surface-2)"></i><i style="background:var(--surface-2)"></i><i style="background:var(--surface-2)"></i><i style="background:var(--surface-2)"></i>
-            </div>
-          </div>
+        <div class="card card--tint">
+          <p class="eyebrow"><span class="es">Perfil que buscamos</span><span class="en">Profile we're looking for</span></p>
+          <ul>
+            <li><span class="es">Ingresos anuales entre $500K y $10M</span><span class="en">$500K to $10M in annual revenue</span></li>
+            <li><span class="es">Datos ya digitales (Shopify, QuickBooks, CRM, hojas de cálculo)</span><span class="en">Data already digital (Shopify, QuickBooks, CRM, spreadsheets)</span></li>
+            <li><span class="es">Una decisión concreta que hoy se toma a ciegas</span><span class="en">One concrete decision made blind today</span></li>
+            <li><span class="es">Disposición a dar acceso de lectura a las fuentes</span><span class="en">Willing to give read access to the sources</span></li>
+          </ul>
         </div>
-        <p class="eyebrow eyebrow--muted">Demo 02 · <span class="es">Servicios profesionales</span><span class="en">Professional services</span></p>
-        <h3><span class="es">Pronóstico de ingresos y retención</span><span class="en">Revenue forecast and retention</span></h3>
-        <p>
-          <span class="bes">Proyección a 12 meses con escenarios, retención por grupo de clientes y costo de adquisición contra valor de vida.</span>
-          <span class="ben">A 12-month projection with scenarios, retention by customer group, and acquisition cost against lifetime value.</span>
-        </p>
-        <p class="fineprint">
-          <span class="bes">Responde a: ¿podemos permitirnos contratar el próximo trimestre?</span>
-          <span class="ben">Answers: can we afford to hire next quarter?</span>
-        </p>
-      </div>
-    </div>
-
-    <div class="grid grid-2" style="margin-top:52px; gap:40px; align-items:center; padding-top:40px; border-top:1px solid var(--line);">
-      <div>
-        <h2 style="font-size:1.9rem;">
-          <span class="bes">Buscamos dos casos de estudio.</span>
-          <span class="ben">We're looking for two case studies.</span>
-        </h2>
-        <p style="margin-top:12px;">
-          <span class="bes">Estamos abriendo dos lugares para proyectos iniciales a precio reducido, a cambio de un testimonio y permiso para publicar el caso. Si tu negocio encaja con el perfil, es la forma más económica de trabajar con nosotros.</span>
-          <span class="ben">We're opening two slots for early projects at a reduced rate, in exchange for a testimonial and permission to publish the case. If your business fits the profile, it's the most affordable way to work with us.</span>
-        </p>
-        <a href="#" class="btn btn-primary" style="margin-top:8px;" onclick="go('contact'); return false;">
-          <span class="es">Agendar llamada</span><span class="en">Book a call</span>
-        </a>
-      </div>
-      <div class="card card--wash">
-        <p class="eyebrow"><span class="es">Perfil que buscamos</span><span class="en">Profile we're looking for</span></p>
-        <ul>
-          <li><span class="es">Ingresos anuales entre $500K y $10M</span><span class="en">$500K to $10M in annual revenue</span></li>
-          <li><span class="es">Datos ya digitales (Shopify, QuickBooks, CRM, hojas de cálculo)</span><span class="en">Data already digital (Shopify, QuickBooks, CRM, spreadsheets)</span></li>
-          <li><span class="es">Una decisión concreta que hoy se toma a ciegas</span><span class="en">One concrete decision made blind today</span></li>
-          <li><span class="es">Disposición a dar acceso de lectura a las fuentes</span><span class="en">Willing to give read access to the sources</span></li>
-        </ul>
       </div>
     </div>
   </main>
@@ -656,37 +745,68 @@
 
   <!-- ═══════════════ CONTACT ═══════════════ -->
   <section class="page" data-page="contact">
-  <main class="section wrap">
-    <div class="grid grid-2" style="gap:64px; align-items:start;">
-      <div>
-        <p class="eyebrow"><span class="es">Contacto</span><span class="en">Contact</span></p>
-        <h1 style="margin:14px 0 0;">
-          <span class="bes">Agenda 20 minutos.</span><span class="ben">Book 20 minutes.</span>
-        </h1>
-        <p class="lead" style="margin-top:20px;">
-          <span class="bes">Cuéntanos dónde viven tus datos y qué decisión te cuesta tomar. Respondemos en menos de 24 horas con horarios para reunirnos.</span>
-          <span class="ben">Tell us where your data lives and which decision is hard to make. We reply within 24 hours with times to meet.</span>
-        </p>
-
-        <div style="margin:28px 0 32px;">
-          <div class="contact-row">
-            <span class="k">Email</span>
-            <span class="v">
-              <a href="mailto:dxr1491@miami.edu">dxr1491@miami.edu</a>
-              <a href="mailto:augustoriverof@hotmail.com">augustoriverof@hotmail.com</a>
-            </span>
-          </div>
-          <div class="contact-row">
-            <span class="k">WhatsApp</span>
-            <span class="v"><a href="https://wa.me/17867701820">+1 (786) 770-1820</a></span>
-          </div>
-          <div class="contact-row">
-            <span class="k"><span class="es">Base</span><span class="en">Based in</span></span>
-            <span class="v"><span>Miami, Florida &nbsp;·&nbsp; <span class="es">remoto en EE. UU. y LatAm</span><span class="en">remote across the US and LatAm</span></span></span>
-          </div>
+  <main>
+    <section class="page-intro band-dark">
+      <div class="wrap hero">
+        <div class="on-dark">
+          <p class="eyebrow"><span class="es">Contacto</span><span class="en">Contact</span></p>
+          <h1 style="margin:16px 0 0;">
+            <span class="bes">Agenda <em>20 minutos.</em></span><span class="ben">Book <em>20 minutes.</em></span>
+          </h1>
+          <p class="lead" style="margin-top:24px;">
+            <span class="bes">Cuéntanos dónde viven tus datos y qué decisión te cuesta tomar. Respondemos en menos de 24 horas con horarios para reunirnos.</span>
+            <span class="ben">Tell us where your data lives and which decision is hard to make. We reply within 24 hours with times to meet.</span>
+          </p>
         </div>
 
-        <p class="eyebrow" style="margin-bottom:16px;">FAQ</p>
+        <div class="card">
+          <h3><span class="es">Solicita tu llamada</span><span class="en">Request your call</span></h3>
+          <p>
+            <span class="bes">Escríbenos con tu nombre, tu empresa y dónde viven tus datos hoy. Respondemos en menos de 24 horas.</span>
+            <span class="ben">Write to us with your name, your company and where your data lives today. We reply within 24 hours.</span>
+          </p>
+          <div class="card-foot">
+            <a href="mailto:dxr1491@miami.edu,augustoriverof@hotmail.com?subject=Solicitud%20de%20llamada%20-%20Magnum%20Data%20Consulting" class="btn btn-primary btn-block">
+              <span class="es">Escribir por email</span><span class="en">Email us</span>
+            </a>
+            <a href="https://wa.me/17867701820" class="btn btn-ghost btn-block">
+              <span class="es">Escribir por WhatsApp</span><span class="en">Message on WhatsApp</span>
+            </a>
+            <p class="fineprint">
+              <span class="bes">Usamos tus datos solo para responderte. Sin listas de correo.</span>
+              <span class="ben">We use your details only to reply. No mailing lists.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section wrap contact-layout">
+      <div>
+        <div class="section-head">
+          <h2 class="h3"><span class="es">Datos de contacto</span><span class="en">Contact details</span></h2>
+        </div>
+        <div class="contact-row">
+          <span class="k">Email</span>
+          <span class="v">
+            <a href="mailto:dxr1491@miami.edu">dxr1491@miami.edu</a>
+            <a href="mailto:augustoriverof@hotmail.com">augustoriverof@hotmail.com</a>
+          </span>
+        </div>
+        <div class="contact-row">
+          <span class="k">WhatsApp</span>
+          <span class="v"><a href="https://wa.me/17867701820">+1 (786) 770-1820</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="k"><span class="es">Base</span><span class="en">Based in</span></span>
+          <span class="v"><span>Miami, Florida &nbsp;·&nbsp; <span class="es">remoto en EE. UU. y LatAm</span><span class="en">remote across the US and LatAm</span></span></span>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-head">
+          <h2 class="h3"><span class="es">Preguntas frecuentes</span><span class="en">FAQ</span></h2>
+        </div>
         <div class="faq">
           <div>
             <h3><span class="es">¿Cuánto cuesta?</span><span class="en">How much does it cost?</span></h3>
@@ -725,42 +845,29 @@
           </div>
         </div>
       </div>
-
-      <div class="card">
-        <h3><span class="es">Solicita tu llamada</span><span class="en">Request your call</span></h3>
-        <p>
-          <span class="bes">Escríbenos con tu nombre, tu empresa y dónde viven tus datos hoy. Respondemos en menos de 24 horas.</span>
-          <span class="ben">Write to us with your name, your company and where your data lives today. We reply within 24 hours.</span>
-        </p>
-        <div class="card-foot">
-          <a href="mailto:dxr1491@miami.edu,augustoriverof@hotmail.com?subject=Solicitud%20de%20llamada%20-%20Magnum%20Analytics" class="btn btn-primary btn-block">
-            <span class="es">Escribir por email</span><span class="en">Email us</span>
-          </a>
-          <a href="https://wa.me/17867701820" class="btn btn-ghost btn-block">
-            <span class="es">Escribir por WhatsApp</span><span class="en">Message on WhatsApp</span>
-          </a>
-          <p class="fineprint">
-            <span class="bes">Usamos tus datos solo para responderte. Sin listas de correo.</span>
-            <span class="ben">We use your details only to reply. No mailing lists.</span>
-          </p>
-        </div>
-      </div>
     </div>
   </main>
   </section>
 
   <!-- ─────────────── Footer ─────────────── -->
-  <footer class="site-footer">
+  <footer class="site-footer band-dark">
     <div class="wrap">
-      <div class="wordmark" style="cursor:default;">
-        <b>Magnum</b><span>Business Intelligence · Miami, FL</span>
+      <div class="footer-brand">
+        <span class="magnum-wordmark magnum-wordmark--dark">
+          <img src="assets/logo-isotipo-oscuro.svg" alt="" width="30" height="30">
+          <span class="magnum-wordmark__text">
+            <span class="magnum-wordmark__main">Magnum</span>
+            <span class="magnum-wordmark__sub">Data Consulting</span>
+          </span>
+        </span>
+        <span class="footer-tagline"><span class="es">BI, Machine Learning e IA · Miami, FL</span><span class="en">BI, Machine Learning &amp; AI · Miami, FL</span></span>
       </div>
-      <div style="display:flex; gap:20px; flex-wrap:wrap; font-size:0.9rem;">
+      <div class="footer-links">
         <a href="mailto:dxr1491@miami.edu">dxr1491@miami.edu</a>
         <a href="mailto:augustoriverof@hotmail.com">augustoriverof@hotmail.com</a>
         <a href="https://wa.me/17867701820">WhatsApp</a>
       </div>
-      <div class="muted" style="font-size:0.85rem;">© 2026 Magnum Analytics</div>
+      <div class="footer-copy">© 2026 Magnum Data Consulting</div>
     </div>
   </footer>
 </div>

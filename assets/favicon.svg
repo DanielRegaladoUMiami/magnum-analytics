@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#2563eb"/>
-  <text x="32" y="45" font-family="Fraunces, Georgia, serif" font-size="40"
-        font-weight="600" text-anchor="middle" fill="#ffffff">M</text>
+<svg width="64" height="64" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" rx="18" fill="#09090B"/>
+  <path fill="#FFFFFF" d="M14 80V74L21 73V31L14 30V24H34L51 60L66 28H82V34L75 35V73L82 74V80H58V74L64 73V42L49 76H45L30 42V73L36 74V80H14Z"/>
+  <rect fill="#94A3B8" x="64" y="14" width="18" height="8"/>
 </svg>

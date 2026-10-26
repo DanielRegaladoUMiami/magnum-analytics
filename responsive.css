@@ -1,29 +1,33 @@
-/* Responsive layer — v0.2.
+/* Responsive layer — v1.0.
  *
- * The v0.1 file targeted literal inline-style strings with !important because the
- * markup carried every dimension inline. index.html now uses classes from
- * ds/styles.css, so this file is plain media queries again.
+ * Plain media queries on the classes in ds/styles.css.
  *
  * Breakpoints:
- *   960px — grids collapse to fewer columns, section rhythm tightens
+ *   960px — grids collapse to fewer columns, two-column blocks stack
  *   860px — header nav becomes a dropdown menu
  *   640px — single column, display type steps down, full-width buttons
+ *   380px — the wordmark steps down so it fits beside the menu button
  */
 
 /* ───────────── Tablet ───────────── */
 @media (max-width: 960px) {
   :root { --gutter: 22px; }
 
-  .hero { grid-template-columns: 1fr; gap: 36px; }
+  .hero { grid-template-columns: 1fr; gap: 40px; }
 
-  .grid-3,
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  /* Three cards in two columns leave one alone on the last row: let it span. */
+  .grid-3 > :last-child:nth-child(odd) { grid-column: 1 / -1; }
 
   .steps--4 { grid-template-columns: repeat(2, 1fr); }
 
   .grid-2 { gap: 32px !important; }
 
-  .service { grid-template-columns: 1fr; gap: 28px; padding-block: 44px; }
+  .service,
+  .example { grid-template-columns: 1fr; gap: 28px; padding-block: 44px; }
+
+  .case-study,
+  .contact-layout { grid-template-columns: 1fr; gap: 40px; }
 }
 
 /* ───────────── Header → dropdown menu ───────────── */
@@ -43,9 +47,9 @@
     gap: 4px;
     margin: 0;
     padding: 10px var(--gutter) 18px;
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
-    box-shadow: var(--shadow-lg);
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-subtle);
+    box-shadow: 0 24px 32px -12px rgba(9, 9, 11, 0.18);  /* falls below the panel only */
   }
   [data-menu="open"] .nav { display: flex; }
 
@@ -53,9 +57,14 @@
     min-height: 44px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--border-subtle);
     padding: 4px 0;
   }
+  /* Current page in the dropdown: a carbon bar on the left instead of the
+     desktop underline. */
+  [data-p="services"] .nav a.n-services,
+  [data-p="work"] .nav a.n-work,
+  [data-p="contact"] .nav a.n-contact { border-bottom-color: var(--border-subtle); box-shadow: inset 2px 0 0 var(--border-strong); padding-left: 12px; }
   .nav .lang-toggle { align-self: flex-start; margin-top: 10px; min-height: 44px; }
   .nav .btn { margin-top: 8px; width: 100%; }
 
@@ -65,7 +74,7 @@
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(28, 27, 25, 0.34);
+    background: rgba(9, 9, 11, 0.42);
     z-index: 20;
   }
 
@@ -73,6 +82,8 @@
   [data-menu="open"] #nav-toggle .bar-top { transform: translateY(4px) rotate(45deg); }
   [data-menu="open"] #nav-toggle .bar-mid { opacity: 0; }
   [data-menu="open"] #nav-toggle .bar-bot { transform: translateY(-4px) rotate(-45deg); }
+
+  .magnum-wordmark { min-height: 44px; }
 }
 
 /* ───────────── Phone ───────────── */
@@ -80,14 +91,19 @@
   :root { --gutter: 18px; }
 
   .grid-2,
-  .grid-3,
-  .grid-4 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
 
   .steps--4 { grid-template-columns: 1fr; }
 
   .grid-2 { gap: 28px !important; }
 
-  h1 { font-size: clamp(2rem, 1.4rem + 4vw, 2.6rem); }
+  h1,
+  .hero h1 { font-size: clamp(2.05rem, 1.4rem + 4vw, 2.6rem); }
+  .br-wide { display: none; }  /* phones: let the hero headline flow */
+
+  .magnum-wordmark { gap: 9px; }
+  .magnum-wordmark img { width: 30px; height: 30px; }
+  .magnum-wordmark__text { font-size: 1.22rem; }
 
   .hero-cta { flex-direction: column; align-items: stretch; }
   .hero-cta .btn { width: 100%; }
@@ -95,24 +111,38 @@
   .cta-band .wrap { flex-direction: column; align-items: flex-start; gap: 20px; }
   .cta-band .btn { width: 100%; }
 
+  .closing-cta { flex-direction: column; align-items: stretch; }
+  .closing-cta .btn { width: 100%; }
+
   .card { padding: 22px; }
   .step { padding: 22px 20px; }
 
+  .section-head { margin-bottom: 26px; }
+
+  /* Each task stacks "what we do" over "what you get"; the column header no
+     longer lines up with anything, so a per-row label replaces it. */
   .tasks-hd { display: none; }
   .task { grid-template-columns: 1fr; gap: 4px; }
-  .task .r::before { content: "Recibes · "; font-weight: 600; color: var(--brand-ink); }
+  .tasks .task:first-of-type { border-top: 2px solid var(--border-strong); }
+  .task .r::before { content: "Recibes · "; font-weight: 700; color: var(--text-primary); }
   [data-l="en"] .task .r::before { content: "You get · "; }
   .tasks .btn { width: 100%; }
 
+  .msg { max-width: 92%; }
+
   .contact-row { flex-direction: column; gap: 4px; }
   .contact-row .k { width: auto; padding-top: 0; }
+
+  .site-footer .wrap { flex-direction: column; align-items: flex-start; }
 
   /* Tap targets for the standalone contact links. */
   a[href^="mailto:"]:not(.btn),
   a[href*="wa.me"]:not(.btn) { display: inline-block; padding: 8px 0; }
 }
 
-/* ───────────── Touch targets (any narrow viewport) ───────────── */
-@media (max-width: 860px) {
-  .wordmark { min-height: 44px; align-items: center; }
+/* ───────────── Small phones ───────────── */
+@media (max-width: 380px) {
+  .magnum-wordmark { gap: 8px; }
+  .magnum-wordmark img { width: 28px; height: 28px; }
+  .magnum-wordmark__text { font-size: 1.1rem; }
 }

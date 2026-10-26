@@ -1,4 +1,4 @@
-/* Magnum Analytics — client-side routing and language toggle.
+/* Magnum Data Consulting — client-side routing and language toggle.
  *
  * The site ships as a single document: all four pages are in the DOM and CSS
  * shows whichever matches [data-p] on #app. This replaces the design-canvas
@@ -18,16 +18,16 @@
 
   var TITLES = {
     es: {
-      home: "Magnum Analytics — Business Intelligence · Miami",
-      services: "Servicios — Magnum Analytics",
-      work: "Demo — Magnum Analytics",
-      contact: "Contacto — Magnum Analytics"
+      home: "Magnum Data Consulting — BI, Machine Learning e IA · Miami",
+      services: "Servicios — Magnum Data Consulting",
+      work: "Ejemplos — Magnum Data Consulting",
+      contact: "Contacto — Magnum Data Consulting"
     },
     en: {
-      home: "Magnum Analytics — Business Intelligence · Miami",
-      services: "Services — Magnum Analytics",
-      work: "Demo — Magnum Analytics",
-      contact: "Contact — Magnum Analytics"
+      home: "Magnum Data Consulting — BI, Machine Learning & AI · Miami",
+      services: "Services — Magnum Data Consulting",
+      work: "Examples — Magnum Data Consulting",
+      contact: "Contact — Magnum Data Consulting"
     }
   };
 
@@ -132,6 +132,7 @@
   });
 
   window.addEventListener("popstate", function () {
+    setMenu(false);
     render(pageFromHash(), currentLang());
     window.scrollTo(0, 0);
   });
