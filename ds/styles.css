@@ -282,8 +282,8 @@ img, svg { display: block; max-width: 100%; }
 .card--dark { background: var(--bg-dark); border-color: var(--bg-dark); }
 
 .card-icon {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   display: grid;
   place-items: center;
   border: 1px solid var(--border-subtle);
@@ -291,7 +291,9 @@ img, svg { display: block; max-width: 100%; }
   color: var(--text-primary);
   flex: none;
 }
-.card-icon svg { width: 22px; height: 22px; }
+/* The three area icons are miniatures of the deliverables on the Examples
+   page (bars, forecast cone, cited answer), drawn square like the isotipo. */
+.card-icon svg { width: 30px; height: 30px; }
 
 .card ul {
   margin: 0;
@@ -431,6 +433,19 @@ img, svg { display: block; max-width: 100%; }
 .bar-row .track > span { display: block; height: 100%; background: var(--chart-6); }
 .bar-row .amt { font-variant-numeric: tabular-nums; font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); width: 60px; flex: none; text-align: right; }
 
+.bar-row .pct { font-variant-numeric: tabular-nums; font-size: 0.82rem; font-weight: 700; color: var(--metric-up); width: 34px; flex: none; text-align: right; }
+.bar-row .pct--low { color: var(--metric-down); }
+
+/* At-risk list (ML example): score, who and why, suggested action. */
+.risk-row { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; padding: 11px 0; border-top: 1px solid var(--border-subtle); }
+.risk-row:first-of-type { border-top: 0; padding-top: 0; }
+.risk-row:last-child { padding-bottom: 0; }
+.risk-row .p { font-size: 0.98rem; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; color: var(--metric-down); }
+.risk-row .p--mid { color: var(--text-secondary); }
+.risk-row .who { font-size: 0.86rem; font-weight: 700; color: var(--text-primary); min-width: 0; }
+.risk-row .why { display: block; font-size: 0.78rem; font-weight: 500; line-height: 1.4; color: var(--text-muted); }
+.risk-row .act { font-size: 0.72rem; font-weight: 700; padding: 3px 8px; border: 1px solid var(--chart-2); border-radius: var(--radius-sm); color: var(--text-secondary); white-space: nowrap; }
+
 .cohort { display: grid; grid-template-columns: repeat(6, 1fr); gap: 3px; }
 .cohort > i { height: 18px; display: block; }
 
@@ -555,6 +570,14 @@ img, svg { display: block; max-width: 100%; }
 .example-body { display: flex; flex-direction: column; gap: 12px; }
 .example-body p { margin: 0; }
 .example-q { color: var(--text-primary); }
+
+/* Each example reads as a short case: situation / what we build / decision. */
+.case { margin: 4px 0 0; display: flex; flex-direction: column; }
+.case > div { padding: 12px 0; border-top: 1px solid var(--border-subtle); }
+.case > div:last-child { border-bottom: 1px solid var(--border-subtle); }
+.case dt { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
+.case dd { margin: 0; color: var(--text-secondary); }
+.case > div:last-child dd { color: var(--text-primary); }
 
 .case-study {
   display: grid;

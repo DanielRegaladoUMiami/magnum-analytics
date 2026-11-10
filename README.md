@@ -2,7 +2,7 @@
 
 Marketing site for Magnum Data Consulting — business intelligence, machine learning and AI
 for small and mid-sized businesses, delivered as finished work rather than software.
-Miami, Florida; remote across the US and LatAm.
+Remote, in English and Spanish.
 
 **Live:** https://danielregaladoumiami.github.io/magnum-analytics/
 
@@ -37,7 +37,7 @@ address, update `<link rel="canonical">` and `og:url` in the `<head>` of `index.
 ## The sample deliverables
 
 The hero dashboard and the three examples on the Examples page (a BI dashboard, an ML
-forecast, an AI assistant) are **built in HTML/CSS, not screenshots**. Each is labelled
+at-risk customer list, an AI assistant) are **built in HTML/CSS, not screenshots**. Each is labelled
 "sample data" in its header, because the numbers and conversations are illustrative
 rather than client work.
 

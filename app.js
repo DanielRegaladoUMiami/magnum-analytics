@@ -18,13 +18,13 @@
 
   var TITLES = {
     es: {
-      home: "Magnum Data Consulting — BI, Machine Learning e IA · Miami",
+      home: "Magnum Data Consulting — BI, Machine Learning e IA",
       services: "Servicios — Magnum Data Consulting",
       work: "Ejemplos — Magnum Data Consulting",
       contact: "Contacto — Magnum Data Consulting"
     },
     en: {
-      home: "Magnum Data Consulting — BI, Machine Learning & AI · Miami",
+      home: "Magnum Data Consulting — BI, Machine Learning & AI",
       services: "Services — Magnum Data Consulting",
       work: "Examples — Magnum Data Consulting",
       contact: "Contact — Magnum Data Consulting"
@@ -104,6 +104,30 @@
     // No stored choice: follow the browser, defaulting to Spanish.
     return (navigator.language || "es").toLowerCase().indexOf("en") === 0 ? "en" : "es";
   }
+
+  /* ---- contact buttons --------------------------------------------------
+   * The addresses and the number are not written anywhere in the page: the
+   * buttons carry data-contact and the link is assembled here on click. To
+   * change who receives the messages, edit these two lists and nothing else.
+   */
+  var MAILBOXES = [["dxr1491", "miami.edu"], ["augustoriverof", "hotmail.com"]];
+  var WHATSAPP = ["1", "786", "770", "1820"];
+
+  function contactUrl(kind, subject) {
+    if (kind === "whatsapp") return "https://wa.me/" + WHATSAPP.join("");
+    var to = MAILBOXES.map(function (m) { return m[0] + "@" + m[1]; }).join(",");
+    return "mailto:" + to + (subject ? "?subject=" + encodeURIComponent(subject) : "");
+  }
+
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest("[data-contact]");
+    if (!el) return;
+    e.preventDefault();
+    var kind = el.getAttribute("data-contact");
+    var url = contactUrl(kind, el.getAttribute("data-subject"));
+    if (kind === "whatsapp") window.open(url, "_blank", "noopener");
+    else window.location.href = url;
+  });
 
   // Inline handlers in the markup call these.
   window.go = go;
