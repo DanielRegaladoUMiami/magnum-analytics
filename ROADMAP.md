@@ -63,6 +63,21 @@ monospace + all-caps "blueprint" look "felt like a terminal, not a website".
 real contact details · GitHub Pages · responsive layer + 44px touch targets · mobile menu ·
 two HTML/CSS demo dashboards.
 
+## v1.1 — positioning and plain copy — complete (2026-11-09)
+
+Driven by Daniel. See "Positioning rules" in CLAUDE.md.
+
+- [x] Removed Miami as a location and the $500K–$10M band everywhere (titles, meta, hero,
+  footer, contact, the case-study profile list)
+- [x] Hero lead reworded: we take the data you already have and build the solution around it
+- [x] Area icons redrawn as miniatures of the deliverables, in the isotipo's geometry
+- [x] Emails and phone number no longer appear as text or in the HTML; buttons build the
+  link on click (`app.js`)
+- [x] Examples rewritten as short illustrative cases; the ML example is now the weekly
+  at-risk customer list; the BI mock shows margin next to revenue per channel
+- [x] Copy pass for machine-sounding lines (slogan pairs, em dashes, unbacked claims)
+- [x] "Three partners" → "Two partners"
+
 ## Next up
 
 - **Custom domain.** Register one that matches the new name and point it at the host

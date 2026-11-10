@@ -1,7 +1,7 @@
 # magnum-analytics
 
 ## Goal
-Public marketing site for **Magnum Data Consulting** — a Miami-based data consulting
+Public marketing site for **Magnum Data Consulting** — a data consulting
 practice: business intelligence, machine learning and AI, sold as finished work. Bilingual
 (ES/EN), single page, published on GitHub Pages at
 https://danielregaladoumiami.github.io/magnum-analytics/
@@ -24,6 +24,17 @@ Magnum Data Consulting everywhere. If the site is deployed at any other address,
 
 There is deliberately no `pyproject.toml`, no `uv`, and no pre-commit here — this repo
 has no Python. Do not add them.
+
+## Positioning rules (decided 2026-11-09, Daniel)
+- **No location.** The site does not say "Miami" as where we are or who we serve; we work
+  remotely for anyone. "University of Miami" stays — it is the degree, not the location.
+- **No revenue band.** No "$500K–$10M" or any other client-size figure. "Small and
+  mid-sized businesses" is as specific as the copy gets.
+- **No addresses or phone number as text.** See Contact details below.
+- **Two partners**, not three.
+- **Plain copy.** No slogan pairs ("X, not Y." / "Three areas, one team."), no em dashes
+  inside sentences, no claims we cannot back yet ("where almost everyone starts").
+  "Hacemos el trabajo. Tú recibes el resultado." is the brand promise and stays.
 
 ## Current milestone
 v1.0 — official brand kit and the rename to Magnum Data Consulting (see ROADMAP.md).
@@ -98,14 +109,21 @@ base — any new work goes straight into `index.html`.
 Four mocks, all built from divs, CSS and one inline SVG (the `.mock*` and `.chat`/`.msg`
 classes in `ds/styles.css`). No screenshots anywhere.
 
-- Home hero: a retail dashboard. Examples page: one per practice area — 01 BI (sales and
-  margin by channel), 02 ML (forecast + retention cohorts), 03 AI (an assistant answering
+- Home hero: a retail dashboard. Examples page: one per practice area — 01 BI (revenue and
+  margin by channel), 02 ML (the weekly list of customers at risk, with reason and
+  suggested action — `.risk-row`), 03 AI (an assistant answering
   from a policy document, citing the page, handing an exception to a person).
 - Dashboards use the `--chart-*` slate ramp and `--metric-*` for deltas, so retheming
   retints them.
 - The `.bars` chart uses `grid-auto-flow: column` and the `.cohort` grid is a fixed
   `repeat(6, 1fr)` — neither is in `responsive.css`'s column-collapse, on purpose.
   Collapsing them would destroy the chart.
+- Each example's text is a short case in a `<dl class="case">`: the situation, what we
+  build, what gets decided with it. Written in the present tense and footed "Caso
+  ilustrativo" so it never reads as a past client.
+- The three area icons (`.card-icon`, home and Services) are miniatures of those same
+  deliverables: ascending bars with the isotipo's block, a forecast cone, a cited answer.
+  Square, filled, duotone from the chart ramp. Do not swap them for stock outline icons.
 - Every mock is labelled "sample data" / "datos de ejemplo". Keep that label: the numbers
   and conversations are illustrative and the site must not imply real client results.
 
@@ -143,18 +161,18 @@ is organised to say exactly that:
 ## No prices on the site
 
 Decided 2026-08-30: no figures, no "from $X", no ranges anywhere in the public copy. The
-only dollar amounts in `index.html` are the client-revenue qualifier ($500K–$10M) and the
-sample numbers inside the dashboard mocks. Do not add a price, and do not suggest one.
+only dollar amounts in `index.html` are the sample numbers inside the dashboard mocks. Do not add a price, and do not suggest one.
 
 The cost FAQ answers with the shape of the deal rather than a number — keep it that way if
 you edit it.
 
 ## Contact details
-Hardcoded in `index.html`, no single source of truth — if they change, update every copy:
-- `mailto:` — two addresses, `dxr1491@miami.edu` and `augustoriverof@hotmail.com`. The
-  "Email us" CTAs send to both (`mailto:a,b`; the contact-card one also sets a subject
-  with the company name); the contact page and footer list them separately. 6 links.
-- `wa.me/17867701820` — 3 links (contact card, contact details, footer).
+The addresses and the WhatsApp number are **not written in `index.html`** and are never
+shown as text. Buttons and footer links carry `data-contact="email"` or
+`data-contact="whatsapp"` (optionally `data-subject`), and `app.js` assembles the link on
+click from two lists at the top of its contact section, `MAILBOXES` and `WHATSAPP`. To
+change who receives messages, edit those lists only. 5 such links: hero, contact card (2),
+footer (2). When the business domain and mailbox exist, replace `MAILBOXES` with it.
 
 ## Where things live
 - `index.html` — the entire site (4 pages, one document)
