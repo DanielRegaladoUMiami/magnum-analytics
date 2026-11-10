@@ -604,66 +604,79 @@
           </div>
         </article>
 
-        <!-- Example 02 · Machine Learning — the weekly at-risk list -->
+        <!-- Example 02 · Machine Learning — predictive modelling in general: one
+             board with several predictions, so it does not read as a single use case -->
         <article class="example">
           <div class="mock">
             <div class="mock-bar">
-              <span>Magnum · <span class="es">Clientes en riesgo</span><span class="en">Customers at risk</span></span>
+              <span>Magnum · <span class="es">Predicciones de la semana</span><span class="en">This week's predictions</span></span>
               <span class="tag-sample"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
             </div>
             <div class="mock-grid">
               <div class="mock-cell">
-                <div class="k"><span class="es">En riesgo este mes</span><span class="en">At risk this month</span></div>
-                <div class="v">14</div>
-                <div class="d d-flat"><span class="es">de 412 clientes activos</span><span class="en">of 412 active customers</span></div>
+                <div class="k"><span class="es">Ventas del próximo mes</span><span class="en">Next month's sales</span></div>
+                <div class="v">$212,400</div>
+                <div class="d d-flat"><span class="es">±7% · entre $197K y $227K</span><span class="en">±7% · between $197K and $227K</span></div>
               </div>
               <div class="mock-cell">
-                <div class="k"><span class="es">Ventas anuales en juego</span><span class="en">Annual sales at stake</span></div>
-                <div class="v">$186,400</div>
-                <div class="d d-neg"><span class="es">8% del total</span><span class="en">8% of the total</span></div>
+                <div class="k"><span class="es">Clientes que se irían</span><span class="en">Customers likely to leave</span></div>
+                <div class="v">14</div>
+                <div class="d d-flat"><span class="es">de 412 activos</span><span class="en">of 412 active</span></div>
+              </div>
+              <div class="mock-cell">
+                <div class="k"><span class="es">Productos por agotarse</span><span class="en">Products about to run out</span></div>
+                <div class="v">6</div>
+                <div class="d d-neg"><span class="es">2 de los más vendidos</span><span class="en">2 of the best sellers</span></div>
+              </div>
+              <div class="mock-cell">
+                <div class="k"><span class="es">Prospectos listos para comprar</span><span class="en">Prospects ready to buy</span></div>
+                <div class="v">9</div>
+                <div class="d d-flat"><span class="es">de 38 abiertos</span><span class="en">of 38 open</span></div>
               </div>
             </div>
             <div class="mock-section">
               <div class="hd">
-                <span><span class="es">A quién llamar esta semana</span><span class="en">Who to call this week</span></span>
-                <span><span class="es">Riesgo</span><span class="en">Risk</span></span>
+                <span><span class="es">Qué hacer esta semana</span><span class="en">What to do this week</span></span>
+                <span><span class="es">Predicción</span><span class="en">Prediction</span></span>
               </div>
               <div class="risk-row">
                 <span class="p">87%</span>
-                <span class="who"><span class="es">Mayorista · n.º 0187</span><span class="en">Wholesaler · no. 0187</span><span class="why"><span class="es">Pedía cada dos semanas; lleva 41 días sin pedir.</span><span class="en">Ordered every two weeks; 41 days without an order.</span></span></span>
+                <span class="who"><span class="es">Cliente · n.º 0187</span><span class="en">Customer · no. 0187</span><span class="why"><span class="es">Probabilidad de irse. Lleva 41 días sin pedir.</span><span class="en">Chance of leaving. 41 days without an order.</span></span></span>
                 <span class="act"><span class="es">Llamar hoy</span><span class="en">Call today</span></span>
               </div>
               <div class="risk-row">
-                <span class="p">74%</span>
-                <span class="who"><span class="es">Restaurante · n.º 0412</span><span class="en">Restaurant · no. 0412</span><span class="why"><span class="es">Su pedido promedio bajó 38% en tres meses.</span><span class="en">Average order down 38% in three months.</span></span></span>
-                <span class="act"><span class="es">Revisar precios</span><span class="en">Review pricing</span></span>
+                <span class="p p--up">92%</span>
+                <span class="who"><span class="es">Prospecto · n.º 0331</span><span class="en">Prospect · no. 0331</span><span class="why"><span class="es">Probabilidad de compra. Pidió cotización dos veces este mes.</span><span class="en">Chance of buying. Asked for a quote twice this month.</span></span></span>
+                <span class="act"><span class="es">Llamar primero</span><span class="en">Call first</span></span>
               </div>
               <div class="risk-row">
-                <span class="p p--mid">69%</span>
-                <span class="who"><span class="es">Tienda · n.º 0093</span><span class="en">Shop · no. 0093</span><span class="why"><span class="es">Dos reclamos abiertos sin resolver.</span><span class="en">Two open complaints, unresolved.</span></span></span>
-                <span class="act"><span class="es">Cerrar reclamos</span><span class="en">Close complaints</span></span>
+                <span class="p p--mid">9 d</span>
+                <span class="who"><span class="es">Producto · ref. 2041</span><span class="en">Product · ref. 2041</span><span class="why"><span class="es">Días para agotarse al ritmo de venta previsto.</span><span class="en">Days until it runs out at the forecast rate of sale.</span></span></span>
+                <span class="act"><span class="es">Pedir 200</span><span class="en">Order 200</span></span>
               </div>
               <div class="risk-row">
-                <span class="p p--mid">61%</span>
-                <span class="who"><span class="es">Mayorista · n.º 0256</span><span class="en">Wholesaler · no. 0256</span><span class="why"><span class="es">Dejó de comprar la línea que más le vendíamos.</span><span class="en">Stopped buying the line we sold them most.</span></span></span>
-                <span class="act"><span class="es">Visita</span><span class="en">Visit</span></span>
+                <span class="p p--mid">+38%</span>
+                <span class="who"><span class="es">Semana del 14 de diciembre</span><span class="en">Week of December 14</span><span class="why"><span class="es">Ventas previstas sobre una semana normal.</span><span class="en">Forecast sales over a normal week.</span></span></span>
+                <span class="act"><span class="es">Reforzar turnos</span><span class="en">Add shifts</span></span>
               </div>
             </div>
             <div class="tags-row">
-              <span class="pill pill--strong">CRM</span>
+              <span class="pill pill--strong">Shopify</span>
               <span class="pill">QuickBooks</span>
+              <span class="pill">CRM</span>
               <span class="pill"><span class="es">Correo de los lunes</span><span class="en">Monday email</span></span>
             </div>
           </div>
           <div class="example-body">
-            <p class="eyebrow"><span class="es">02 · Machine Learning</span><span class="en">02 · Machine Learning</span></p>
-            <h2 class="h3"><span class="es">Clientes en riesgo de irse</span><span class="en">Customers at risk of leaving</span></h2>
+            <p class="eyebrow">02 · Machine Learning</p>
+            <h2 class="h3"><span class="es">Modelos predictivos a la medida</span><span class="en">Predictive models built for your question</span></h2>
             <dl class="case">
-              <div><dt><span class="es">La situación</span><span class="en">The situation</span></dt><dd><span class="es">Una distribuidora con unos 400 clientes recurrentes. Se entera de que un cliente se fue cuando ya lleva meses sin comprar.</span><span class="en">A distributor with about 400 repeat customers. It finds out a customer has left once they've gone months without buying.</span></dd></div>
-              <div><dt><span class="es">Lo que construimos</span><span class="en">What we build</span></dt><dd><span class="es">Un modelo que revisa pedidos, pagos y reclamos, y cada lunes manda la lista de quién está cambiando de comportamiento, con el motivo.</span><span class="en">A model that reads orders, payments and complaints, and every Monday sends the list of who is changing behaviour, with the reason.</span></dd></div>
-              <div><dt><span class="es">Lo que se decide con esto</span><span class="en">What gets decided with it</span></dt><dd><span class="es">A quién llama el equipo de ventas esta semana, y con qué propuesta.</span><span class="en">Who the sales team calls this week, and with what offer.</span></dd></div>
+              <div><dt><span class="es">La situación</span><span class="en">The situation</span></dt><dd><span class="es">Un negocio con dos o más años de historial de ventas, clientes e inventario. Las decisiones de cada semana se toman mirando el mes pasado.</span><span class="en">A business with two or more years of sales, customer and inventory history. Each week's decisions are made by looking at last month.</span></dd></div>
+              <div><dt><span class="es">Lo que construimos</span><span class="en">What we build</span></dt><dd><span class="es">Un modelo por cada pregunta sobre lo que va a pasar: cuánto se va a vender, quién se va, qué se agota, quién va a comprar. Cada lunes llegan las predicciones con la acción sugerida.</span><span class="en">One model for each question about what will happen: how much will sell, who is leaving, what runs out, who will buy. Every Monday the predictions arrive with a suggested action.</span></dd></div>
+              <div><dt><span class="es">Lo que se decide con esto</span><span class="en">What gets decided with it</span></dt><dd><span class="es">A quién llamar, cuánto comprar y cuánto personal programar esta semana.</span><span class="en">Who to call, how much to buy and how many staff to schedule this week.</span></dd></div>
             </dl>
-            <p class="fineprint"><span class="es">Caso ilustrativo: distribución con clientes recurrentes</span><span class="en">Illustrative case: distribution with repeat customers</span></p>
+            <p><span class="es">Lo mismo sirve para precios, morosidad, fraude o demanda por sucursal. Si hay historial, se puede modelar.</span><span class="en">The same goes for pricing, late payments, fraud or demand by location. If there is history, it can be modelled.</span></p>
+            <p class="fineprint"><span class="es">Caso ilustrativo: cualquier negocio con historial de datos</span><span class="en">Illustrative case: any business with data history</span></p>
           </div>
         </article>
 

@@ -73,8 +73,9 @@ Driven by Daniel. See "Positioning rules" in CLAUDE.md.
 - [x] Area icons redrawn as miniatures of the deliverables, in the isotipo's geometry
 - [x] Emails and phone number no longer appear as text or in the HTML; buttons build the
   link on click (`app.js`)
-- [x] Examples rewritten as short illustrative cases; the ML example is now the weekly
-  at-risk customer list; the BI mock shows margin next to revenue per channel
+- [x] Examples rewritten as short illustrative cases; the ML example is a board of
+  weekly predictions (sales, churn, stock-outs, prospects) standing for predictive
+  modelling in general; the BI mock shows margin next to revenue per channel
 - [x] Copy pass for machine-sounding lines (slogan pairs, em dashes, unbacked claims)
 - [x] "Three partners" → "Two partners"
 

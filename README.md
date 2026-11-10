@@ -37,7 +37,7 @@ address, update `<link rel="canonical">` and `og:url` in the `<head>` of `index.
 ## The sample deliverables
 
 The hero dashboard and the three examples on the Examples page (a BI dashboard, an ML
-at-risk customer list, an AI assistant) are **built in HTML/CSS, not screenshots**. Each is labelled
+board of weekly predictions, an AI assistant) are **built in HTML/CSS, not screenshots**. Each is labelled
 "sample data" in its header, because the numbers and conversations are illustrative
 rather than client work.
 

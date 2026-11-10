@@ -436,12 +436,14 @@ img, svg { display: block; max-width: 100%; }
 .bar-row .pct { font-variant-numeric: tabular-nums; font-size: 0.82rem; font-weight: 700; color: var(--metric-up); width: 34px; flex: none; text-align: right; }
 .bar-row .pct--low { color: var(--metric-down); }
 
-/* At-risk list (ML example): score, who and why, suggested action. */
-.risk-row { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; padding: 11px 0; border-top: 1px solid var(--border-subtle); }
+/* Prediction rows (ML example): the predicted figure, what it refers to and
+   why, and the suggested action. */
+.risk-row { display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; padding: 11px 0; border-top: 1px solid var(--border-subtle); }
 .risk-row:first-of-type { border-top: 0; padding-top: 0; }
 .risk-row:last-child { padding-bottom: 0; }
 .risk-row .p { font-size: 0.98rem; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; color: var(--metric-down); }
 .risk-row .p--mid { color: var(--text-secondary); }
+.risk-row .p--up { color: var(--metric-up); }
 .risk-row .who { font-size: 0.86rem; font-weight: 700; color: var(--text-primary); min-width: 0; }
 .risk-row .why { display: block; font-size: 0.78rem; font-weight: 500; line-height: 1.4; color: var(--text-muted); }
 .risk-row .act { font-size: 0.72rem; font-weight: 700; padding: 3px 8px; border: 1px solid var(--chart-2); border-radius: var(--radius-sm); color: var(--text-secondary); white-space: nowrap; }

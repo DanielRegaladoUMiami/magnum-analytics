@@ -110,8 +110,9 @@ Four mocks, all built from divs, CSS and one inline SVG (the `.mock*` and `.chat
 classes in `ds/styles.css`). No screenshots anywhere.
 
 - Home hero: a retail dashboard. Examples page: one per practice area — 01 BI (revenue and
-  margin by channel), 02 ML (the weekly list of customers at risk, with reason and
-  suggested action — `.risk-row`), 03 AI (an assistant answering
+  margin by channel), 02 ML (a board of several weekly predictions — sales, churn, stock-outs, prospects —
+  each with a suggested action, `.risk-row`; it stands for predictive modelling in
+  general, so do not narrow it to one use case), 03 AI (an assistant answering
   from a policy document, citing the page, handing an exception to a person).
 - Dashboards use the `--chart-*` slate ramp and `--metric-*` for deltas, so retheming
   retints them.

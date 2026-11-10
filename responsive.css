@@ -147,9 +147,9 @@
   .magnum-wordmark__text { font-size: 1.1rem; }
 }
 
-/* At-risk list: the action chip drops under the reason on narrow phones. */
+/* Prediction rows: the action chip drops under the reason on narrow phones. */
 @media (max-width: 480px) {
-  .risk-row { grid-template-columns: 40px minmax(0, 1fr); }
+  .risk-row { grid-template-columns: 48px minmax(0, 1fr); }
   .risk-row .act { grid-column: 2; justify-self: start; }
   .bar-row .lbl { width: 62px; }
 }
