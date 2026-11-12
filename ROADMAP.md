@@ -1,6 +1,50 @@
 # Roadmap — Magnum Data Consulting (repo: magnum-analytics)
 
-## Current milestone: v1.0 — official brand kit + rename to Magnum Data Consulting
+## Current milestone: v2.0 — dark redesign
+
+Driven by Daniel, 2026-11-12. He asked for the site to look like turing.com, then
+narrowed it: he likes that design, does not want it copied as is, and wants Magnum's own
+colours and fonts. So v2.0 takes the visual language (dark ground, big type with air, pill
+buttons, rounded slabs, soft glow) and keeps the brand kit's palette and type, the four
+pages, the copy and the mocks. See "Design reference" in CLAUDE.md.
+
+Built on the branch `redesign/v2-dark`. It goes live when it is merged to `main` and
+pushed, which waits for Daniel's OK.
+
+- [x] Carbon is the page ground; components read role tokens (`--fg`, `--surface-*`,
+  `--accent`, `--line`) with an `.on-light` scope for the one light slab and the one
+  inverted card. Kit token names and values unchanged
+- [x] Rounded geometry replaces the square corners and 2px rules: pill buttons and tags,
+  20px cards and mocks, panels for each service and example, full-width slabs, a footer
+  panel
+- [x] Display type scaled up (home h1 to 5.25rem), eyebrows tracked wide; still Manrope
+  800 + Spectral italic
+- [x] Home hero rebuilt: the promise at display size over a bars-of-light motif (thirty
+  bars rising to the right, the last one carrying the isotipo's block), then the sample
+  dashboard as a wide shot with a second panel (new customers by channel)
+- [x] Two new home blocks in place of the client logos and traction numbers a reference
+  site would show: a tools strip in text and a facts row with the shape of the deal
+  (2–4 weeks, 3 areas, 0 software to learn, a reply in 24 h or less). Chosen by Daniel
+- [x] "The problem" is the light slab; "How we work" and the closing CTA are dark slabs
+- [x] Header: links centred, language and call button right, every target 44px. Footer:
+  a panel with the page links next to the contact links
+- [x] Mocks rethemed for the dark ground: chart ramp now runs dim to bright, metric
+  green/red lightened to pass contrast, chat bubbles inverted
+- [x] Scroll reveal for blocks marked `data-reveal`, off without script and under
+  reduced motion
+- [x] Dropped `scroll-behavior: smooth`: changing page from the bottom of another one
+  animated the scroll through the new page
+- [x] Verified in Chromium against a local server: 4 pages × ES/EN ×
+  360/390/768/1024/1440px. No console errors or failed requests, no horizontal overflow,
+  no text spilling out of its box, every text element passes WCAG AA contrast, every
+  link and button at 1024px and below is at least 44px. Mobile menu, Escape,
+  Back/Forward, language toggle and the contact buttons checked; the page renders
+  complete with JavaScript off and with reduced motion
+- [ ] Check the deployed URL at the same widths once it is live (not done: nothing has
+  been pushed)
+- [ ] Real-device check on an iOS and an Android handset (still open from v1.0)
+
+## v1.0 — official brand kit + rename to Magnum Data Consulting — complete
 
 Driven by Daniel, Oct 2026. The brand kit (Paleta 5 monochrome & silver, Manrope 800 +
 Spectral SemiBold Italic, the "M Imperial con Ascenso" isotipo) replaced the v0.2 look,
@@ -119,6 +163,13 @@ Driven by Daniel. See "Positioning rules" in CLAUDE.md.
   businesses in Miami) and the profile list on the Examples page. Do not re-raise this.
 - **The v0.2 look** (warm off-white, blue + coral, Fraunces + Inter) — replaced 2026-10 by
   the official brand kit. Do not reintroduce blue or coral.
+- **The v1.0 shape** (white ground, square corners, 2px carbon rules under section heads)
+  — replaced 2026-11 by the dark redesign. The kit's colours and type stayed.
+- **Copying a reference site outright** — decided against 2026-11-12. turing.com is the
+  reference for the visual language only; a blue accent and a section-by-section copy of
+  its home page were both proposed and dropped.
+- **Client logos and traction numbers on the home page** — not until there are real ones.
+  The tools strip and the facts row stand in their place.
 
 ## Done
 

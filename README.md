@@ -29,9 +29,9 @@ address, update `<link rel="canonical">` and `og:url` in the `<head>` of `index.
 | Path | What it is |
 |---|---|
 | `index.html` | The whole site — all four pages in one document |
-| `app.js` | Page routing (`#inicio`, `#servicios`, `#demo`, `#contacto`), the ES/EN toggle and the mobile menu |
-| `ds/styles.css` | Brand tokens (from the official brand kit) and component classes |
-| `responsive.css` | Media queries (960 / 860 / 640 / 380px) |
+| `app.js` | Page routing (`#inicio`, `#servicios`, `#demo`, `#contacto`), the ES/EN toggle, the mobile menu and the scroll reveal |
+| `ds/styles.css` | Brand tokens (from the official brand kit), role tokens and component classes |
+| `responsive.css` | Media queries (960 / 860 / 640 / 480 / 380px) |
 | `assets/` | Favicon and the isotipo for light and dark backgrounds |
 
 ## The sample deliverables
@@ -46,11 +46,17 @@ with an `<img>`; nothing else depends on it.
 
 ## Brand and retheming
 
-The visual system is the official brand kit v1.0: monochrome and silver on pure white,
-Manrope ExtraBold for headings, Spectral SemiBold Italic for accents, and the "M"
-isotipo in `assets/`. Its colour and type tokens sit in the first `:root` block of
-`ds/styles.css` under the kit's own names (`--text-primary`, `--brand-accent`,
-`--bg-dark`, `--font-sans`, …). Changing those values retints or refonts the whole site.
+The colours and type are the official brand kit v1.0: monochrome and silver, Manrope
+ExtraBold for headings, Spectral SemiBold Italic for accents, and the "M" isotipo in
+`assets/`. Since v2.0 the site sets them on a dark ground (the kit's carbon) with rounded
+geometry: pill buttons, rounded cards and large rounded slabs. That visual language is
+modelled on turing.com; none of its assets, fonts, copy or sections are reused.
+
+The kit's tokens sit in the first `:root` block of `ds/styles.css` under the kit's own
+names (`--text-primary`, `--brand-accent`, `--bg-dark`, `--font-sans`, …). The second
+block maps them to roles (`--fg`, `--surface-*`, `--accent`, `--line`, …) that the
+components read; an `.on-light` scope flips those roles for the one light slab and the
+one inverted card. Changing the kit values retints or refonts the whole site.
 
 ## License
 
