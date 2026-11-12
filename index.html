@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Magnum Data Consulting — BI, Machine Learning e IA</title>
 <meta name="description" content="Magnum Data Consulting does the data work for small and mid-sized businesses: dashboards and automated reporting (BI), forecasts and customer models (machine learning), and AI assistants and agents. You get the finished deliverable, not software to learn.">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#09090b">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://danielregaladoumiami.github.io/magnum-analytics/">
 
@@ -30,7 +30,7 @@
   <header class="site-header">
     <div class="wrap">
       <a href="#" class="magnum-wordmark" aria-label="Magnum Data Consulting" onclick="go('home'); return false;">
-        <img src="assets/logo-isotipo.svg" alt="" width="34" height="34">
+        <img src="assets/logo-isotipo-oscuro.svg" alt="" width="34" height="34">
         <span class="magnum-wordmark__text">
           <span class="magnum-wordmark__main">Magnum</span>
           <span class="magnum-wordmark__sub">Data Consulting</span>
@@ -46,11 +46,15 @@
       </button>
 
       <nav id="site-nav" class="nav">
-        <a href="#" class="nav-link n-services" onclick="go('services'); return false;"><span class="es">Servicios</span><span class="en">Services</span></a>
-        <a href="#" class="nav-link n-work" onclick="go('work'); return false;"><span class="es">Ejemplos</span><span class="en">Examples</span></a>
-        <a href="#" class="nav-link n-contact" onclick="go('contact'); return false;"><span class="es">Contacto</span><span class="en">Contact</span></a>
-        <button type="button" class="lang-toggle" onclick="toggleLang()"><span class="es">EN</span><span class="en">ES</span></button>
-        <a href="#" class="btn btn-primary" onclick="go('contact'); return false;"><span class="es">Agendar llamada</span><span class="en">Book a call</span></a>
+        <div class="nav-links">
+          <a href="#" class="nav-link n-services" onclick="go('services'); return false;"><span class="es">Servicios</span><span class="en">Services</span></a>
+          <a href="#" class="nav-link n-work" onclick="go('work'); return false;"><span class="es">Ejemplos</span><span class="en">Examples</span></a>
+          <a href="#" class="nav-link n-contact" onclick="go('contact'); return false;"><span class="es">Contacto</span><span class="en">Contact</span></a>
+        </div>
+        <div class="nav-actions">
+          <button type="button" class="lang-toggle" onclick="toggleLang()"><span class="es">EN</span><span class="en">ES</span></button>
+          <a href="#" class="btn btn-primary btn-sm" onclick="go('contact'); return false;"><span class="es">Agendar llamada</span><span class="en">Book a call</span></a>
+        </div>
       </nav>
     </div>
   </header>
@@ -59,97 +63,159 @@
   <section class="page" data-page="home">
   <main>
 
-    <!-- Hero — dark band with the brand promise, as in the identity manual -->
-    <section class="hero-band band-dark">
-      <div class="wrap hero">
-        <div class="on-dark">
-          <p class="eyebrow"><span class="es">BI · Machine Learning · IA</span><span class="en">BI · Machine Learning · AI</span></p>
-          <h1 style="margin:16px 0 0;">
-            <span class="bes">Hacemos el trabajo.<br class="br-wide"> <em>Tú recibes el resultado.</em></span>
-            <span class="ben">We do the work.<br class="br-wide"> <em>You get the result.</em></span>
-          </h1>
-          <p class="lead" style="margin-top:24px;">
-            <span class="bes">Tomamos los datos que ya tienes y construimos la solución a tu medida: dashboards, pronósticos y asistentes de IA, entregados funcionando y sin software que aprender.</span>
-            <span class="ben">We take the data you already have and build the solution around it: dashboards, forecasts and AI assistants, delivered working, with no software to learn.</span>
-          </p>
-          <div class="hero-cta">
-            <a href="#" class="btn btn-primary btn-lg" onclick="go('contact'); return false;">
-              <span class="es">Agendar llamada de 20 min</span><span class="en">Book a 20-min call</span>
-            </a>
-            <a href="#contacto" data-contact="email" class="btn btn-ghost btn-lg">
-              <span class="es">Escríbenos</span><span class="en">Email us</span>
-            </a>
+    <!-- Hero — the brand promise at display size over the bars motif, then the
+         sample dashboard as a wide shot -->
+    <section class="hero-band">
+      <div class="wrap">
+        <div class="hero-top">
+          <!-- Decorative motif: bars of light rising to the right; the last one
+               carries the isotipo's floating block. --h is the height in percent,
+               --i the entry order. -->
+          <div class="hero-art" aria-hidden="true">
+            <i style="--h:5;--i:0"></i><i style="--h:8;--i:1"></i><i style="--h:7;--i:2"></i><i style="--h:11;--i:3"></i><i style="--h:10;--i:4"></i><i style="--h:14;--i:5"></i>
+            <i style="--h:13;--i:6"></i><i style="--h:18;--i:7"></i><i style="--h:16;--i:8"></i><i style="--h:21;--i:9"></i><i style="--h:25;--i:10"></i><i style="--h:23;--i:11"></i>
+            <i style="--h:29;--i:12"></i><i style="--h:27;--i:13"></i><i style="--h:34;--i:14"></i><i style="--h:32;--i:15"></i><i style="--h:39;--i:16"></i><i style="--h:37;--i:17"></i>
+            <i style="--h:45;--i:18"></i><i style="--h:43;--i:19"></i><i style="--h:51;--i:20"></i><i style="--h:56;--i:21"></i><i style="--h:53;--i:22"></i><i style="--h:62;--i:23"></i>
+            <i style="--h:59;--i:24"></i><i style="--h:69;--i:25"></i><i style="--h:75;--i:26"></i><i style="--h:72;--i:27"></i><i style="--h:85;--i:28"></i><i style="--h:100;--i:29"></i>
           </div>
-          <p class="fineprint" style="margin-top:16px;">
-            <span class="bes">Sin compromiso · 20 minutos · Te vas con un alcance claro.</span>
-            <span class="ben">No commitment · 20 minutes · You leave with a clear scope.</span>
-          </p>
+
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="es">BI · Machine Learning · IA</span><span class="en">BI · Machine Learning · AI</span></p>
+            <h1>
+              <span class="bes">Hacemos el trabajo.<br class="br-wide"> <em>Tú recibes el resultado.</em></span>
+              <span class="ben">We do the work.<br class="br-wide"> <em>You get the result.</em></span>
+            </h1>
+            <p class="lead">
+              <span class="bes">Tomamos los datos que ya tienes y construimos la solución a tu medida: dashboards, pronósticos y asistentes de IA, entregados funcionando y sin software que aprender.</span>
+              <span class="ben">We take the data you already have and build the solution around it: dashboards, forecasts and AI assistants, delivered working, with no software to learn.</span>
+            </p>
+            <div class="hero-cta">
+              <a href="#" class="btn btn-primary btn-lg" onclick="go('contact'); return false;">
+                <span class="es">Agendar llamada de 20 min</span><span class="en">Book a 20-min call</span>
+              </a>
+              <a href="#contacto" data-contact="email" class="btn btn-ghost btn-lg">
+                <span class="es">Escríbenos</span><span class="en">Email us</span>
+              </a>
+            </div>
+            <p class="fineprint">
+              <span class="bes">Sin compromiso · 20 minutos · Te vas con un alcance claro.</span>
+              <span class="ben">No commitment · 20 minutes · You leave with a clear scope.</span>
+            </p>
+          </div>
         </div>
 
         <!-- Hero dashboard mock — HTML/CSS, not a screenshot. Sample data. -->
-        <div class="mock" aria-hidden="true">
-          <div class="mock-bar">
-            <span>Magnum · Retail Ops</span>
-            <span class="tag-sample"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
-          </div>
-          <div class="mock-grid">
-            <div class="mock-cell">
-              <div class="k"><span class="es">Ventas del mes</span><span class="en">Sales this month</span></div>
-              <div class="v">$184,320</div>
-              <div class="d d-pos">+12.4% vs. Jul</div>
+        <div class="hero-shot" data-reveal>
+          <div class="mock mock--wide" aria-hidden="true">
+            <div class="mock-bar">
+              <span>Magnum · Retail Ops</span>
+              <span class="tag-sample"><span class="es">Datos de ejemplo</span><span class="en">Sample data</span></span>
             </div>
-            <div class="mock-cell">
-              <div class="k"><span class="es">Margen</span><span class="en">Profit margin</span></div>
-              <div class="v">31.8%</div>
-              <div class="d d-pos">+1.9 pts vs. Jul</div>
+            <div class="mock-grid">
+              <div class="mock-cell">
+                <div class="k"><span class="es">Ventas del mes</span><span class="en">Sales this month</span></div>
+                <div class="v">$184,320</div>
+                <div class="d d-pos">+12.4% vs. Jul</div>
+              </div>
+              <div class="mock-cell">
+                <div class="k"><span class="es">Margen</span><span class="en">Profit margin</span></div>
+                <div class="v">31.8%</div>
+                <div class="d d-pos">+1.9 pts vs. Jul</div>
+              </div>
+              <div class="mock-cell">
+                <div class="k"><span class="es">Canal principal</span><span class="en">Top channel</span></div>
+                <div class="v v--text"><span class="es">Redes pagadas</span><span class="en">Paid social</span></div>
+                <div class="d d-flat"><span class="es">38% de clientes nuevos</span><span class="en">38% of new customers</span></div>
+              </div>
+              <div class="mock-cell">
+                <div class="k"><span class="es">Pronóstico · 30 días</span><span class="en">Forecast · 30 days</span></div>
+                <div class="v">$196,400</div>
+                <div class="d d-flat"><span class="es">±6% de confianza</span><span class="en">±6% confidence band</span></div>
+              </div>
             </div>
-            <div class="mock-cell">
-              <div class="k"><span class="es">Canal principal</span><span class="en">Top channel</span></div>
-              <div class="v v--text"><span class="es">Redes pagadas</span><span class="en">Paid social</span></div>
-              <div class="d d-flat"><span class="es">38% de clientes nuevos</span><span class="en">38% of new customers</span></div>
+            <div class="mock-split">
+              <div class="mock-section">
+                <div class="hd">
+                  <span><span class="es">Ingresos por semana</span><span class="en">Revenue by week</span></span>
+                  <span>W22 — W35</span>
+                </div>
+                <div class="bars">
+                  <i style="height:42%"></i><i style="height:51%"></i><i style="height:46%"></i>
+                  <i style="height:58%"></i><i style="height:63%"></i><i style="height:55%"></i>
+                  <i style="height:69%"></i><i style="height:74%"></i><i style="height:66%"></i>
+                  <i style="height:81%"></i><i style="height:88%"></i><i style="height:79%"></i>
+                  <i style="height:94%;background:var(--chart-6)"></i><i style="height:100%;background:var(--chart-7)"></i>
+                </div>
+              </div>
+              <div class="mock-section">
+                <div class="hd">
+                  <span><span class="es">Clientes nuevos por canal</span><span class="en">New customers by channel</span></span>
+                  <span>AUG 2026</span>
+                </div>
+                <div class="bar-row bar-row--wide">
+                  <span class="lbl"><span class="es">Redes pagadas</span><span class="en">Paid social</span></span>
+                  <span class="track"><span style="width:100%;background:var(--chart-7)"></span></span>
+                  <span class="amt">38%</span>
+                </div>
+                <div class="bar-row bar-row--wide">
+                  <span class="lbl"><span class="es">Búsqueda</span><span class="en">Search</span></span>
+                  <span class="track"><span style="width:71%"></span></span>
+                  <span class="amt">27%</span>
+                </div>
+                <div class="bar-row bar-row--wide">
+                  <span class="lbl">Email</span>
+                  <span class="track"><span style="width:55%;background:var(--chart-5)"></span></span>
+                  <span class="amt">21%</span>
+                </div>
+                <div class="bar-row bar-row--wide" style="margin-bottom:0;">
+                  <span class="lbl"><span class="es">Referidos</span><span class="en">Referrals</span></span>
+                  <span class="track"><span style="width:37%;background:var(--chart-4)"></span></span>
+                  <span class="amt">14%</span>
+                </div>
+              </div>
             </div>
-            <div class="mock-cell">
-              <div class="k"><span class="es">Pronóstico · 30 días</span><span class="en">Forecast · 30 days</span></div>
-              <div class="v">$196,400</div>
-              <div class="d d-flat"><span class="es">±6% de confianza</span><span class="en">±6% confidence band</span></div>
+            <div class="tags-row">
+              <span class="pill pill--strong">Shopify</span>
+              <span class="pill">QuickBooks</span>
+              <span class="pill">Meta Ads</span>
             </div>
-          </div>
-          <div class="mock-section">
-            <div class="hd">
-              <span><span class="es">Ingresos por semana</span><span class="en">Revenue by week</span></span>
-              <span>W22 — W35</span>
-            </div>
-            <div class="bars">
-              <i style="height:42%"></i><i style="height:51%"></i><i style="height:46%"></i>
-              <i style="height:58%"></i><i style="height:63%"></i><i style="height:55%"></i>
-              <i style="height:69%"></i><i style="height:74%"></i><i style="height:66%"></i>
-              <i style="height:81%"></i><i style="height:88%"></i><i style="height:79%"></i>
-              <i style="height:94%;background:var(--chart-6)"></i><i style="height:100%;background:var(--chart-7)"></i>
-            </div>
-          </div>
-          <div class="tags-row">
-            <span class="pill pill--strong">Shopify</span>
-            <span class="pill">QuickBooks</span>
-            <span class="pill">Meta Ads</span>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Tools — the ones the work is done in, named in text. This is not a
+         client list: do not word it like one and do not add logos. -->
+    <section class="tools">
+      <div class="wrap">
+        <p class="eyebrow"><span class="es">Trabajamos con las herramientas que ya usas</span><span class="en">We work with the tools you already use</span></p>
+        <ul class="tools-list">
+          <li>Power BI</li>
+          <li>Tableau</li>
+          <li>Looker Studio</li>
+          <li>Excel</li>
+          <li>Google Sheets</li>
+          <li>BigQuery</li>
+          <li>SQL</li>
+          <li>Python</li>
+          <li>Shopify</li>
+          <li>QuickBooks</li>
+        </ul>
+      </div>
+    </section>
+
     <!-- What we do — mirrors the three areas on the Services page -->
     <section class="section wrap">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow eyebrow--muted"><span class="es">Qué hacemos</span><span class="en">What we do</span></p>
-          <h2>
-            <span class="bes">Tres tipos de trabajo, según lo que necesites.</span>
-            <span class="ben">Three kinds of work, depending on what you need.</span>
-          </h2>
-        </div>
-        <a href="#" class="section-link" onclick="go('services'); return false;"><span class="es">Ver qué incluye cada área</span><span class="en">See what each area includes</span> <span aria-hidden="true">→</span></a>
+      <div class="section-head section-head--center" data-reveal>
+        <p class="eyebrow"><span class="es">Qué hacemos</span><span class="en">What we do</span></p>
+        <h2>
+          <span class="bes">Tres tipos de trabajo, según lo que necesites.</span>
+          <span class="ben">Three kinds of work, depending on what you need.</span>
+        </h2>
       </div>
       <div class="grid grid-3">
-        <div class="card">
+        <div class="card" data-reveal>
+          <span class="card-idx" aria-hidden="true">01</span>
           <div class="card-icon">
             <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="3" y="16" width="5" height="9" fill="var(--chart-3)"/><rect x="11.5" y="11" width="5" height="14" fill="var(--chart-4)"/><rect x="20" y="8" width="5" height="17" fill="currentColor"/><rect x="20" y="3" width="5" height="2.6" fill="currentColor"/></svg>
           </div>
@@ -159,7 +225,8 @@
             <span class="ben">Dashboards, automated reports and one clean base with the numbers you decide on, connected to your current sources.</span>
           </p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal>
+          <span class="card-idx" aria-hidden="true">02</span>
           <div class="card-icon">
             <svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><polygon points="14,14 25,4 25,18" fill="var(--chart-2)"/><line x1="3" y1="25" x2="25" y2="25" stroke="var(--chart-3)" stroke-width="1.5"/><polyline points="3,22 8,18 14,14" stroke="currentColor" stroke-width="2" stroke-linecap="square"/><line x1="14" y1="14" x2="25" y2="10.5" stroke="currentColor" stroke-width="2" stroke-dasharray="2.5 2.5"/><rect x="12" y="12" width="4" height="4" fill="currentColor"/></svg>
           </div>
@@ -169,7 +236,8 @@
             <span class="ben">Forecasts, at-risk customers, inventory and pricing: models that learn from your history and hand you the answer every month.</span>
           </p>
         </div>
-        <div class="card">
+        <div class="card" data-reveal>
+          <span class="card-idx" aria-hidden="true">03</span>
           <div class="card-icon">
             <svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M3 4h22v15H12l-5 5v-5H3z" stroke="currentColor" stroke-width="2" stroke-linejoin="miter"/><line x1="8" y1="9.5" x2="20" y2="9.5" stroke="var(--chart-4)" stroke-width="2"/><rect x="8" y="13" width="7" height="2.6" fill="currentColor"/></svg>
           </div>
@@ -180,22 +248,49 @@
           </p>
         </div>
       </div>
-      <p class="fineprint" style="margin-top:20px;">
-        <span class="bes">Formación formal: maestría en Business Analytics, Universidad de Miami.</span>
-        <span class="ben">Formal training: MS in Business Analytics, University of Miami.</span>
-      </p>
+      <div class="section-foot" data-reveal>
+        <a href="#" class="btn btn-ghost btn-arrow" onclick="go('services'); return false;"><span class="es">Ver qué incluye cada área</span><span class="en">See what each area includes</span></a>
+        <p class="fineprint">
+          <span class="bes">Formación formal: maestría en Business Analytics, Universidad de Miami.</span>
+          <span class="ben">Formal training: MS in Business Analytics, University of Miami.</span>
+        </p>
+      </div>
     </section>
 
-    <!-- The problem — alternate band on Plata Nieve -->
-    <section class="band-alt">
-      <div class="section wrap">
-        <p class="eyebrow eyebrow--muted"><span class="es">El problema</span><span class="en">The problem</span></p>
-        <div class="grid grid-2" style="gap:56px; align-items:start; margin-top:14px;">
-          <h2 style="max-width:16ch;">
+    <!-- The shape of the deal as four figures. Each one is already stated in
+         the copy (Services, Contact, FAQ); none is a client result. No prices. -->
+    <section class="section wrap">
+      <div class="facts" data-reveal>
+        <div class="fact">
+          <p class="fact-n">2–4</p>
+          <p class="fact-l"><span class="es">semanas para un primer dashboard</span><span class="en">weeks to a first dashboard</span></p>
+        </div>
+        <div class="fact">
+          <p class="fact-n">3</p>
+          <p class="fact-l"><span class="es">áreas: BI, Machine Learning e IA</span><span class="en">areas: BI, machine learning and AI</span></p>
+        </div>
+        <div class="fact">
+          <p class="fact-n">0</p>
+          <p class="fact-l"><span class="es">software que aprender</span><span class="en">software to learn</span></p>
+        </div>
+        <div class="fact">
+          <p class="fact-n">24 h</p>
+          <p class="fact-l"><span class="es">o menos para responderte</span><span class="en">or less to get a reply</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The problem — the one light slab: the kit's white ground, inverted
+         against the dark page -->
+    <section class="slab slab--light on-light">
+      <div class="wrap" data-reveal>
+        <p class="eyebrow"><span class="es">El problema</span><span class="en">The problem</span></p>
+        <div class="grid grid-2 problem">
+          <h2>
             <span class="bes">Tienes los datos, pero <em>nadie tiene tiempo de revisarlos.</em></span>
             <span class="ben">You have the data, but <em>nobody has time to go through it.</em></span>
           </h2>
-          <div class="stack" style="gap:18px;">
+          <div class="stack">
             <p>
               <span class="bes">Ventas en Shopify, contabilidad en QuickBooks, campañas en una hoja de cálculo, un CRM que nadie actualiza. La información está ahí, pero revisarla toma horas cada semana y las decisiones terminan tomándose por intuición.</span>
               <span class="ben">Sales in Shopify, books in QuickBooks, campaigns in a spreadsheet, a CRM nobody updates. The information is there, but reviewing it takes hours every week and decisions end up being made on instinct.</span>
@@ -210,55 +305,57 @@
     </section>
 
     <!-- How we work -->
-    <section class="section wrap">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow eyebrow--muted"><span class="es">Cómo trabajamos</span><span class="en">How we work</span></p>
-          <h2>
-            <span class="bes">Cuatro pasos, de la primera llamada a la entrega.</span>
-            <span class="ben">Four steps, from the first call to handover.</span>
-          </h2>
+    <section class="slab">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <div>
+            <p class="eyebrow"><span class="es">Cómo trabajamos</span><span class="en">How we work</span></p>
+            <h2>
+              <span class="bes">Cuatro pasos, de la primera llamada a la entrega.</span>
+              <span class="ben">Four steps, from the first call to handover.</span>
+            </h2>
+          </div>
         </div>
-      </div>
-      <div class="steps steps--4">
-        <div class="step">
-          <div class="step-num">01</div>
-          <h3><span class="es">Llamada de diagnóstico</span><span class="en">Diagnostic call</span></h3>
-          <p>
-            <span class="bes">20 minutos: qué datos tienes, dónde viven y qué decisión quieres tomar con ellos.</span>
-            <span class="ben">20 minutes: what data you have, where it lives, and what decision you want to make with it.</span>
-          </p>
-        </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <h3><span class="es">Propuesta de alcance fijo</span><span class="en">Fixed-scope proposal</span></h3>
-          <p>
-            <span class="bes">Entregables, métricas y fechas por escrito antes de que se firme nada.</span>
-            <span class="ben">Deliverables, metrics and dates in writing before anything is signed.</span>
-          </p>
-        </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <h3><span class="es">Construcción en sprints</span><span class="en">Build in sprints</span></h3>
-          <p>
-            <span class="bes">Ciclos de dos semanas con una revisión intermedia, para que veas avance real y corrijas rumbo.</span>
-            <span class="ben">Two-week cycles with a mid-point review, so you see real progress and can correct course.</span>
-          </p>
-        </div>
-        <div class="step">
-          <div class="step-num">04</div>
-          <h3><span class="es">Entrega y traspaso</span><span class="en">Handover</span></h3>
-          <p>
-            <span class="bes">El entregable en producción, documentación corta y una sesión de capacitación con tu equipo.</span>
-            <span class="ben">The deliverable in production, short documentation and one training session with your team.</span>
-          </p>
+        <div class="steps steps--4" data-reveal>
+          <div class="step">
+            <div class="step-num">01</div>
+            <h3><span class="es">Llamada de diagnóstico</span><span class="en">Diagnostic call</span></h3>
+            <p>
+              <span class="bes">20 minutos: qué datos tienes, dónde viven y qué decisión quieres tomar con ellos.</span>
+              <span class="ben">20 minutes: what data you have, where it lives, and what decision you want to make with it.</span>
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <h3><span class="es">Propuesta de alcance fijo</span><span class="en">Fixed-scope proposal</span></h3>
+            <p>
+              <span class="bes">Entregables, métricas y fechas por escrito antes de que se firme nada.</span>
+              <span class="ben">Deliverables, metrics and dates in writing before anything is signed.</span>
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <h3><span class="es">Construcción en sprints</span><span class="en">Build in sprints</span></h3>
+            <p>
+              <span class="bes">Ciclos de dos semanas con una revisión intermedia, para que veas avance real y corrijas rumbo.</span>
+              <span class="ben">Two-week cycles with a mid-point review, so you see real progress and can correct course.</span>
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <h3><span class="es">Entrega y traspaso</span><span class="en">Handover</span></h3>
+            <p>
+              <span class="bes">El entregable en producción, documentación corta y una sesión de capacitación con tu equipo.</span>
+              <span class="ben">The deliverable in production, short documentation and one training session with your team.</span>
+            </p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <section class="cta-band band-dark">
-    <div class="wrap on-dark">
+  <section class="slab cta-band">
+    <div class="wrap" data-reveal>
       <h2>
         <span class="bes">¿Empezamos con una <em>llamada de 20 minutos?</em></span>
         <span class="ben">Shall we start with a <em>20-minute call?</em></span>
@@ -276,8 +373,8 @@
        of the page is that we sell the finished work, not software. -->
   <section class="page" data-page="services">
   <main>
-    <section class="page-intro band-dark">
-      <div class="wrap on-dark">
+    <section class="page-intro">
+      <div class="wrap">
         <p class="eyebrow"><span class="es">Servicios</span><span class="en">Services</span></p>
         <h1 style="margin:16px 0 0; max-width:18ch;">
           <span class="bes">Qué hacemos y <em>qué recibes.</em></span>
@@ -294,7 +391,7 @@
       <div class="services">
 
         <!-- 01 · Business Intelligence -->
-        <section class="service">
+        <section class="service" data-reveal>
           <div class="service-head">
             <div class="card-icon">
               <svg viewBox="0 0 28 28" aria-hidden="true"><rect x="3" y="16" width="5" height="9" fill="var(--chart-3)"/><rect x="11.5" y="11" width="5" height="14" fill="var(--chart-4)"/><rect x="20" y="8" width="5" height="17" fill="currentColor"/><rect x="20" y="3" width="5" height="2.6" fill="currentColor"/></svg>
@@ -347,7 +444,7 @@
         </section>
 
         <!-- 02 · Machine Learning -->
-        <section class="service">
+        <section class="service" data-reveal>
           <div class="service-head">
             <div class="card-icon">
               <svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><polygon points="14,14 25,4 25,18" fill="var(--chart-2)"/><line x1="3" y1="25" x2="25" y2="25" stroke="var(--chart-3)" stroke-width="1.5"/><polyline points="3,22 8,18 14,14" stroke="currentColor" stroke-width="2" stroke-linecap="square"/><line x1="14" y1="14" x2="25" y2="10.5" stroke="currentColor" stroke-width="2" stroke-dasharray="2.5 2.5"/><rect x="12" y="12" width="4" height="4" fill="currentColor"/></svg>
@@ -408,7 +505,7 @@
         </section>
 
         <!-- 03 · AI -->
-        <section class="service">
+        <section class="service" data-reveal>
           <div class="service-head">
             <div class="card-icon">
               <svg viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M3 4h22v15H12l-5 5v-5H3z" stroke="currentColor" stroke-width="2" stroke-linejoin="miter"/><line x1="8" y1="9.5" x2="20" y2="9.5" stroke="var(--chart-4)" stroke-width="2"/><rect x="8" y="13" width="7" height="2.6" fill="currentColor"/></svg>
@@ -492,7 +589,7 @@
               <span class="ben">For what recurs: keeping the dashboard current, retraining the model, answering new questions, adjusting the reports. Month to month.</span>
             </p>
           </div>
-          <div class="card card--dark on-dark">
+          <div class="card card--invert on-light">
             <p class="eyebrow"><span class="es">Sin software que aprender</span><span class="en">No software to learn</span></p>
             <p>
               <span class="bes">Trabajamos con las herramientas que ya tienes (Power BI, Excel, Google Workspace, tu CRM) y montamos lo que falte. Todo se entrega en producción, con documentación corta y una sesión de capacitación.</span>
@@ -519,8 +616,8 @@
        #demo so shared links keep working. -->
   <section class="page" data-page="work">
   <main>
-    <section class="page-intro band-dark">
-      <div class="wrap on-dark">
+    <section class="page-intro">
+      <div class="wrap">
         <p class="eyebrow"><span class="es">Ejemplos de entregables</span><span class="en">Sample deliverables</span></p>
         <h1 style="margin:16px 0 0; max-width:20ch;">
           <span class="bes">Mira lo que recibes <em>antes de comprarlo.</em></span>
@@ -537,7 +634,7 @@
       <div class="examples">
 
         <!-- Example 01 · BI -->
-        <article class="example">
+        <article class="example" data-reveal>
           <div class="mock">
             <div class="mock-bar">
               <span>Magnum · <span class="es">Retail</span><span class="en">Retail</span></span>
@@ -606,7 +703,7 @@
 
         <!-- Example 02 · Machine Learning — predictive modelling in general: one
              board with several predictions, so it does not read as a single use case -->
-        <article class="example">
+        <article class="example" data-reveal>
           <div class="mock">
             <div class="mock-bar">
               <span>Magnum · <span class="es">Predicciones de la semana</span><span class="en">This week's predictions</span></span>
@@ -681,7 +778,7 @@
         </article>
 
         <!-- Example 03 · AI — an assistant answering from documents -->
-        <article class="example">
+        <article class="example" data-reveal>
           <div class="mock">
             <div class="mock-bar">
               <span>Magnum · <span class="es">Asistente interno</span><span class="en">Internal assistant</span></span>
@@ -759,9 +856,9 @@
   <!-- ═══════════════ CONTACT ═══════════════ -->
   <section class="page" data-page="contact">
   <main>
-    <section class="page-intro band-dark">
-      <div class="wrap hero">
-        <div class="on-dark">
+    <section class="page-intro">
+      <div class="wrap intro-split">
+        <div>
           <p class="eyebrow"><span class="es">Contacto</span><span class="en">Contact</span></p>
           <h1 style="margin:16px 0 0;">
             <span class="bes">Agenda <em>20 minutos.</em></span><span class="ben">Book <em>20 minutes.</em></span>
@@ -796,7 +893,7 @@
 
     <div class="section wrap contact-layout">
       <div>
-        <div class="section-head">
+        <div class="section-head section-head--rule">
           <h2 class="h3"><span class="es">Datos prácticos</span><span class="en">Practical details</span></h2>
         </div>
         <div class="contact-row">
@@ -814,7 +911,7 @@
       </div>
 
       <div>
-        <div class="section-head">
+        <div class="section-head section-head--rule">
           <h2 class="h3"><span class="es">Preguntas frecuentes</span><span class="en">FAQ</span></h2>
         </div>
         <div class="faq">
@@ -860,23 +957,37 @@
   </section>
 
   <!-- ─────────────── Footer ─────────────── -->
-  <footer class="site-footer band-dark">
-    <div class="wrap">
-      <div class="footer-brand">
-        <span class="magnum-wordmark magnum-wordmark--dark">
-          <img src="assets/logo-isotipo-oscuro.svg" alt="" width="30" height="30">
-          <span class="magnum-wordmark__text">
-            <span class="magnum-wordmark__main">Magnum</span>
-            <span class="magnum-wordmark__sub">Data Consulting</span>
+  <footer class="site-footer">
+    <div class="footer-panel">
+      <div class="wrap footer-main">
+        <div class="footer-brand">
+          <span class="magnum-wordmark">
+            <img src="assets/logo-isotipo-oscuro.svg" alt="" width="32" height="32">
+            <span class="magnum-wordmark__text">
+              <span class="magnum-wordmark__main">Magnum</span>
+              <span class="magnum-wordmark__sub">Data Consulting</span>
+            </span>
           </span>
-        </span>
-        <span class="footer-tagline"><span class="es">BI, Machine Learning e IA</span><span class="en">BI, Machine Learning &amp; AI</span></span>
+          <span class="footer-tagline"><span class="es">Hacemos el trabajo. Tú recibes el resultado.</span><span class="en">We do the work. You get the result.</span></span>
+        </div>
+        <nav class="footer-col" aria-labelledby="footer-site">
+          <p class="eyebrow" id="footer-site"><span class="es">Sitio</span><span class="en">Site</span></p>
+          <a href="#" onclick="go('services'); return false;"><span class="es">Servicios</span><span class="en">Services</span></a>
+          <a href="#" onclick="go('work'); return false;"><span class="es">Ejemplos</span><span class="en">Examples</span></a>
+          <a href="#" onclick="go('contact'); return false;"><span class="es">Contacto</span><span class="en">Contact</span></a>
+        </nav>
+        <div class="footer-col">
+          <p class="eyebrow"><span class="es">Contacto</span><span class="en">Contact</span></p>
+          <a href="#contacto" data-contact="email"><span class="es">Escríbenos</span><span class="en">Email us</span></a>
+          <a href="#contacto" data-contact="whatsapp">WhatsApp</a>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="#contacto" data-contact="email"><span class="es">Escríbenos</span><span class="en">Email us</span></a>
-        <a href="#contacto" data-contact="whatsapp">WhatsApp</a>
+      <div class="wrap">
+        <div class="footer-bottom">
+          <span>© 2026 Magnum Data Consulting</span>
+          <span><span class="es">BI, Machine Learning e IA</span><span class="en">BI, Machine Learning &amp; AI</span></span>
+        </div>
       </div>
-      <div class="footer-copy">© 2026 Magnum Data Consulting</div>
     </div>
   </footer>
 </div>

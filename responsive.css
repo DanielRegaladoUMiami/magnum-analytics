@@ -1,4 +1,4 @@
-/* Responsive layer — v1.0.
+/* Responsive layer — v2.0.
  *
  * Plain media queries on the classes in ds/styles.css.
  *
@@ -11,9 +11,7 @@
 
 /* ───────────── Tablet ───────────── */
 @media (max-width: 960px) {
-  :root { --gutter: 22px; }
-
-  .hero { grid-template-columns: 1fr; gap: 40px; }
+  :root { --gutter: 24px; }
 
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   /* Three cards in two columns leave one alone on the last row: let it span. */
@@ -21,18 +19,30 @@
 
   .steps--4 { grid-template-columns: repeat(2, 1fr); }
 
-  .grid-2 { gap: 32px !important; }
+  .grid-2 { gap: 32px; }
+
+  /* Four figures become two rows of two, with a hairline between the rows. */
+  .facts { grid-template-columns: repeat(2, 1fr); }
+  .fact { padding-block: 28px; }
+  .fact:nth-child(odd) { border-left: 0; }
+  .fact:nth-child(n + 3) { border-top: 1px solid var(--line); }
 
   .service,
-  .example { grid-template-columns: 1fr; gap: 28px; padding-block: 44px; }
+  .example { grid-template-columns: 1fr; gap: 28px; }
 
   .case-study,
-  .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+  .contact-layout,
+  .intro-split { grid-template-columns: 1fr; gap: 40px; }
+
+  .hero-art { width: 64%; opacity: 0.55; }
+
+  .footer-main { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-brand { grid-column: 1 / -1; }
 }
 
 /* ───────────── Header → dropdown menu ───────────── */
 @media (max-width: 860px) {
-  .site-header .wrap { gap: 12px; }
+  .site-header .wrap { gap: 12px; min-height: 64px; padding-block: 10px; }
 
   #nav-toggle { display: inline-flex; }
 
@@ -44,29 +54,35 @@
     right: 0;
     flex-direction: column;
     align-items: stretch;
-    gap: 4px;
+    gap: 0;
     margin: 0;
-    padding: 10px var(--gutter) 18px;
-    background: var(--bg-primary);
-    border-bottom: 1px solid var(--border-subtle);
-    box-shadow: 0 24px 32px -12px rgba(9, 9, 11, 0.18);  /* falls below the panel only */
+    padding: 6px var(--gutter) 24px;
+    background: var(--surface-1);
+    border-bottom: 1px solid var(--line);
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 32px 48px -16px rgba(0, 0, 0, 0.85);  /* falls below the panel only */
   }
   [data-menu="open"] .nav { display: flex; }
 
+  .nav-links { flex-direction: column; align-items: stretch; gap: 0; margin: 0; }
   .nav a.nav-link {
-    min-height: 44px;
+    min-height: 52px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--line);
     padding: 4px 0;
+    font-size: 1.05rem;
+    color: var(--fg);
   }
-  /* Current page in the dropdown: a carbon bar on the left instead of the
+  /* Current page in the dropdown: a white bar on the left instead of the
      desktop underline. */
   [data-p="services"] .nav a.n-services,
   [data-p="work"] .nav a.n-work,
-  [data-p="contact"] .nav a.n-contact { border-bottom-color: var(--border-subtle); box-shadow: inset 2px 0 0 var(--border-strong); padding-left: 12px; }
-  .nav .lang-toggle { align-self: flex-start; margin-top: 10px; min-height: 44px; }
-  .nav .btn { margin-top: 8px; width: 100%; }
+  [data-p="contact"] .nav a.n-contact { border-bottom-color: var(--line); box-shadow: inset 2px 0 0 var(--fg-strong); padding-left: 14px; }
+
+  .nav-actions { flex-direction: column; align-items: stretch; gap: 14px; margin-top: 18px; }
+  .nav .lang-toggle { align-self: flex-start; min-width: 56px; min-height: 44px; }
+  .nav .btn { width: 100%; min-height: 48px; font-size: 0.95rem; }
 
   /* Scrim behind the open panel. Header is z-index 30; the panel sits above
      this, the click handler in app.js closes the menu on a scrim tap. */
@@ -74,7 +90,7 @@
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(9, 9, 11, 0.42);
+    background: rgba(0, 0, 0, 0.62);
     z-index: 20;
   }
 
@@ -83,7 +99,16 @@
   [data-menu="open"] #nav-toggle .bar-mid { opacity: 0; }
   [data-menu="open"] #nav-toggle .bar-bot { transform: translateY(-4px) rotate(-45deg); }
 
-  .magnum-wordmark { min-height: 44px; }
+
+  /* The wide hero dashboard folds back to two figures per row, and the two
+     lower panels stack. */
+  .mock--wide .mock-grid { grid-template-columns: 1fr 1fr; }
+  .mock--wide .bars { height: 112px; gap: 5px; }
+  .mock-split { grid-template-columns: 1fr; }
+  .mock-split > .mock-section + .mock-section { border-left: 0; border-top: 1px solid var(--line); }
+
+  .problem { grid-template-columns: 1fr; gap: 24px; }
+  .problem h2 { max-width: 18ch; }
 }
 
 /* ───────────── Phone ───────────── */
@@ -95,36 +120,49 @@
 
   .steps--4 { grid-template-columns: 1fr; }
 
-  .grid-2 { gap: 28px !important; }
+  .grid-2 { gap: 28px; }
 
   h1,
-  .hero h1 { font-size: clamp(2.05rem, 1.4rem + 4vw, 2.6rem); }
+  .hero-copy h1 { font-size: clamp(2.2rem, 1.3rem + 4.6vw, 2.9rem); line-height: 1.06; }
   .br-wide { display: none; }  /* phones: let the hero headline flow */
 
   .magnum-wordmark { gap: 9px; }
   .magnum-wordmark img { width: 30px; height: 30px; }
   .magnum-wordmark__text { font-size: 1.22rem; }
 
+  /* The motif drops behind the copy and thins out so the text stays clear. */
+  .hero-art { width: 100%; top: 0; bottom: 34%; opacity: 0.36; }
+
   .hero-cta { flex-direction: column; align-items: stretch; }
   .hero-cta .btn { width: 100%; }
 
-  .cta-band .wrap { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .mock-cell { padding: 14px 14px; }
+  .mock-cell .v { font-size: 1.45rem; }
+  .mock-cell .v--text { font-size: 1.1rem; }
+
   .cta-band .btn { width: 100%; }
 
   .closing-cta { flex-direction: column; align-items: stretch; }
   .closing-cta .btn { width: 100%; }
 
-  .card { padding: 22px; }
-  .step { padding: 22px 20px; }
+  .service,
+  .example { padding: 18px; }
 
-  .section-head { margin-bottom: 26px; }
+  .card { padding: 24px; }
+  .card-idx { top: 22px; right: 24px; }
+  .step { padding: 24px 22px; }
+
+  .section-foot .btn { width: 100%; white-space: normal; }
+
+  .fact { padding-inline: 10px; }
+  .fact-l { letter-spacing: 0.1em; }
 
   /* Each task stacks "what we do" over "what you get"; the column header no
      longer lines up with anything, so a per-row label replaces it. */
   .tasks-hd { display: none; }
   .task { grid-template-columns: 1fr; gap: 4px; }
-  .tasks .task:first-of-type { border-top: 2px solid var(--border-strong); }
-  .task .r::before { content: "Recibes · "; font-weight: 700; color: var(--text-primary); }
+  .tasks .task:first-of-type { border-top: 1px solid var(--line-strong); }
+  .task .r::before { content: "Recibes · "; font-weight: 700; color: var(--fg-strong); }
   [data-l="en"] .task .r::before { content: "You get · "; }
   .tasks .btn { width: 100%; }
 
@@ -133,11 +171,8 @@
   .contact-row { flex-direction: column; gap: 4px; }
   .contact-row .k { width: auto; padding-top: 0; }
 
-  .site-footer .wrap { flex-direction: column; align-items: flex-start; }
-
-  /* Tap targets for the standalone contact links. */
-  a[href^="mailto:"]:not(.btn),
-  a[href*="wa.me"]:not(.btn) { display: inline-block; padding: 8px 0; }
+  .footer-main { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; }
 }
 
 /* ───────────── Small phones ───────────── */
@@ -151,5 +186,12 @@
 @media (max-width: 480px) {
   .risk-row { grid-template-columns: 48px minmax(0, 1fr); }
   .risk-row .act { grid-column: 2; justify-self: start; }
-  .bar-row .lbl { width: 62px; }
+  /* The longest channel label ("Wholesale") has to fit beside the bar. */
+  .bar-row { gap: 8px; }
+  .bar-row .lbl { width: 70px; font-size: 0.66rem; letter-spacing: 0.02em; }
+  .bar-row .amt { width: 54px; }
+  .bar-row--wide .lbl { width: 100px; }
+  .bar-row--wide .amt { width: 34px; }
+  .mock-bar { font-size: 0.74rem; padding-inline: 14px; }
+  .mock-bar .tag-sample { font-size: 0.58rem; padding-inline: 8px; }
 }

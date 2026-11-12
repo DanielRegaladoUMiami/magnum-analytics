@@ -163,4 +163,28 @@
 
   render(pageFromHash(), storedLang());
   go(pageFromHash(), { replace: true, keepScroll: true });
+
+  /* ---- scroll reveal ----------------------------------------------------
+   * Blocks marked data-reveal fade up the first time they enter the viewport.
+   * The hidden starting state only exists under [data-reveal-on], which is set
+   * here and nowhere else: with no script, no IntersectionObserver or reduced
+   * motion, the attribute is never set and everything is simply visible.
+   * Pages that are not showing are display:none, so their blocks do not
+   * intersect until the visitor navigates to them.
+   */
+  var revealEls = document.querySelectorAll("[data-reveal]");
+  var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (revealEls.length && "IntersectionObserver" in window && !reducedMotion) {
+    app.setAttribute("data-reveal-on", "");
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.setAttribute("data-reveal", "in");
+        revealObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.06 });
+
+    Array.prototype.forEach.call(revealEls, function (el) { revealObserver.observe(el); });
+  }
 })();
